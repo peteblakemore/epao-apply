@@ -1,0 +1,43 @@
+
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        What is your organisation's full legal name?
+      </h1>
+
+      <form class="form" action="organisation-confirm" method="post">
+
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          id: "legal-name",
+          name: "legal-name"
+        }) }}
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
