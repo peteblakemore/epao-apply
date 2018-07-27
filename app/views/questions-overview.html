@@ -30,7 +30,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
-                Check eligibility
+                Has your organisation been removed from any of the following registers?
               </a>
               {{ govukTag({
                 attributes: { id: "eligibility-completed" },
@@ -40,7 +40,117 @@
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
-                Read declaration
+                Has your organisation received direction or sanctions from any of the following?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Has your organisation ever had to repay public money?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Is your organisation in any of the following? (insolvency, receivership, etc)
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Has any director or senior responsible person of your organisation been removed from the Charities Commission or appear on the Register of Removed Trustees?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Have any directors, shareholders, senior employees or someone that has powers of representation, decision or control of your organisation had any of the following?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Are any directors, or any other person who has powers of representation, decision or control of the organisation, in a state of or subject to such proceedings?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Has it been established that your organisation is in breach of obligations related to the payment of tax or social security contributions?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                From 1 April 2013 onwards, have any of your company’s tax returns submitted on or after 1 October 2012
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Does your organisation have an internal audit policy or process in place with regard to fraud and financial irregularity?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                It is a requirement that your organisation is registered with the Information Commissioner’s Office?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                It is a requirement your organisation has the appropriate insurance?
+              </a>
+              {{ govukTag({
+                attributes: { id: "read-declaration-completed" },
+                classes: "app-task-list__task-completed",
+                text: "Completed"
+              }) }}
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                The Prevent Agenda is a statutory duty, as an organisation are you aware of the policies and practices that you need to have in place to comply with the duty?
               </a>
               {{ govukTag({
                 attributes: { id: "read-declaration-completed" },
