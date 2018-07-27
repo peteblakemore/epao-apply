@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/eligibility_start-trading" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Select your organisation
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">
+              Organisation 1, 1 Street Name, Town Name, P05T C0D3
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-2" name="select-org" type="radio" value="Organisation 2, 2 Close, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-2">
+              Organisation 2, 2 Close, Town Name, P05T C0D3
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              Organisation 3, 2 Road Name, Town Name, P05T C0D3
+            </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

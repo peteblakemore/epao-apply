@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 
-{% from "tag/macro.njk" import govukTag %}
-
 {% block pageTitle %}
-  Task list
+  EPAO application questions
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -11,13 +18,14 @@
     <div class="govuk-grid-column-two-thirds app-column-minimum">
 
       <h1 class="govuk-heading-l">
-        Service name goes here
+        EPAO application
       </h1>
+      <p>Complete all of the sections below before submitting your application to join the register of EPAOs.</p>
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Check before you start
+            <span class="app-task-list__section-number">1. </span> Corporate information
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -44,7 +52,7 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Prepare application
+            <span class="app-task-list__section-number">2. </span> Financial health assessment
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -91,12 +99,60 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Apply
+            <span class="app-task-list__section-number">3. </span> Financial health management
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Submit and pay
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Organisation details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Submit and pay
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Capacity and capability
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Submit and pay
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">6. </span> Standard
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Submit and pay
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">7. </span> Apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Declare and submit
               </a>
             </li>
           </ul>

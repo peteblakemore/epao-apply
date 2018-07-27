@@ -16,36 +16,37 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Sign in details</h1>
-    <p>To enable you to return to your application later on we'll need to take some details from you.</p>
-    <form action="/eligibility_find-company" method="post">
-      <h2 class="govuk-heading-m">Email address</h2>
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="driving-licence-number">
-          For example, jsmith@epao.co.uk
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="eligibility-standard" name="eligibility-standard" type="text">
-      </div>
 
-      <h2 class="govuk-heading-m">Mobile number</h2>
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="driving-licence-number">
-          This must be a UK-based number
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="eligibility-standard" name="eligibility-standard" type="text">
-      </div>
+    <form action="/eligibility_find-organisation" method="post">
 
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Why do you need these, and which ones should you use?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>If you don't complete your application in one sitting, we'll need an email address and mobile number to enable to you sign back in later.</p>
-          <p>The email address and mobile number you give should be yours if you'll be answering questions in the application to become an EPAO. You can add more details later to allow other people to view and contribute to the application.</p>
-        </div>
-      </details>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Sign in details
+            </h1>
+          </legend>
+          <p>To enable you to return to your application later on we'll need to take some details from you.</p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="dob-day">
+              Email address
+            </label>
+            <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="mobile-number">
+              Mobile number
+            </label>
+            <span id="email-hint" class="govuk-hint">
+              This must be a UK-based number
+            </span>
+            <input class="govuk-input" id="mobile-number" name="mobile-number" type="number" aria-describedby="number">
+          </div>
+
+        </fieldset>
+      </div>
       <button type="submit" class="govuk-button">
         Continue
       </button>

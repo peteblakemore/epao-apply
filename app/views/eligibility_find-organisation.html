@@ -16,18 +16,21 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Search for your company</h1>
-    <form action="/eligibility_confirm-company" method="post">
+
+    <form action="/eligibility_confirm-organisation" method="post">
       <div class="govuk-form-group">
-        <label class="govuk-label" for="driving-licence-number">
-          Start typing the name of your company
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="eligibility-standard" name="eligibility-standard" type="text">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="org-name">
+            What's your organisation's name?
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="org-name" name="org-name" type="text">
       </div>
       <button type="submit" class="govuk-button">
         Continue
       </button>
     </form>
+
   </div>
 </div>
 {% endblock %}
