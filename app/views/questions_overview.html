@@ -1,0 +1,287 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO application questions
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="grid-grid-row">
+    <div class="govuk-grid-column-two-thirds app-column-minimum">
+
+      <h1 class="govuk-heading-l">
+        EPAO application
+      </h1>
+      <p>Complete all of the sections below before submitting your application to join the register of EPAOs.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Corporate information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Registered charity</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Register of Removed Trustees</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Company removed from registers</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Direction and sanctions</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Repaying public money</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Public bodies</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Insolvency and administration</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Bankruptcy</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">TBC</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Breach of tax and social security obligations</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Tax returns submitted on or after 1 October 2012</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Outstanding legal disputes</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Internal audit policies and processes</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Registration with the Information Commissioner’s Office</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Insurance</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Safeguarding policy</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+        		<li class="app-task-list__item">
+        			<a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">The Prevent Agenda</a> {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+        		</li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Financial health assessment
+          </h2>
+          <ul class="app-task-list__items">
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Type of organisation</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Financial statements</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">n/a</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">n/a</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Financial year end</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Months covered by financials</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Audited financial statements</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Turnover</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Depreciation and amortisation charges</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Profit and loss</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Dividends</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Assets</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Liabilities</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Borrowings</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Shareholders assets</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Intangible assets</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Part of a wider group</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Parental guarantee</a>
+        		</li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Financial management
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Contracts withdrawn from you</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Withdrawn from contracts</a>
+        		</li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Organisation details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Registered company name</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Trading name</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Contact details</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">UK Provider Registration Number (UKPRN)</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Ofqual recognition number</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Company registration number</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Trading status</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Company classification</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Organisation type</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Part of a group of companies</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Overall executive management</a>
+        		</li>
+        		<li class="app-task-list__item">
+        			<a class="app-task-list__task-name" href="#">Directors</a>
+        		</li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Capacity and capability
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Confirm you’ve read the [standard name] assessment plan, and that you can meet its specified requirements
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Will you be able to deliver end-point assessments anywhere in England?
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                When will you be able to conduct your first assessment?
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Your occupational competence
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Do you currently have the capacity and capability to deliver the following as part of a complete end-point assessment process?
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                What types of end-point assessment you will deliver?
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Your staff
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Your internal quality assurance and management procedures
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Your online information
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Your end-point assessment delivery model
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">6. </span> Standard
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Standard-specific questions
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">7. </span> Apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Declare and submit
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="govuk-clearfix"></div>
+  </div>
+{% endblock %}

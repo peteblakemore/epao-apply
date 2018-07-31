@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Corporate information</h1>
+
+      <form action="/form-handler" method="post">
+        <div class="govuk-form-group">
+      		<fieldset aria-describedby="nationality-hint" class="govuk-fieldset">
+      			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m"></legend>
+      			<h2 class="govuk-fieldset__heading"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Has your organisation been removed from any of the following registers?</legend></h2><legend class="govuk-fieldset__legend govuk-fieldset__legend--m"></legend> <span class="govuk-hint" id="register-hint">Select all that apply</span>
+      			<div class="govuk-checkboxes">
+      				<div class="govuk-checkboxes__item">
+      					<input class="govuk-checkboxes__input" id="register-1" name="register" type="checkbox" value="register-1"> <label class="govuk-label govuk-checkboxes__label" for="register-1">register-1</label>
+      				</div>
+      				<div class="govuk-checkboxes__item">
+      					<input class="govuk-checkboxes__input" id="register-2" name="register" type="checkbox" value="register-2"> <label class="govuk-label govuk-checkboxes__label" for="register-2">register-2</label>
+      				</div>
+      				<div class="govuk-checkboxes__item">
+      					<input class="govuk-checkboxes__input" id="register-3" name="register" type="checkbox" value="register-3"> <label class="govuk-label govuk-checkboxes__label" for="register-3">register-3</label>
+      				</div>
+      				<div class="govuk-checkboxes__item">
+      					<input class="govuk-checkboxes__input" id="register-4" name="register" type="checkbox" value="register-4"> <label class="govuk-label govuk-checkboxes__label" for="register-4">register-4</label>
+      				</div>
+      				<div class="govuk-checkboxes__item">
+      					<input class="govuk-checkboxes__input" id="register-5" name="register" type="checkbox" value="register-5"> <label class="govuk-label govuk-checkboxes__label" for="register-5">register-5</label>
+      				</div>
+      			</div>
+      		</fieldset>
+      	</div>
+
+
+
+        <button type="submit" class="govuk-button">
+Continue
+</button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
