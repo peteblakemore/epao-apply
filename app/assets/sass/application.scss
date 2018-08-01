@@ -9,6 +9,10 @@ $govuk-global-styles: true;
 @import 'patterns/related-items';
 @import 'patterns/task-list';
 
+// Patterns added later
+@import 'patterns/apply-overview';
+
+
 //cookie-banner
 @import "../../../docs/assets/sass/cookie-banner";
 

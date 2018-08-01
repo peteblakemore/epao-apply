@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/eligibility_signin",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Check your inbox
+    </h1>
+    <p class="govuk-body">Select the link in the email sent to [email-address] to validate your email address.</p>
+
+    <a href="/eligibility_enter-code" class="govuk-button" role="button">Continue</a>
+  </div>
+</div>
+{% endblock %}

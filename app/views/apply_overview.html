@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row framework-dashboard">
+		<div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-l">Application overview</h1>
+			<ul>
+				<li class="browse-list-item">
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+          </h2>
+          <div class="browse-list-item-status-quiet">
+						<p class="browse-list-item-status-title">You must add your organisation’s details</p>
+					</div>
+				</li>
+				<li class="browse-list-item">
+					<h2 class="govuk-heading-m">2. Make supplier declaration</h2>
+					<p class="instruction-list-item-box inactive">Can't start yet</p>
+				</li>
+        <li class="browse-list-item">
+					<h2 class="govuk-heading-m">3. Make supplier declaration</h2>
+					<p class="instruction-list-item-box inactive">Can't start yet</p>
+				</li>
+        <li class="browse-list-item">
+					<h2 class="govuk-heading-m">4. Make supplier declaration</h2>
+					<p class="instruction-list-item-box inactive">Can't start yet</p>
+				</li>
+			</ul>
+
+    <br>
+
+      <h2 class="govuk-heading-m">Guidance</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Download the invitation to apply</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Read about how to apply</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Legal documents</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Download the proposed framework agreement</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Communications</h2>
+      <p class="govuk-body">You can review and ask clarification questions about this framework until 5pm BST, Wednesday 8 August 2018.</p>
+      <p class="govuk-body"><a class="govuk-link" href="#">Read about how to apply</a></p>
+      <span id="comms-hint" class="govuk-hint">
+        Last updated Tuesday 31 July 2018
+      </span>
+
+
+
+      <h2 class="govuk-heading-m">Reporting</h2>
+      <p class="govuk-body"><a class="govuk-link" href="#">Download the reporting template</a></p>
+      <p class="govuk-body">You’ll need to send monthly ‘management information’ about the contracts you’ve been working on to CCS.</p>
+
+
+		</div>
+	</div>
+
+
+
+    <!-- <li class="browse-list-item">
+      <h2>2. Make supplier declaration</h2>
+      <p class="instruction-list-item-box inactive">Can't start yet</p>
+    </li>
+    <li class="browse-list-item">
+      <h2>3. Add, edit and complete services</h2>
+      <p class="instruction-list-item-box inactive">Can't start yet</p>
+    </li> -->
+
+</div>
+</div>
+
+{% endblock %}

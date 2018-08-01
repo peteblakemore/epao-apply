@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/eligibility_check-email",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="mob-code">
+                Enter the code sent to your mobile
+              </label>
+              <span id="mob-code-hint" class="govuk-hint">
+                The code was sent to the number you used to set up this account
+              </span>
+            </h1>
+            <input class="govuk-input govuk-input--width-10" id="mob-code" name="mob-code" type="text">
+          </div>
+
+          <a href="/apply_overview" class="govuk-button" role="button">Continue</a>
+        </form>
+      </div>
+    </div>
+{% endblock %}
