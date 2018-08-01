@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/url/of/previous/page",
+    text: "Back"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">What employers will see</h1>
+      <p class="govuk-body">This information will be visible on the register of EPAOs.</p>
+      <form action="/eligibility_check-answers" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="company-name">
+            Company name
+          </label>
+          <span id="company-name-hint" class="govuk-hint">
+            This is how employers will see your company name on the register of EPAOs
+          </span>
+          <input class="govuk-input" id="company-name" name="company-name" type="text" aria-describedby="company-name-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="contact-name">
+            Contact name
+          </label>
+          <span id="contact-name-hint" class="govuk-hint">
+            This can be the name of the person or team you want employers to contact
+          </span>
+          <input class="govuk-input" id="contact-name" name="contact-name" type="text" aria-describedby="contact-name-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="contact-email">
+            Contact email address
+          </label>
+          <span id="contact-email-hint" class="govuk-hint">
+            This is the email address employers will use to contact you or your organisation
+          </span>
+          <input class="govuk-input" id="contact-email" name="contact-email" type="text" aria-describedby="contact-email-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="contact-phone">
+            Contact phone number
+          </label>
+          <input class="govuk-input" id="contact-phone" name="contact-phone" type="text" aria-describedby="contact-phone-hint">
+        </div>
+
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
