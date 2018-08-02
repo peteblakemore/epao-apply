@@ -4,9 +4,6 @@
   Question page
 {% endblock %}
 
-
-
-
 {% block beforeContent %}
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -21,7 +18,7 @@
         href: "../application_company-details"
       },
       {
-        text: "Company address"
+        text: "Executive management"
       }
     ]
   }) }}
@@ -32,38 +29,32 @@
 {% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">What is your registered address?</h1>
+        <h1 class="govuk-heading-l">Who has responsibility for the overall executive management of your organisation?</h1>
 
         <form action="../application_company-details" method="post">
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="building-street">
-              Building and street
+              Full name
             </label>
             <input class="govuk-input" id="building-street" name="building-street" type="text" aria-describedby="building-street-hint">
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="town-city">
-              Town or city
+            <h2 class="govuk-heading-m">Positions held with other organisations</h2>
+            <label class="govuk-label govuk-label--s" for="town-city">
+              Position 1
             </label>
-            <input class="govuk-input" id="town-city" name="town-city" type="text" aria-describedby="town-city-hint">
+            <input class="govuk-input govuk-input--width-20" id="town-city" name="town-city" type="text" aria-describedby="town-city-hint">
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="building-street">
-              Postcode
-            </label>
-            <input class="govuk-input" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+            <p class="govuk-body">
+              <a href="#" class="govuk-link">
+                Add another position
+              </a>
+            </p>
           </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="building-street">
-              Country
-            </label>
-            <input class="govuk-input" id="country" name="v" type="text" aria-describedby="country-hint">
-          </div>
-
           <button type="submit" class="govuk-button">
             Save and return
           </button>

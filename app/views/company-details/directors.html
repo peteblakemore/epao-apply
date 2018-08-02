@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Application overview",
+        href: "../apply_overview"
+      },
+      {
+        text: "Company details",
+        href: "../application_company-details"
+      },
+      {
+        text: "Directors"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Directors details</h1>
+
+    <form action="../application_company-details" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="building-street">
+          Full name
+        </label>
+        <input class="govuk-input" id="building-street" name="building-street" type="text" aria-describedby="building-street-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+          <label class="govuk-label govuk-label--m" for="building-street">
+            Date of birth
+          </label>
+          <span id="dob-hint" class="govuk-hint">
+          For example, 31 3 1980
+        </span>
+          <div class="govuk-date-input" id="dob">
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                Day
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                Month
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                Year
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="building-street">
+          Percentage of shares the director holds
+        </label>
+        <span class="govuk-hint">For example, 75%</span>
+        <input class="govuk-input govuk-input--width-10" id="width-4" name="width-4" type="text">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">
+            Add another position
+          </a>
+        </p>
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and return
+      </button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

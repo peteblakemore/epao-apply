@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Application overview",
+        href: "../apply_overview"
+      },
+      {
+        text: "Company details",
+        href: "../application_company-details"
+      },
+      {
+        text: "Organisation type"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="../application_company-details" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What's the organisation type of your company?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Professional body</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Employer or trade body</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Sector Skills Council</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Awarding Organisation</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Training Provider (including FE colleges)</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">University (funded by HEFCE)</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">Assessment Organisation (specifically created to undertake end-point assessment)</label>
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">None of the above</label>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and return
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

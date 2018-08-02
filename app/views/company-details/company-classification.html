@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Application overview",
+        href: "../apply_overview"
+      },
+      {
+        text: "Company details",
+        href: "../application_company-details"
+      },
+      {
+        text: "Company classification"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="../application_company-details" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What type of classification does your company fall under?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-1">
+              Voluntary, Community and Social Enterprise (VCSE)
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-2" name="select-org" type="radio" value="Organisation 2, 2 Close, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-2">
+              Third Sector organisations
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              Small or Medium Enterprise (SME)
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              Sheltered workshop
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              Public service mutual
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
+              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              None of the above
+            </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and return
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

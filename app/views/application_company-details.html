@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     href: "/apply_overview",
-    text: "Back"
+    text: "Back to application overview"
   }) }}
 {% endblock %}
 
@@ -24,11 +24,7 @@
         What employers will see
       </h2>
 
-      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
-      <!--   * `app-check-your-answers--short` for short questions -->
-      <!--   * `app-check-your-answers__questions-long` for long questions -->
-      <!--   * none for single group of q&a -->
-      <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers__questions-long">
+      <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers__questions-long app-check-your-answers--spacer">
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -85,13 +81,13 @@
         </div>
       </dl>
 
-<br><br>
+
 
       <h2 class="govuk-heading-m">
         Your organisation details
       </h2>
 
-      <dl class="app-check-your-answers app-check-your-answers--short">
+      <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers--spacer">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Registered company name
@@ -108,7 +104,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Registered company address
+            Registered address
           </dt>
           <dd class="app-check-your-answers__answer">
             <a href="/company-details/company-address" class="govuk-link">Answer required</a>
@@ -120,10 +116,22 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
+            UK Provider Registration Number (UKPRN)
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            <a href="/company-details/ukprn" class="govuk-link">Answer required</a>
+          </dd>
+          <dd class="app-check-your-answers__change">
+
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
             Company classification
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="#" class="govuk-link">Answer required</a>
+            <a href="/company-details/company-classification" class="govuk-link">Answer required</a>
           </dd>
           <dd class="app-check-your-answers__change">
 
@@ -135,7 +143,7 @@
             Organisation type
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="#" class="govuk-link">Answer required</a>
+            <a href="/company-details/organisation-type" class="govuk-link">Answer required</a>
           </dd>
           <dd class="app-check-your-answers__change">
 
@@ -147,7 +155,7 @@
             Part of a group of companies?
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="#" class="govuk-link">Answer required</a>
+            <a href="/company-details/group-companies" class="govuk-link">Answer required</a>
           </dd>
           <dd class="app-check-your-answers__change">
 
@@ -159,7 +167,7 @@
             Overall executive management
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="#" class="govuk-link">Answer required</a>
+            <a href="/company-details/executive-management" class="govuk-link">Answer required</a>
           </dd>
           <dd class="app-check-your-answers__change">
 
@@ -171,15 +179,25 @@
             Directors
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="#" class="govuk-link">Answer required</a>
+            <a href="/company-details/directors" class="govuk-link">Answer required</a>
           </dd>
           <dd class="app-check-your-answers__change">
 
           </dd>
         </div>
 
-
       </dl>
+    </div>
+  </div>
+
+<p class="govuk-body">You must complete your company details to make an application.</p>
+<p class="govuk-body"><a href="#" class="govuk-link">Return to your application</a></p>
+
+<p class="govuk-body"></p>
+
+Once you confirm your information you’ll need to contact support to correct a mistake in your:
+UKPRN
+organisation type
 
 
     </div>
