@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "../application_company-details",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">What is your registered office address?</h1>
+
+        <form action="../application_company-details" method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="building-street">
+              Building and street
+            </label>
+            <input class="govuk-input" id="building-street" name="building-street" type="text" aria-describedby="building-street-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="town-city">
+              Town or city
+            </label>
+            <input class="govuk-input" id="town-city" name="town-city" type="text" aria-describedby="town-city-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="building-street">
+              Postcode
+            </label>
+            <input class="govuk-input" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="building-street">
+              Country
+            </label>
+            <input class="govuk-input" id="country" name="v" type="text" aria-describedby="country-hint">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Save and return
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
