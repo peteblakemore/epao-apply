@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Blank page
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% set questions = [{
+    longTitle: "Do you agree to comply...",
+    shortTitle: "",
+    name: "comply"
+},
+{
+    longTitle: "Why don't you comply...",
+    shortTitle: "",
+    name: "comply"
+}
+] %}
+
+
+{% block content %}
+<div class="govuk-width-container">
+<a href="#" class="govuk-back-link">Back</a>
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post">
+        {% for question in questions %}
+                    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                {{question.longTitle}}
+                            </h1>
+                        </legend>
+                        <span id="{{question.name}}-hint" class="govuk-hint">
+                            {{question.hint}}
+                        </span>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    {% endfor %}
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <h1 class="govuk-heading-l">What it means to be on the register of end-point assessment organisations</h1>
+
+      <form action="/form-handler" method="post">
+
+
+
+    <div class="govuk-form-group">
+			<label class="govuk-label govuk-label--m" for="passport-number">Passport number</label> <span class="govuk-hint" id="passport-number-hint">For example, 502135326</span> <input aria-describedby="passport-number-hint" class="govuk-input" id="passport-number" name="passport-number" type="text">
+		</div>
+
+
+    <div class="govuk-form-group">
+			<fieldset aria-describedby="expiry-hint" class="govuk-fieldset" role="group">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Expiry date</legend> <span class="govuk-hint" id="expiry-hint">For example, 31 3 1980</span>
+				<div class="govuk-date-input" id="expiry">
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="expiry-day">Day</label> <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" pattern="[0-9]*" type="number">
+						</div>
+					</div>
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="expiry-month">Month</label> <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" pattern="[0-9]*" type="number">
+						</div>
+					</div>
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="expiry-year">Year</label> <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" pattern="[0-9]*" type="number">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+
+
+
+    <button class="govuk-button" type="submit">Save and return</button>
+	</form> -->
+    </div>
+  </div>
+</main>
+</div>
+{% endblock %}

@@ -236,9 +236,9 @@
             Overall executive management
           </dt>
           <dd class="app-check-your-answers__answer">
-              {% if data['executive-management'] %}
+              {% if data['responsible-name'] %}
                 <p class="govuk-body">
-                {{ data['executive-management'] }}
+                {{ data['responsible-name'] }}
                 </p>
                 {% else %}
                 <a href="/company-details/executive-management" class="govuk-link">
@@ -247,7 +247,7 @@
               {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-            {% if data['executive-management'] %}
+            {% if data['responsible-name'] %}
             <a href="/company-details/executive-management" class="govuk-link">
               Change
             </a>
