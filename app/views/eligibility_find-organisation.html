@@ -20,11 +20,11 @@
     <form action="/eligibility_confirm-organisation" method="post">
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="org-name">
+          <label class="govuk-label govuk-label--l" for="company-name">
             What's your organisation's name?
           </label>
         </h1>
-        <input class="govuk-input govuk-input--width-20" id="org-name" name="org-name" type="text">
+        <input class="govuk-input govuk-input--width-20" id="company-name" name="company-name" value="{{ data['company-name'] }}"  type="text">
       </div>
       <button type="submit" class="govuk-button">
         Continue
