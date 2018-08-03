@@ -37,7 +37,7 @@
           <span id="contact-name-hint" class="govuk-hint">
             This can be the name of the person or team you want employers to contact
           </span>
-          <input class="govuk-input" id="contact-name" name="contact-name" type="text" aria-describedby="contact-name-hint">
+          <input class="govuk-input" id="contact-name" name="contact-name" value="{{ data['contact-name'] }}" type="text" aria-describedby="contact-name-hint">
         </div>
 
         <div class="govuk-form-group">
@@ -47,14 +47,14 @@
           <span id="contact-email-hint" class="govuk-hint">
             This is the email address employers will use to contact you or your organisation
           </span>
-          <input class="govuk-input" id="contact-email" name="contact-email" type="text" aria-describedby="contact-email-hint">
+          <input class="govuk-input" id="contact-email" name="contact-email" value="{{ data['contact-email'] }}" type="text" aria-describedby="contact-email-hint">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="contact-phone">
             Contact phone number
           </label>
-          <input class="govuk-input" id="contact-phone" name="contact-phone" type="text" aria-describedby="contact-phone-hint">
+          <input class="govuk-input" id="contact-phone" name="contact-phone" value="{{ data['contact-phone'] }}" type="text" aria-describedby="contact-phone-hint">
         </div>
 
         <button type="submit" class="govuk-button">

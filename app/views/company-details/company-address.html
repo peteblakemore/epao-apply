@@ -40,28 +40,28 @@
             <label class="govuk-label govuk-label--m" for="building-street">
               Building and street
             </label>
-            <input class="govuk-input" id="building-street" name="building-street" type="text" aria-describedby="building-street-hint">
+            <input class="govuk-input" id="building-street" name="building-street" value="{{ data['building-street'] }}" type="text" aria-describedby="building-street-hint">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="town-city">
               Town or city
             </label>
-            <input class="govuk-input" id="town-city" name="town-city" type="text" aria-describedby="town-city-hint">
+            <input class="govuk-input" id="town-city" name="town-city" value="{{ data['town-city'] }}" type="text" aria-describedby="town-city-hint">
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="building-street">
+            <label class="govuk-label govuk-label--m" for="postcode">
               Postcode
             </label>
-            <input class="govuk-input" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+            <input class="govuk-input" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text" aria-describedby="postcode-hint">
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="building-street">
+            <label class="govuk-label govuk-label--m" for="country">
               Country
             </label>
-            <input class="govuk-input" id="country" name="v" type="text" aria-describedby="country-hint">
+            <input class="govuk-input" id="country" name="country" value="{{ data['country'] }}" type="text" aria-describedby="country-hint">
           </div>
 
           <button type="submit" class="govuk-button">

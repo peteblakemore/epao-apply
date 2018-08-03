@@ -32,17 +32,17 @@
             <label class="govuk-label govuk-date-input__label" for="dob-day">
               Email address
             </label>
-            <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
+            <input class="govuk-input" id="sign-in-email" name="sign-in-email" value="{{ data['sign-in-email'] }}" type="sign-in-email" aria-describedby="sign-in-email-hint">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-date-input__label" for="mobile-number">
               Mobile number
             </label>
-            <span id="email-hint" class="govuk-hint">
+            <span id="sign-in-mobile-hint" class="govuk-hint">
               This must be a UK-based number
             </span>
-            <input class="govuk-input" id="mobile-number" name="mobile-number" type="number" aria-describedby="number">
+            <input class="govuk-input" id="sign-in-mobile" name="sign-in-mobile" value="{{ data['sign-in-mobile'] }}" type="number" aria-describedby="number">
           </div>
 
         </fieldset>

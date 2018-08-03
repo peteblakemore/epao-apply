@@ -31,7 +31,7 @@
             Contact name
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact name]
+            {{ data['contact-name'] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="#">
@@ -45,7 +45,7 @@
             Contact email
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact email]
+            {{ data['contact-email'] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="#">
@@ -59,7 +59,7 @@
             Contact phone number
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact phone number]
+            {{ data['contact-phone'] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="#">
@@ -93,7 +93,7 @@
             Registered company name
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Registered company name]
+            {{ data['company-name'] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="#">
@@ -107,10 +107,26 @@
             Registered address
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/company-address" class="govuk-link">Answer required</a>
+              {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
+                <p class="govuk-body">
+                {{ data['building-street'] }}<br>
+                {{ data['town-city'] }}<br>
+                {{ data['postcode'] }}<br>
+                {{ data['country'] }}
+                </p>
+                {% else %}
+              <a href="/company-details/company-address" class="govuk-link">
+                Answer required
+              </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
+            <a href="/company-details/company-address" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
 
@@ -119,10 +135,23 @@
             UK Provider Registration Number (UKPRN)
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/ukprn" class="govuk-link">Answer required</a>
+              {% if data['ukprn'] %}
+                <p class="govuk-body">
+                {{ data['ukprn'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/ukprn" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['ukprn'] %}
+            <a href="/company-details/ukprn" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
 
@@ -131,10 +160,23 @@
             Company classification
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/company-classification" class="govuk-link">Answer required</a>
+              {% if data['company-classification'] %}
+                <p class="govuk-body">
+                {{ data['company-classification'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/company-classification" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['company-classification'] %}
+            <a href="/company-details/company-classification" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
 
@@ -143,22 +185,49 @@
             Organisation type
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/organisation-type" class="govuk-link">Answer required</a>
+              {% if data['organisation-type'] %}
+                <p class="govuk-body">
+                {{ data['organisation-type'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/organisation-type" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['organisation-type'] %}
+            <a href="/company-details/organisation-type" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
+
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Part of a group of companies?
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/group-companies" class="govuk-link">Answer required</a>
+              {% if data['group-companies'] %}
+                <p class="govuk-body">
+                {{ data['group-companies'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/group-companies" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['group-companies'] %}
+            <a href="/company-details/group-companies" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
 
@@ -167,22 +236,49 @@
             Overall executive management
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/executive-management" class="govuk-link">Answer required</a>
+              {% if data['executive-management'] %}
+                <p class="govuk-body">
+                {{ data['executive-management'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/executive-management" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['executive-management'] %}
+            <a href="/company-details/executive-management" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
+
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Directors
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/directors" class="govuk-link">Answer required</a>
+              {% if data['director-name'] %}
+                <p class="govuk-body">
+                {{ data['director-name'] }}
+                </p>
+                {% else %}
+                <a href="/company-details/directors" class="govuk-link">
+                Answer required
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['director-name'] %}
+            <a href="/company-details/directors" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+            {% endif %}
           </dd>
         </div>
 
@@ -191,13 +287,12 @@
   </div>
 
 <p class="govuk-body">You must complete your company details to make an application.</p>
-<p class="govuk-body"><a href="#" class="govuk-link">Return to your application</a></p>
+<a href="/apply_overview" class="govuk-button">
+  Return to overview
+</a>
 
 <p class="govuk-body"></p>
 
-Once you confirm your information you’ll need to contact support to correct a mistake in your:
-UKPRN
-organisation type
 
 
     </div>

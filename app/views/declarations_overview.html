@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO application questions
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/apply_overview",
+    text: "Back to application overview"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="grid-grid-row">
+  <div class="govuk-grid-column-two-thirds app-column-minimum">
+    <h1 class="govuk-heading-l">Your declaration overview</h1>
+    <p>You must answer all the questions to make your declaration.</p>
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">1.</span> What it means to be on the register of end-point assessment organisations</h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Invitation to apply</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Terms and conditions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Providing services straight away</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Providing evidence of experience</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">No unfair access to information</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Signing and returning the framework agreement</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">2.</span> Grounds for mandatory exclusion</h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Organised crime or conspiracy convictions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Bribery or corruption convictions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Fraud convictions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Terrorism convictions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Organised crime convictions</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">3.</span> Grounds for discretionary exclusion</h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">In breach of tax payments</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Bankruptcy or insolvency</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Voluntary administration, compulsory winding up or receivership</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Mitigating factors for discretionary exclusion (10 to 12)</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">If a tax return was incorrect</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Why a tax return was incorrect</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Mitigating factors for tax returns</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Contracts withdrawn from you</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Withdrawn from contracts</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Mitigating factors for contract withdrawal</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Register of Removed Trustees</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Company removed from registers</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Direction and sanctions</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Repaying public money</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Public bodies</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Legal disputes</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Mitigating factors for discretionary exclusion (20 to 25)</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">4.</span> Application accuracy</h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Declaration accuracy</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Changes to information</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">End-point assessments description accuracy</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Information changes</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Use of other information</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Details on register</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">5.</span> Contact details</h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Primary contact name</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Primary contact email</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Contract notice contact name</a>
+          </li>
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Contract notice contact name</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="govuk-clearfix"></div>
+</div>
+{% endblock %}
