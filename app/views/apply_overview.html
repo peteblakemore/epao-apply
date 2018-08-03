@@ -15,24 +15,65 @@
 		<div class="govuk-grid-column-two-thirds">
 			<h1 class="govuk-heading-l">Application overview</h1>
 			<ul>
-				<li class="browse-list-item">
+        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
+        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
+        <li class="browse-list-item">
+          {{ govukTag({
+            attributes: { id: "eligibility-completed" },
+            classes: "app-task-list__task-completed",
+            text: "Completed"
+          }) }}
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+          </h2>
+        </li>
+        {% else %}
+        <li class="browse-list-item">
           <h2 class="govuk-heading-m">
             <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
           </h2>
           <div class="browse-list-item-status-quiet">
-						<p class="browse-list-item-status-title">You must add your organisation’s details</p>
-					</div>
-				</li>
-				<li class="browse-list-item">
-					<h2 class="govuk-heading-m">2. Make declaration</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
+            <p class="browse-list-item-status-title">You must add your organisation’s details</p>
+          </div>
+        </li>
+        {% endif %}
+
+        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
+        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
+        <li class="browse-list-item">
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="#">2. Make declaration</a>
+          </h2>
+          <div class="browse-list-item-status-quiet">
+            <p class="browse-list-item-status-title">You must complete the declarations</p>
+          </div>
+        </li>
+        {% else %}
+        <li class="browse-list-item">
+          <h2 class="govuk-heading-m">2. Make declaration</h2>
+          <p class="instruction-list-item-box inactive">Can't start yet</p>
+        </li>
+        {% endif %}
+
+        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
+        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
+        <li class="browse-list-item">
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="#">3. Add, edit and complete financial health assessment</a>
+          </h2>
+          <div class="browse-list-item-status-quiet">
+            <p class="browse-list-item-status-title">You must add your financial health information</p>
+          </div>
+        </li>
+        {% else %}
         <li class="browse-list-item">
 					<h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
 					<p class="instruction-list-item-box inactive">Can't start yet</p>
 				</li>
+        {% endif %}
+
         <li class="browse-list-item">
-					<h2 class="govuk-heading-m">4. Add, edit and complete application to assess [standard-name]</h2>
+					<h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['eligibility-standard'] }}</h2>
 					<p class="instruction-list-item-box inactive">Can't start yet</p>
 				</li>
 			</ul>

@@ -283,15 +283,24 @@
         </div>
 
       </dl>
+
+      {% if data['director-name'] and data['responsible-name'] and data['group-companies']
+      and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
+      <p class="govuk-body">You have completed all of the Company details questions. Select save and return to continue with your application.</p>
+      <a href="/apply_overview" class="govuk-button">
+        Save and return
+      </a>
+      {% else %}
+        <p class="govuk-body">You must complete your company details to make an application.</p>
+        <a href="/apply_overview" class="govuk-button">
+          Return to overview
+        </a>
+      {% endif %}
+
+      
     </div>
   </div>
 
-<p class="govuk-body">You must complete your company details to make an application.</p>
-<a href="/apply_overview" class="govuk-button">
-  Return to overview
-</a>
-
-<p class="govuk-body"></p>
 
 
 
