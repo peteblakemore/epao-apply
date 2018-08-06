@@ -6,52 +6,37 @@ if (window.console && window.console.info) {
 }
 
 $(document).ready(function() {
-  // add code here
-  var availableTags = [
-    {
-      value: 'able seafarer',
-      name: 'Able seafairing 101',
-      requirements: [
-        'Able seafairing requirement 1',
-        'Able seafairing requirement 2',
-        'Able seafairing requirement 3',
-        'Able seafairing requirement 4'
-      ]
-    },
-    'actor, puppeteer/marionetteer (actor/actress)',
-    'actuary',
-    'administrative worker',
-    'advertising manager',
-    'aerial rigger',
-    'agricultural adviser (farming adviser)',
-    'agricultural machinery mechanic (agricultural mechanic)',
-    'agronomist',
-    'air traffic controller',
-    'air traffic safety technician',
-    'aircraft instrument technician',
-    'aircraft mechanic',
-    'airline clerk (airline ticket agent)',
-    'ammunition and explosives operative (munitions worker)',
-    'animal technician',
-    'animator',
-    'anthropologist',
-    'applications manager (computer applications manager)',
-    'apprentice training officer/trainer (instructor)',
-    'archeologist',
-    'architect'
-  ];
-
   $('#eligibility-standard').autocomplete({
-    source: availableTags,
-    select: function(event, ui) {
-      // console.log({ event, ui });
-      $('.js-standard-name').text(ui.item.name);
-      ui.item.requirements.map(function(requirement, index) {
-        $('.js-prerequisites ul').append('<li>' + requirement + '</li>');
+    source: function(request, response) {
+      $.getJSON('/public/javascripts/data.json', function(data) {
+        var array = $.map(data, function(standard) {
+          const { value, name, requirements } = standard;
+          return {
+            value,
+            name,
+            requirements
+          };
+        });
+        // Manually filter as we're not using a server to filter resulsts
+        response($.ui.autocomplete.filter(array, request.term));
       });
-      $('.js-prerequisites').removeClass('js-hidden');
-      $(this).val('');
-      return false;
+    },
+    select: function(event, ui) {
+      $('.js-standard-name').text(ui.item.name);
+      $('.js-prerequisites ul').empty();
+      if (ui.item.requirements) {
+        ui.item.requirements.map(function(requirement, index) {
+          $('.js-prerequisites ul').append('<li>' + requirement + '</li>');
+        });
+        $('.js-prerequisites').removeClass('js-hidden');
+      } else {
+        $('.js-prerequisites ul').empty();
+        $('.js-prerequisites').addClass('js-hidden');
+      }
+      // Clear input on select.. if we do this
+      // (or need to carry any other data accross) we'll need to user hidden form inputs
+      // $(this).val('');
+      // return false;
     }
   });
 });

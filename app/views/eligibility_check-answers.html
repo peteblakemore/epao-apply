@@ -1,19 +1,5 @@
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  Question page
-{% endblock %}
-
-{% block beforeContent %}
-  {% include 'includes/_phase-banner-alpha.html' %}
-  {{ govukBackLink({
-    href: "/eligibility_what-employers-see",
-    text: "Back"
-  }) }}
-
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %} {% block beforeContent %} {% include 'includes/_phase-banner-alpha.html'
+%} {{ govukBackLink({ href: "/eligibility_what-employers-see", text: "Back" }) }} {% endblock %} {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -29,6 +15,20 @@
     <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers__questions-long">
       <div class="app-check-your-answers__contents">
         <dt class="app-check-your-answers__question">
+          Standard
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data['eligibility-standard'] }}
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="/eligibility_standard">
+            Change
+            <span class="govuk-visually-hidden"> company name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
           Company name
         </dt>
         <dd class="app-check-your-answers__answer">
@@ -36,7 +36,8 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
-            Change<span class="govuk-visually-hidden"> company name</span>
+            Change
+            <span class="govuk-visually-hidden"> company name</span>
           </a>
         </dd>
       </div>
@@ -50,7 +51,8 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
-            Change<span class="govuk-visually-hidden"> contact name</span>
+            Change
+            <span class="govuk-visually-hidden"> contact name</span>
           </a>
         </dd>
       </div>
@@ -64,7 +66,8 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
-            Change<span class="govuk-visually-hidden"> contact email</span>
+            Change
+            <span class="govuk-visually-hidden"> contact email</span>
           </a>
         </dd>
       </div>
@@ -78,7 +81,8 @@
         </dd>
         <dd class="app-check-your-answers__change">
           <a href="#">
-            Change<span class="govuk-visually-hidden"> contact phone number</span>
+            Change
+            <span class="govuk-visually-hidden"> contact phone number</span>
           </a>
         </dd>
       </div>
