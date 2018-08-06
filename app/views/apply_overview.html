@@ -32,10 +32,22 @@
           <h2 class="govuk-heading-m">
             <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
           </h2>
+
+
           <div class="browse-list-item-status-quiet">
             <p class="browse-list-item-status-title">You must add your organisation’s details</p>
           </div>
+
+          <h2 class="govuk-heading-s">You need your:</h2>
+
+          <ul class="govuk-list govuk-list--bullet govuk-list--left-bump">
+            <li>Company Registration Number/Charity Number</li>
+            <li>UKPRN</li>
+            <li>Organisational information</li>
+          </ul>
+
         </li>
+
         {% endif %}
 
         {% if data['director-name'] and data['responsible-name'] and data['group-companies']
@@ -64,18 +76,34 @@
           <div class="browse-list-item-status-quiet">
             <p class="browse-list-item-status-title">You must add your financial health information</p>
           </div>
+          <h2 class="govuk-heading-s">You need your:</h2>
+            <ul class="govuk-list govuk-list--bullet govuk-list--left-bump">
+              <li>Full financial statements</li>
+            </ul>
         </li>
         {% else %}
         <li class="browse-list-item">
 					<h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
+          <p class="instruction-list-item-box inactive">Can't start yet</p>
+          <h2 class="govuk-heading-s">You need your:</h2>
+            <ul class="govuk-list govuk-list--bullet govuk-list--left-bump">
+              <li>Full financial statements</li>
+            </ul>
 				</li>
         {% endif %}
 
         <li class="browse-list-item">
 					<h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['eligibility-standard'] }}</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
+          <p class="instruction-list-item-box inactive">Can't start yet</p>
+
+
+          <h2 class="govuk-heading-s">You need your:</h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--left-bump">
+              <li>Evidence of your occupational and assessment capacity</li>
+            </ul>
+
+          </li>
 			</ul>
 
     <br>
