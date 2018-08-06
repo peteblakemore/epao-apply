@@ -49,7 +49,6 @@ $(document).ready(function() {
       ui.item.requirements.map(function(requirement, index) {
         $('.js-prerequisites ul').append('<li>' + requirement + '</li>');
       });
-      $('js-requirements').append();
       $('.js-prerequisites').removeClass('js-hidden');
       $(this).val('');
       return false;
