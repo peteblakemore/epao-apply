@@ -10,11 +10,13 @@
 {% set questions = [{
     longTitle: "Do you agree to comply...",
     shortTitle: "",
+    hint: "We need to know if you agree to comply or not",
     name: "comply"
 },
 {
     longTitle: "Why don't you comply...",
     shortTitle: "",
+    hint: "If you don't comply, let us know here",
     name: "comply"
 }
 ] %}
@@ -29,31 +31,36 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/form-handler" method="post">
         {% for question in questions %}
-                    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            <h1 class="govuk-fieldset__heading">
-                                {{question.longTitle}}
-                            </h1>
-                        </legend>
-                        <span id="{{question.name}}-hint" class="govuk-hint">
-                            {{question.hint}}
-                        </span>
-                        <div class="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
-                                <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
-                                <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
-                                    No
-                                </label>
-                            </div>
-                        </div>
-                    </fieldset>
-                    {% endfor %}
+
+<div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                      {{question.longTitle}}
+                  </h2>
+              </legend>
+              <span id="{{question.name}}-hint" class="govuk-hint">
+                  {{question.hint}}
+              </span>
+              <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
+                          Yes
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
+                          No
+                      </label>
+                  </div>
+              </div>
+          </fieldset>
+        </div>
+
+
+        {% endfor %}
       </form>
 
 
