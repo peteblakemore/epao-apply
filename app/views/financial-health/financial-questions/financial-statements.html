@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as data %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="declarations_overview" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{% for question in data.financials %}
+    <form action="{{question.next_href}}" method="post">
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="eligibility-standard">
+            {{question.longTitle}}
+          </label>
+        </h1>
+
+        <input class="govuk-input govuk-input--width-20" id="eligibility-standard" name="eligibility-standard" type="text">
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+    </form>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+{% endblock %}
