@@ -7,421 +7,59 @@
 {% block beforeContent %}
 {% endblock %}
 
-<!-- [{
-    longTitle: "Do you agree to comply ...",
-    shortTitle: "",
-    hint: "We need to know if you agree to comply or not",
-    name: "comply"
-},
-{
-    longTitle: "Why don't you comply...",
-    shortTitle: "",
-
-    name: "no-comply"
-}
-] -->
-
-{% set questions =
-  [
-      {
-
-          "longTitle": "Do you agree to comply with the terms of the Conditions for organisations on the register of end-point assessment organisations (link opens in a new tab)?",
-          "shorttitle": "Invitation to apply",
-          "bullets": [
-              "any offence under sections 44 to 46 of the Serious Crime Act 2007 which relates to an offence covered by subparagraph (f)",
-              "conspiracy within the meaning of section 1 or 1A of the Criminal Law Act 1977"
-          ],
-          "name": "invite",
-          "id": "invite"
-      },
-      {
-          "longTitle": "Do you accept the terms and conditions in the Register of end-point assessment organisations: pre-application guidance (link opens in a new tab)?",
-          "shorttitle": "Terms and conditions",
-          "name": "terms-and-conditions",
-          "id": "terms-and-conditions"
-      },
-      {
-          "longTitle": "If your application is successful, can you conduct end-point assessments for [standard name] from the first day you’re awarded a place on the register of end-point assessment organisations?",
-          "shorttitle": "Providing services straight away",
-          "name": "straight-away",
-          "id": "straight-away"
-      },
-      {
-          "longTitle": "Do you agree to sign and return the final agreement, without changing it, within 10 days of it being issued by the Education and Skills Funding Agency?",
-          "shorttitle": "Signing and returning the agreement",
-          "name": "sign-and-return-framework",
-          "id": "sign-and-return-framework"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of:",
-          "shorttitle": "Organised crime or conspiracy convictions",
-          "name": "convictions",
-          "id": "convictions"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of:",
-          "shorttitle": "Bribery or corruption convictions",
-          "bullets": [
-              "corruption within the meaning of section 1(2) of the Public Bodies Corrupt Practices Act 1889 or section 1 of the Prevention of Corruption Act 1906",
-              "the common law offence of bribery",
-              "bribery within the meaning of sections 1, 2, or 6 of the Bribery Act 2010",
-              "any other offence within the meaning of article 57(1) of the Public Contracts Directive as defined by the law of any jurisdiction outside England and Wales and Northern Ireland",
-              "any other offence within the meaning of article 57(1) of the Public Contracts Directive created after 26th February 2015 in England and Wales or Northern Ireland"
-          ],
-          "name": "bribary-and-corruption",
-          "id": "bribary-and-corruption"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of any offence that relates to fraud affecting the European Communities’ financial interests as defined by article 1 of the Convention of the Protection of the Financial Interests of the European Communities, including:",
-          "shorttitle": "Fraud convictions",
-          "bullets": [
-              "the common law offence of cheating the Revenue (HMRC)",
-              "the common law offence of conspiracy to defraud",
-              "fraud or theft within the meaning of the Theft Act 1968, the Theft Act (Northern Ireland) 1969, the Theft Act 1978 or the Theft (Northern Ireland) Order 1978",
-              "fraudulent trading within the meaning of section 458 of the Companies Act 1985, article 451 of the Companies (Northern Ireland) Order 1986 or section 993 of the Companies Act 2006",
-              "fraudulent evasion within the meaning of section 170 of the Customs and Excise Management Act 1979 or section 72 of the Value Added Tax Act 1994",
-              "an offence in connection with taxation in the European Union within the meaning of section 71 of the Criminal Justice Act 1993",
-              "destroying, defacing or concealing of documents or procuring the execution of a valuable security within the meaning of section 20 of the Theft Act 1968 or section 19 of the Theft Act (Northern Ireland) 1969",
-              "fraud within the meaning of section 2, 3 or 4 of the Fraud Act 2006",
-              "the possession of articles for use in frauds within the meaning of section 6 of the Fraud Act 2006, or the making, adapting, supplying or offering to supply articles for use in frauds within the meaning of section 7 of that Act"
-          ],
-          "name": "fraud",
-          "id": "fraud"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisation has been convicted of any offence listed in:",
-          "shorttitle": "Terrorism convictions",
-          "bullets": [
-              "section 41 of the Counter Terrorism Act 2008",
-              "schedule 2 of the Counter Terrorism Act 2008 where the court has determined that there is a terrorist connection",
-              "any offence under sections 44 to 46 of the Serious Crime Act 2007"
-          ],
-          "name": "terrorism",
-          "id": "terrorism"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisation has been convicted of:",
-          "shorttitle": "Organised crime convictions",
-          "bullets": [
-              "money laundering within the meaning of sections 340(11) and 415 of the Proceeds of Crime Act 2002",
-              "an offence in connection with the proceeds of criminal conduct within the meaning of section 93A, 93B or 93C of the Criminal Justice Act 1988 or article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996",
-              "an offence under section 4 of the Asylum and Immigration (Treatment of Claimants etc) Act 2004",
-              "an offence under section 59A of the Sexual Offences Act 2003",
-              "an offence under section 71 of the Coroners and Justice Act 2009",
-              "an offence in connection with the proceeds of drug trafficking within the meaning of section 49, 50 and 51 of the Drug Trafficking Act 1994"
-          ],
-          "name": "organised-crime",
-          "id": "organised-crime"
-      },
-      {
-          "longTitle": "Have members of your organisation or a partner organisation been legally found to be in breach of tax payments or social security contributions?",
-          "shorttitle": "In breach of tax payments",
-          "name": "breach-of-tax",
-          "id": "breach-of-tax"
-      },
-      {
-          "longTitle": "Please confirm whether, within the past 3 years, your organisation or any of your partner organisations:",
-          "shorttitle": "Bankruptcy or insolvency",
-          "bullets": [
-              "has been made bankrupt or the subject of insolvency or winding-up proceedings"
-          ],
-          "name": "bankruptcy",
-          "id": "bankruptcy"
-      },
-      {
-          "longTitle": "Please confirm whether your organisation or any of your partner organisations is in:",
-          "shorttitle": "Voluntary administration, compulsory winding up or receivership",
-          "bullets": [
-              "voluntary administration or company voluntary arrangement",
-              "compulsory winding up",
-              "receivership",
-              "composition with creditors"
-          ],
-          "name": "voluntary-administration",
-          "id": "voluntary-administration"
-      },
-      {
-          "longTitle": "Please confirm whether any of your organisation’s tax returns, submitted on or after 1 October 2012, have:",
-          "shorttitle": "Mitigating factors for discretionary exclusion (10 to 12)",
-          "bullets": [
-              "been found to be incorrect as of 1 April 2013",
-              "given rise to a criminal conviction for tax-related offences which is unspent, or to a civil penalty for fraud or evasion"
-          ],
-          "name": "mitigating-factors-exclusion-1",
-          "id": "mitigating-factors-exclusion-1"
-      },
-      {
-          "longTitle": "Please confirm whether any of your organisation’s tax returns, submitted on or after 1 October 2012, have been found to be incorrect on or after 1 April 2013 because:",
-          "shorttitle": "If a tax return was incorrect",
-          "bullets": [
-              "HMRC successfully challenged it under the General Anti-Abuse Rule (GAAR) or Halifax abuse principle",
-              "a tax authority (in a jurisdiction in which your organisation is established) successfully challenging it under any tax rules or legislation that have an effect equivalent or similar to the GAAR or Halifax abuse principle",
-              "an avoidance scheme that your organisation was involved with failed and was, or should have been, notified under the Disclosure of Tax Avoidance Scheme (DOTAS) or equivalent"
-          ],
-          "name": "tax-return-incorrect",
-          "id": "tax-return-incorrect"
-      },
-      {
-          "shorttitle": "Why a tax return was incorrect",
-          "name": "why-incorrect",
-          "id": "why-incorrect"
-      },
-      {
-          "longTitle": "If you responded ‘yes’ to either question 14 or 15, please provide details of any mitigating factors that you think should be taken into consideration.",
-          "shorttitle": "Mitigating factors for tax returns",
-          "name": "mitigating-factors-tax",
-          "id": "mitigating-factors-tax"
-      },
-      {
-          "longTitle": "Has your organisation had any contract for the delivery of services withdrawn within the last 3 financial years?",
-          "shorttitle": "Contracts withdrawn from you",
-          "name": "contracts-withdrawn",
-          "id": "contracts-withdrawn"
-      },
-      {
-          "longTitle": "Has your organisation withdrawn from a contract for the delivery of services within the last 3 years?",
-          "shorttitle": "Withdrawn from contracts",
-          "name": "withdrawn-from-contracts",
-          "id": "withdrawn-from-contracts"
-      },
-      {
-          "longTitle": "If you responded ‘yes’ to either question 17 or 18, please provide details of any mitigating factors that you think should be taken into consideration.",
-          "shorttitle": "Mitigating factors for contract withdrawal",
-          "name": "mitigating-factors-withdrawn",
-          "id": "mitigating-factors-withdrawn"
-      },
-      {
-          "longTitle": "Has any director or senior responsible person of your organisation been removed from the Charities Commission or appear on the Register of Removed Trustees?",
-          "shorttitle": "Register of Removed Trustees",
-          "name": "removed-trustees",
-          "id": "removed-trustees"
-      },
-      {
-          "longTitle": "Has your organisation been removed from any of the following registers?",
-          "shorttitle": "Company removed from registers",
-          "bullets": [
-              "Education and Skills Funding Agency’s register of training organisations",
-              "Ofqual’s register",
-              "Other professional or trade registers"
-          ],
-          "name": "company-removed",
-          "id": "company-removed"
-      },
-      {
-          "longTitle": "Has your organisation received direction or sanctions from any of the following?",
-          "shorttitle": "Direction and sanctions",
-          "bullets": [
-              "Ofqual; The QAA",
-              "Awarding organisations",
-              "Other similar bodies"
-          ],
-          "name": "sanctions",
-          "id": "sanctions"
-      },
-      {
-          "longTitle": "Has your organisation ever had to repay public money?",
-          "shorttitle": "Repaying public money",
-          "name": "public-money",
-          "id": "public-money"
-      },
-      {
-          "longTitle": "Have any directors, shareholders, senior employees or someone that has powers of representation, decision or control of your organisation had any of the following?",
-          "shorttitle": "Public bodies",
-          "bullets": [
-              "Failure to repay funding due to any public body",
-              "Early termination of a contract with a public body",
-              "Early withdrawal from a contract with a public body"
-          ],
-          "name": "public-bodies",
-          "id": "public-bodies"
-      },
-      {
-          "longTitle": "Does your organisation have any outstanding or ongoing legal disputes that could prevent you from conducting end-point assessments?",
-          "shorttitle": "Legal disputes",
-          "name": "legal-disputes",
-          "id": "legal-disputes"
-      },
-      {
-          "longTitle": "If you responded ‘yes’ to either question 20 to 24, please provide details of any mitigating factors that you think should be taken into consideration.",
-          "shorttitle": "Mitigating factors for discretionary exclusion (20 to 25)",
-          "name": "mitigating-factors-exclusion-2",
-          "id": "mitigating-factors-exclusion-2"
-      },
-      {
-          "longTitle": "Are all the answers in your declaration truthful? False information may result in:",
-          "shorttitle": "Declaration accuracy",
-          "bullets": [
-              "exclusion from this and future exercises",
-              "the removal from the register of end-point assessment organisations",
-              "the withdrawal of contracts with employers",
-              "civil or criminal proceedings"
-          ],
-          "name": "accuracy",
-          "id": "accuracy"
-      },
-      {
-          "longTitle": "Do you agree to inform the Education and Skills Funding Agency as soon as possible if there are any changes to the information you’re providing in this declaration?",
-          "shorttitle": "Changes to information",
-          "name": "changes-to-information",
-          "id": "changes-to-information"
-      },
-      {
-          "longTitle": "Will all the applications to deliver end-point assessments for standards be accurate and true representations?",
-          "shorttitle": "End-point assessments description accuracy",
-          "name": "description-accuracy",
-          "id": "description-accuracy"
-      },
-      {
-          "longTitle": "Do you accept that the information you provide cannot be changed after you’ve submitted the application?",
-          "shorttitle": "Information changes",
-          "name": "information-changes",
-          "id": "information-changes"
-      },
-      {
-          "longTitle": "Do you accept that the Education and Skills Funding Agency may use information it already holds, obtains from other government bodies or which is already in the public domain to validate part or all of any of your answers? The information obtained may be shared with employers to assist them in their selection process.",
-          "shorttitle": "Use of other information",
-          "name": "use-of-information",
-          "id": "use-of-information"
-      },
-      {
-          "longTitle": "Are you happy your company details will be added to the register of end-point assessment organisations if your application is successful?",
-          "shorttitle": "Details on register",
-          "name": "details",
-          "id": "details"
-      },
-      {
-          "longTitle": "Who is the primary contact for the application?",
-          "shorttitle": "Primary contact name",
-          "name": "primary-name",
-          "id": "primary-name"
-      },
-      {
-          "longTitle": "What is the primary contact’s email address?",
-          "shorttitle": "Primary contact email",
-          "name": "primary-email",
-          "id": "primary-email"
-      },
-      {
-          "longTitle": "If your application is successful, what contact name should appear on the contract notice?",
-          "shorttitle": "Contract notice contact name",
-          "name": "contract-notice",
-          "id": "contract-notice"
-      }
-  ]
-  %}
+{% import "../includes/data.html" as data %}
 
 {% block content %}
 <div class="govuk-width-container">
-<a href="#" class="govuk-back-link">Back</a>
-
-<main class="govuk-main-wrapper " id="main-content" role="main">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">What it means to be on the register of end-point assessment organisations</h1>
-
-      <p class="govuk-body">If you make an application to be added to the register, you’re agreeing to the terms and conditions in the legal documentation.</p>
-
-      <p class="govuk-body">You must be able to truthfully answer ‘yes’ to every question on this page for your application to be considered eligible.</p>
-
-      <p class="govuk-body">If you can’t answer ‘yes’ to every question on this page, it’s very unlikely that your application will be accepted.</p>
-
-      <form action="/form-handler" method="post">
-        <ol class="app-questions-list">
-        {% for question in questions %}
-        <div class="govuk-form-group">
-          <li>
-          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <p class="govuk-body">
-                      {{question.longTitle}}
-                  </p>
-              </legend>
-              <!-- <span id="{{question.name}}-hint" class="govuk-hint">
-                  {{question.hint}}
-              </span> -->
-              <ul class="govuk-list govuk-list--bullet">
-                {% for bullet in question.bullets %}
-                <li>{{bullet}}</li>
-                {% endfor %}
-              </ul>
-              <div class="govuk-radios">
-                  <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
-                          Yes
-                      </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
-                      <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
-                          No
-                      </label>
-                  </div>
-              </div>
-          </fieldset>
-        </li>
+    <a href="#" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">What it means to be on the register of end-point assessment organisations</h1>
+            <p class="govuk-body">If you make an application to be added to the register, you’re agreeing to the terms and conditions in the legal documentation.</p>
+            <p class="govuk-body">You must be able to truthfully answer ‘yes’ to every question on this page for your application to be considered eligible.</p>
+            <p class="govuk-body">If you can’t answer ‘yes’ to every question on this page, it’s very unlikely that your application will be accepted.</p>
+            <form action="/form-handler" method="post">
+                <ol class="app-questions-list">
+                    {% for question in data.questions %}
+                    <div class="govuk-form-group">
+                    <li>
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <p class="govuk-body">
+                                    {{question.longTitle}}
+                                </p>
+                            </legend>
+                            <!-- <span id="{{question.name}}-hint" class="govuk-hint">
+                                {{question.hint}}
+                            </span> -->
+                            <ul class="govuk-list govuk-list--bullet">
+                                {% for bullet in question.bullets %}
+                                <li>{{bullet}}</li>
+                                {% endfor %}
+                            </ul>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </li>
+                    </div>
+                    {% endfor %}
+                </ol>
+            </form>
         </div>
-        {% endfor %}
-      </ol>
-      </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <h1 class="govuk-heading-l">What it means to be on the register of end-point assessment organisations</h1>
-
-      <form action="/form-handler" method="post">
-
-
-
-    <div class="govuk-form-group">
-			<label class="govuk-label govuk-label--m" for="passport-number">Passport number</label> <span class="govuk-hint" id="passport-number-hint">For example, 502135326</span> <input aria-describedby="passport-number-hint" class="govuk-input" id="passport-number" name="passport-number" type="text">
-		</div>
-
-
-    <div class="govuk-form-group">
-			<fieldset aria-describedby="expiry-hint" class="govuk-fieldset" role="group">
-				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Expiry date</legend> <span class="govuk-hint" id="expiry-hint">For example, 31 3 1980</span>
-				<div class="govuk-date-input" id="expiry">
-					<div class="govuk-date-input__item">
-						<div class="govuk-form-group">
-							<label class="govuk-label govuk-date-input__label" for="expiry-day">Day</label> <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" pattern="[0-9]*" type="number">
-						</div>
-					</div>
-					<div class="govuk-date-input__item">
-						<div class="govuk-form-group">
-							<label class="govuk-label govuk-date-input__label" for="expiry-month">Month</label> <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" pattern="[0-9]*" type="number">
-						</div>
-					</div>
-					<div class="govuk-date-input__item">
-						<div class="govuk-form-group">
-							<label class="govuk-label govuk-date-input__label" for="expiry-year">Year</label> <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" pattern="[0-9]*" type="number">
-						</div>
-					</div>
-				</div>
-			</fieldset>
-		</div>
-
-
-
-
-    <button class="govuk-button" type="submit">Save and return</button>
-	</form> -->
     </div>
-  </div>
-</main>
+    </main>
 </div>
 {% endblock %}
