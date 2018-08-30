@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What it means to be an EPAO
+  Grounds for discretionary exclusion
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@
             <p class="govuk-body">If you can’t answer ‘yes’ to every question on this page, it’s very unlikely that your application will be accepted.</p>
             <form action="/form-handler" method="post">
                 <ol class="app-questions-list">
-                    {% for question in data.what_it_means %}
+                    {% for question in data.contact_details %}
                     <div class="govuk-form-group">
                     <li>
                         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -52,6 +52,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <br><br>
                         </fieldset>
                     </li>
                     </div>

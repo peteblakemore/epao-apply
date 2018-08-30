@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Blank page
+  Grounds for mandatory exclusion
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="govuk-width-container">
-    <a href="#" class="govuk-back-link">Back</a>
+    <a href="declarations_overview" class="govuk-back-link">Back</a>
     <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -21,7 +21,7 @@
             <p class="govuk-body">If you can’t answer ‘yes’ to every question on this page, it’s very unlikely that your application will be accepted.</p>
             <form action="/form-handler" method="post">
                 <ol class="app-questions-list">
-                    {% for question in data.questions %}
+                    {% for question in data.grounds_for_mandatory %}
                     <div class="govuk-form-group">
                     <li>
                         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
