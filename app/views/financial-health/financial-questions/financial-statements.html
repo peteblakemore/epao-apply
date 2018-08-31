@@ -25,13 +25,13 @@
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="financial-statements-1" name="financial-statements" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="financial-statements-1" name="financial-statements" type="radio" value="Yes" {{ checked('financial-statements','Yes') }}>
               <label class="govuk-label govuk-radios__label" for="financial-statements-1">
               Yes
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="financial-statements-2" name="financial-statements" type="radio" value="No">
+              <input class="govuk-radios__input" id="financial-statements-2" name="financial-statements" type="radio" value="No" {{ checked('financial-statements','No') }}>
               <label class="govuk-label govuk-radios__label" for="financial-statements-2">
               No
             </label>
@@ -43,6 +43,7 @@
         Save and continue
       </button>
     </form>
+    <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
   </div>
 </div>
 </div>

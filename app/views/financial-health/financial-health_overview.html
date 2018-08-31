@@ -25,13 +25,21 @@
           {% for question in financialData.financials %}
           <li class="app-task-list__item">
             <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
-            {% if data[question.name] %}
+            {% if question.name === "financial-year-end-date" %}
+              {% if data["financial-year-end-date-day"] and data["financial-year-end-date-month"] and data["financial-year-end-date-year"] %}
+                {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+              {% endif %}
+            {% elif data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
-            {% else %}
             {% endif %}
           </li>
           {% endfor %}
         </ul>
+
+
+
+
+
 
   </div>
   <div class="govuk-clearfix"></div>
