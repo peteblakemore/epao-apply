@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="financial-statements" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="months-covered-by-financials" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="financial-year-end-date-hint" role="group">
+          <label class="govuk-label govuk-label--l" for="building-street">
+            End date of the financial statements you’re submitting
+          </label>
+          <span id="financial-year-end-date-hint" class="govuk-hint">
+          For example, 31 3 2019
+        </span>
+          <div class="govuk-date-input" id="financial-year-end-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="financial-year-end-date-day">
+                Day
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="financial-year-end-date-day" name="financial-year-end-date-day" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="financial-year-end-date-month">
+                Month
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="financial-year-end-date-month" name="financial-year-end-date-month" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="financial-year-end-date-year">
+                Year
+              </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="financial-year-end-date-year" name="financial-year-end-date-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+</div>
+
+{% endblock %}
