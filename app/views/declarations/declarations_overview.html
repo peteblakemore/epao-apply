@@ -13,151 +13,87 @@
 
 {% endblock %}
 
+{% import "../includes/data.html" as financialData %}
+
 {% block content %}
 <div class="grid-grid-row">
   <div class="govuk-grid-column-two-thirds app-column-minimum">
     <h1 class="govuk-heading-l">Your declaration overview</h1>
     <p>You must answer all the questions to make your declaration.</p>
     <ol class="app-task-list">
+
+
+
       <li>
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">1.</span> What it means to be on the register of end-point assessment organisations</h2>
         <ul class="app-task-list__items">
+          {% for question in financialData.what_it_means %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">Invitation to apply</a>
-            {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">Terms and conditions</a>
-            <!-- {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }} -->
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">Providing services straight away</a>
-            <!-- {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }} -->
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">Providing evidence of experience</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">No unfair access to information</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="what-it-means">Signing and returning the framework agreement</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">2.</span> Grounds for mandatory exclusion</h2>
         <ul class="app-task-list__items">
+          {% for question in financialData.grounds_for_mandatory %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-mandatory">Organised crime or conspiracy convictions</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-mandatory">Bribery or corruption convictions</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-mandatory">Fraud convictions</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-mandatory">Terrorism convictions</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-mandatory">Organised crime convictions</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">3.</span> Grounds for discretionary exclusion</h2>
         <ul class="app-task-list__items">
+          {% for question in financialData.grounds_for_discretionary %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">In breach of tax payments</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Bankruptcy or insolvency</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Voluntary administration, compulsory winding up or receivership</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Mitigating factors for discretionary exclusion (10 to 12)</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">If a tax return was incorrect</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Why a tax return was incorrect</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Mitigating factors for tax returns</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Contracts withdrawn from you</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Withdrawn from contracts</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="grounds-for-discretionary">Mitigating factors for contract withdrawal</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Register of Removed Trustees</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Company removed from registers</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Direction and sanctions</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Repaying public money</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Public bodies</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Legal disputes</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="#">Mitigating factors for discretionary exclusion (20 to 25)</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">4.</span> Application accuracy</h2>
         <ul class="app-task-list__items">
+          {% for question in financialData.application_accuracy %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">Declaration accuracy</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">Changes to information</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">End-point assessments description accuracy</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">Information changes</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">Use of other information</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="application-accuracy">Details on register</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">5.</span> Contact details</h2>
         <ul class="app-task-list__items">
+          {% for question in financialData.contact_details %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="contact-details">Primary contact name</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="contact-details">Primary contact email</a>
-          </li>
-          <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="contact-details">Contract notice contact name</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
+
     </ol>
   </div>
   <div class="govuk-clearfix"></div>

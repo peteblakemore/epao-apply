@@ -8,7 +8,7 @@
 {% include 'includes/_phase-banner-alpha.html' %}
 {% endblock %}
 
-{% import "../includes/data.html" as data %}
+{% import "../includes/data.html" as financialData %}
 
 {% block content %}
 <div class="govuk-width-container">
@@ -20,10 +20,10 @@
             <p class="govuk-body">If you make an application to be added to the register, you’re agreeing to the terms and conditions in the legal documentation.</p>
             <p class="govuk-body">You must be able to truthfully answer ‘yes’ to every question on this page for your application to be considered eligible.</p>
             <p class="govuk-body">If you can’t answer ‘yes’ to every question on this page, it’s very unlikely that your application will be accepted.</p>
-            <form action="/form-handler" method="post">
+            <form action="declarations_overview" method="post">
                 <ol class="app-questions-list">
-                    {% for question in data.what_it_means %}
-                    <div class="govuk-form-group">
+                    {% for question in financialData.what_it_means %}
+                    <div class="govuk-form-group" id="{{question.id}}">
                     <li>
                         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -39,15 +39,15 @@
                                 <li>{{bullet}}</li>
                                 {% endfor %}
                             </ul>
-                            <div class="govuk-radios">
+                            <div class="govuk-radios govuk-!-margin-bottom-5">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes">
+                                    <input class="govuk-radios__input" id="{{question.name}}-yes" name="{{question.name}}" type="radio" value="yes" {{ checked(question.name,'yes') }}>
                                     <label class="govuk-label govuk-radios__label" for="{{question.name}}-yes">
                                         Yes
                                     </label>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no">
+                                    <input class="govuk-radios__input" id="{{question.name}}-no" name="{{question.name}}" type="radio" value="no" {{ checked(question.name,'no') }}>
                                     <label class="govuk-label govuk-radios__label" for="{{question.name}}-no">
                                         No
                                     </label>
@@ -58,6 +58,9 @@
                     </div>
                     {% endfor %}
                 </ol>
+                <button type="submit" class="govuk-button">
+                  Save and return
+                </button>
             </form>
         </div>
     </div>

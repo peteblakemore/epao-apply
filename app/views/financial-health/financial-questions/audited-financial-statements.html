@@ -25,13 +25,13 @@
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="audited-financial-statements-1" name="audited-financial-statements" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="audited-financial-statements-1" name="audited-financial-statements" type="radio" value="Yes" {{ checked('audited-financial-statements','Yes') }}>
               <label class="govuk-label govuk-radios__label" for="audited-financial-statements-1">
               Yes
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="audited-financial-statements-2" name="audited-financial-statements" type="radio" value="No">
+              <input class="govuk-radios__input" id="audited-financial-statements-2" name="audited-financial-statements" type="radio" value="No" {{ checked('audited-financial-statements','No') }}>
               <label class="govuk-label govuk-radios__label" for="audited-financial-statements-2">
               No
             </label>
