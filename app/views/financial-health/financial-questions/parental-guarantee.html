@@ -16,16 +16,29 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="../financial-health_overview" method="post">
-          <div class="govuk-form-group">
-
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="parental-guarantee">
-                Does your organisation have a parental guarantee?
-              </label>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does your organisation have a parental guarantee?
             </h1>
-
-            <input class="govuk-input govuk-input--width-20" id="parental-guarantee" name="parental-guarantee" value="{{ data['parental-guarantee'] }}" type="text">
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parental-guarantee-1" name="parental-guarantee" type="radio" value="Yes" {{ checked('parental-guarantee','Yes') }}>
+              <label class="govuk-label govuk-radios__label" for="parental-guarantee-1">
+              Yes
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parental-guarantee-2" name="parental-guarantee" type="radio" value="No" {{ checked('parental-guarantee','No') }}>
+              <label class="govuk-label govuk-radios__label" for="parental-guarantee-2">
+              No
+            </label>
+            </div>
           </div>
+        </fieldset>
+      </div>
           <button type="submit" class="govuk-button">
             Save and continue
           </button>

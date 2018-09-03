@@ -6,8 +6,6 @@
 
 {% block beforeContent %}
   {% include 'includes/_phase-banner-alpha.html' %}
-
-
 {% endblock %}
 
 {% block content %}
@@ -51,6 +49,22 @@
             <p class="browse-list-item-status-title">You must complete the declarations</p>
           </div>
         </li>
+
+        {% elif data['director-name'] and data['responsible-name'] %}
+        <li class="browse-list-item">
+          {{ govukTag({
+            attributes: { id: "eligibility-completed" },
+            classes: "app-task-list__task-completed",
+            text: "Completed"
+          }) }}
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
+          </h2>
+          <div class="browse-list-item-status-quiet">
+            <p class="browse-list-item-status-title">You must complete the declarations</p>
+          </div>
+        </li>
+
         {% else %}
         <li class="browse-list-item">
           <h2 class="govuk-heading-m">2. Make declaration</h2>
