@@ -14,87 +14,207 @@
 			<h1 class="govuk-heading-l">Application overview</h1>
 
 			<ul>
-        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
-        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
-        <li class="browse-list-item">
-          {{ govukTag({
-            attributes: { id: "eligibility-completed" },
-            classes: "app-task-list__task-completed",
-            text: "Completed"
-          }) }}
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
-          </h2>
-        </li>
-        {% else %}
-        <li class="browse-list-item">
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
-          </h2>
 
+        {# SECTION 1 #}
 
-          <div class="browse-list-item-status-quiet">
-            <p class="browse-list-item-status-title">You must add your organisation’s details</p>
-          </div>
-
-        {% endif %}
-
-        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
-        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
-        <li class="browse-list-item">
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
-          </h2>
-          <div class="browse-list-item-status-quiet">
-            <p class="browse-list-item-status-title">You must complete the declarations</p>
-          </div>
-        </li>
-
-        {% elif data['director-name'] and data['responsible-name'] %}
-        <li class="browse-list-item">
-          {{ govukTag({
-            attributes: { id: "eligibility-completed" },
-            classes: "app-task-list__task-completed",
-            text: "Completed"
-          }) }}
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
-          </h2>
-          <div class="browse-list-item-status-quiet">
-            <p class="browse-list-item-status-title">You must complete the declarations</p>
-          </div>
-        </li>
-
-        {% else %}
-        <li class="browse-list-item">
-          <h2 class="govuk-heading-m">2. Make declaration</h2>
-          <p class="instruction-list-item-box inactive">Can't start yet</p>
-        </li>
-        {% endif %}
-
-        {% if data['director-name'] and data['responsible-name'] and data['group-companies']
-        and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
-        <li class="browse-list-item">
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="financial-health/financial-health_intro">3. Add, edit and complete financial health assessment</a>
-          </h2>
-          <div class="browse-list-item-status-quiet">
-            <p class="browse-list-item-status-title">You must add your financial health information</p>
-          </div>
-        </li>
-        {% else %}
-        <li class="browse-list-item">
-					<h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
-          <p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
-        {% endif %}
-
-        <li class="browse-list-item">
-					<h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
-          <p class="instruction-list-item-box inactive">Can't start yet</p>
-
+        {# have all the questions in this section been completed #}
+        {% if
+          data['director-name'] and
+          data['responsible-name'] and
+          data['group-companies'] and
+          data['organisation-type'] and
+          data['company-classification'] and
+          data['ukprn'] and
+          data['company-classification']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "eligibility-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+            </h2>
           </li>
-			</ul>
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must add your organisation’s details</p>
+            </div>
+          </li>
+        {% endif %}
+
+        {# SECTION 2 #}
+
+        {# if any of the questions in section 1 have no data... #}
+        {% if
+          not data['director-name'] or
+          not data['responsible-name'] or
+          not data['group-companies'] or
+          not data['organisation-type'] or
+          not data['company-classification'] or
+          not data['ukprn'] or
+          not data['company-classification']
+        %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">2. Make declaration</h2>
+            <p class="instruction-list-item-box inactive">Can't start yet</p>
+          </li>
+          
+        {# have all the questions in this section been completed #}
+        {% elif 
+          data['invite'] and
+          data['terms-and-conditions'] and
+          data['straight-away'] and
+          data['sign-and-return-framework'] and
+          data['convictions'] and
+          data['bribary-and-corruption'] and
+          data['fraud'] and
+          data['terrorism'] and
+          data['organised-crime'] and
+          data['breach-of-tax'] and
+          data['bankruptcy'] and
+          data['voluntary-administration'] and
+          data['mitigating-factors-exclusion-1'] and
+          data['tax-return-incorrect'] and
+          data['mitigating-factors-tax'] and
+          data['contracts-withdrawn'] and
+          data['withdrawn-from-contracts'] and
+          data['mitigating-factors-withdrawn'] and
+          data['removed-trustees'] and
+          data['company-removed'] and
+          data['sanctions'] and
+          data['public-money'] and
+          data['public-bodies'] and
+          data['legal-disputes'] and
+          data['mitigating-factors-exclusion-2'] and
+          data['accuracy'] and
+          data['changes-to-information'] and
+          data['description-accuracy'] and
+          data['information-changes'] and
+          data['use-of-information'] and
+          data['details'] and
+          data['primary-name'] and
+          data['primary-email'] and
+          data['contract-notice']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "eligibility-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
+            </h2>
+          </li>
+        {# else, it needs to be completed #}
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must complete the declarations</p>
+            </div>
+          </li>
+        {% endif %}
+
+        {# SECTION 3 #}
+
+        {# if any of the questions in section 2 have no data... #}
+        {% if 
+          not data['invite'] or
+          not data['terms-and-conditions'] or
+          not data['straight-away'] or
+          not data['sign-and-return-framework'] or
+          not data['convictions'] or
+          not data['bribary-and-corruption'] or
+          not data['fraud'] or
+          not data['terrorism'] or
+          not data['organised-crime'] or
+          not data['breach-of-tax'] or
+          not data['bankruptcy'] or
+          not data['voluntary-administration'] or
+          not data['mitigating-factors-exclusion-1'] or
+          not data['tax-return-incorrect'] or
+          not data['mitigating-factors-tax'] or
+          not data['contracts-withdrawn'] or
+          not data['withdrawn-from-contracts'] or
+          not data['mitigating-factors-withdrawn'] or
+          not data['removed-trustees'] or
+          not data['company-removed'] or
+          not data['sanctions'] or
+          not data['public-money'] or
+          not data['public-bodies'] or
+          not data['legal-disputes'] or
+          not data['mitigating-factors-exclusion-2'] or
+          not data['accuracy'] or
+          not data['changes-to-information'] or
+          not data['description-accuracy'] or
+          not data['information-changes'] or
+          not data['use-of-information'] or
+          not data['details'] or
+          not data['primary-name'] or
+          not data['primary-email'] or
+          not data['contract-notice']
+        %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
+            <p class="instruction-list-item-box inactive">Can't start yet</p>
+          </li>
+        
+        {# have all the questions in this section been completed #}
+        {# data['financial-year-end-date'] and #}
+        {# had to remove the above as the date fields are separated into 3 #}
+        {% elif
+          data['financial-statements'] and
+          data['months-covered-by-financials'] and
+          data['audited-financial-statements'] and
+          data['turnover'] and
+          data['depreciation-and-amortisation'] and
+          data['profit-and-loss'] and
+          data['dividends'] and
+          data['assets'] and
+          data['liabilities'] and
+          data['borrowings'] and
+          data['shareholders-assets'] and
+          data['intangible-assets'] and
+          data['parental-guarantee']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "eligibility-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="financial-health/financial-health_intro">3. Add, edit and complete financial health assessment</a>
+            </h2>
+          </li>
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="financial-health/financial-health_intro">3. Add, edit and complete financial health assessment</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must add your financial health information</p>
+            </div>
+          </li>
+        {% endif %}
+
+        {# SECTION 4 #}
+
+        <li class="browse-list-item">
+          <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
+          <p class="instruction-list-item-box inactive">Can't start yet</p>
+        </li>
+
+      </ul>
 
     <br>
 
