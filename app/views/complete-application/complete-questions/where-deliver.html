@@ -11,31 +11,134 @@
 
 {% block content %}
 <div class="govuk-width-container">
-    <a href="../complete_overview" class="govuk-back-link">Back</a>
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="occupational-competence" method="post">
+		<a href="../complete_overview" class="govuk-back-link">Back</a>
+		<main class="govuk-main-wrapper" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<form action="occupational-competence" method="post">
+						<div class="govuk-form-group">
+							<fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Will you deliver end-point assessments anywhere in England?
+                  </h1>
+                </legend>
 
-          <div class="govuk-form-group">
+                <div class="govuk-radios" data-module="radios">
 
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="complete_where-deliver">
-                Will you deliver end-point assessments anywhere in England?
-              </label>
-            </h1>
+                  <!-- yes -->
+                  <div        class="govuk-radios__item">
+										<input    class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_where-deliver-1"
+                              id="complete_where-deliver-1"
+                              name="complete_where-deliver"
+                              type="radio"
+                              value="yes">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_where-deliver">
+                              Yes
+                      </label>
+									</div>
 
-            <input class="govuk-input govuk-input--width-20" id="complete_where-deliver" name="complete_where-deliver" type="text">
 
-          </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
+                  <!-- no -->
+                  <div        class="govuk-radios__item">
+										  <input  class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_where-deliver-2"
+                              id="complete_where-deliver-2"
+                              name="complete_where-deliver"
+                              type="radio"
+                              value="no">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_where-deliver">
+                              No
+                      </label>
+									</div>
+                  <!-- yes hidden -->
+                  <div
+                              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                              id="conditional-complete_where-deliver-2">
 
-        </form>
-        <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
-  </div>
-</div>
-</div>
+                              <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="where-deliver-check-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Where in England will you deliver end-point assessments?
+      </h1>
+    </legend>
+    <span id="where-deliver-check-hint" class="govuk-hint">
+      Select all that apply.
+    </span>
+    <div class="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-1" name="where-deliver-check" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-1">
+          North Easy
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-2" name="where-deliver-check" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-2">
+          North West
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          Yorkshire and The Humber
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          East Midlands
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          West Midlands
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          East of England
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          London
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          South East
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
+          South West
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+
+                              </div>
+                	</div>
+								</div>
+
+							</fieldset>
+						</div><button class="govuk-button" type="submit">Save and continue</button>
+					</form>
+				</div>
+			</div>
+			<p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+		</main>
+	</div>
 
 {% endblock %}
