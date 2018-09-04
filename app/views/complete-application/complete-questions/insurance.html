@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="ico-registration" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="safeguarding-policy" method="post">
+          <div class="govuk-form-group">
+
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="complete_insurance">
+                Does your organisation have the appropriate insurance?
+              </label>
+            </h1>
+
+            <input class="govuk-input govuk-input--width-20" id="complete_insurance" id="complete_insurance" type="text">
+
+          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+        </form>
+        <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}

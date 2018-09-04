@@ -29,7 +29,7 @@
         <ul class="app-task-list__items">
           {% for question in financialData.what_it_means %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
             {% if data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
@@ -43,7 +43,7 @@
         <ul class="app-task-list__items">
           {% for question in financialData.grounds_for_mandatory %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
             {% if data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
@@ -57,7 +57,7 @@
         <ul class="app-task-list__items">
           {% for question in financialData.grounds_for_discretionary %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
             {% if data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
@@ -71,7 +71,7 @@
         <ul class="app-task-list__items">
           {% for question in financialData.application_accuracy %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
             {% if data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
@@ -85,7 +85,7 @@
         <ul class="app-task-list__items">
           {% for question in financialData.contact_details %}
           <li class="app-task-list__item">
-            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}#{{question.id}}">{{question.shortTitle}}</a>
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
             {% if data[question.name] %}
               {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}

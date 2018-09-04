@@ -457,20 +457,128 @@
 {% set complete_standard =
   [
       {
-        "longTitle": "{{ data['standard-name'] }}",
-        "shortTitle": "{{ data['standard-name'] }}",
-        "name": "intangible-assets",
-        "id": "intangible-assets",
-        "next_href": "parental-guarantee",
-        "href": "financial-questions/intangible-assets"
+        "longTitle": data['standard-name'] + " assessment plan",
+        "shortTitle": data['standard-name'],
+        "name": "complete_standard_name",
+        "id": "complete_standard_name",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/standard-name"
+      }
+  ]
+%}
+
+{% set complete_required_docs =
+  [
+      {
+        "longTitle": "Required documentation",
+        "shortTitle": "Internal audit policies and processes",
+        "name": "complete_internal-audit-policies-and-processes",
+        "id": "complete_internal-audit-policies-and-processes",
+        "next_href": "ico-registration",
+        "href": "complete-questions/internal-audit-policies-and-processes"
       },
       {
-        "longTitle": "Does your organisation have a parental guarantee?",
-        "shortTitle": "Parental guarantee",
-        "name": "parental-guarantee",
-        "id": "parental-guarantee",
-        "next_href": "../financial-health_overview",
-        "href": "financial-questions/parental-guarantee"
+        "longTitle": "Are you registered with the Information Commissioner’s Office (link opens in a new tab) [www.ico.gov.uk]?",
+        "shortTitle": "ICO registration",
+        "name": "complete_ico-registration",
+        "id": "complete_ico-registration",
+        "next_href": "insurance",
+        "href": "complete-questions/ico-registration"
+      },
+      {
+        "longTitle": "Does your organisation have the appropriate insurance?",
+        "shortTitle": "Insurance",
+        "name": "complete_insurance",
+        "id": "complete_insurance",
+        "next_href": "safeguarding-policy",
+        "href": "complete-questions/insurance"
+      },
+      {
+        "longTitle": "Do you have a safeguarding policy?",
+        "shortTitle": "Safeguarding policy",
+        "name": "complete_safeguarding-policy",
+        "id": "complete_safeguarding-policy",
+        "next_href": "prevent-agenda",
+        "href": "complete-questions/safeguarding-policy"
+      },
+      {
+        "longTitle": "Do you have policies and practices in place that comply with the Prevent Agenda?",
+        "shortTitle": "The Prevent Agenda",
+        "name": "complete_prevent-agenda",
+        "id": "complete_prevent-agenda",
+        "next_href": "best-practice",
+        "href": "complete-questions/prevent-agenda"
+      },
+      {
+        "longTitle": "Are you a member of any professional organisations that represent the development of best practice and skills?",
+        "shortTitle": "Best practice and skills",
+        "name": "complete_best-practice-skills",
+        "id": "complete_best-practice-skills",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/best-practice"
+      }
+  ]
+
+
+%}
+
+{% set complete_capacity_capability =
+  [
+      {
+        "longTitle": "Will you deliver end-point assessments anywhere in England?",
+        "shortTitle": "Where you deliver end-point assessments",
+        "name": "complete_where-deliver",
+        "id": "complete_where-deliver",
+        "next_href": "occupational-competence",
+        "href": "complete-questions/where-deliver"
+      },
+      {
+        "longTitle": "Your occupational competence",
+        "shortTitle": "Occupational competence",
+        "name": "complete_occupational-competence",
+        "id": "complete_occupational-competence",
+        "next_href": "process",
+        "href": "complete-questions/occupational-competence"
+      },
+      {
+        "longTitle": "Your complete end-point assessment process",
+        "shortTitle": "Providing a complete end-point assessment process",
+        "name": "complete_process",
+        "id": "complete_process",
+        "next_href": "assessment-types",
+        "href": "complete-questions/process"
+      },
+      {
+        "longTitle": "What types of end-point assessment you will deliver?",
+        "shortTitle": "End-point assessment types",
+        "name": "complete_assessment-types",
+        "id": "complete_assessment-types",
+        "next_href": "your-staff",
+        "href": "complete-questions/assessment-types"
+      },
+      {
+        "longTitle": "Your staff",
+        "shortTitle": "Your staff",
+        "name": "complete_your-staff",
+        "id": "complete_your-staff",
+        "next_href": "quality",
+        "href": "complete-questions/your-staff"
+      },
+      {
+        "longTitle": "Your internal quality assurance and management procedures ",
+        "shortTitle": "Quality assurance and management procedures",
+        "name": "complete_quality",
+        "id": "complete_quality",
+        "next_href": "delivery-model",
+        "href": "complete-questions/quality"
+      },
+      {
+        "longTitle": "Your end-point assessment delivery model",
+        "shortTitle": "Your delivery model",
+        "name": "complete_delivery-model",
+        "id": "complete_delivery-model",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/delivery-model"
       }
   ]
 %}
