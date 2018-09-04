@@ -1,25 +1,18 @@
 .framework-dashboard {
-  .app-task-list__item {
-    // border-top: 1px solid #bfc1c3;
-    // padding-top: 20px;
-    // list-style-type: none;
-
-    .govuk-heading-m {
-      font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 10px;
+  .browse-list-item {
+    border-top: 1px solid #bfc1c3;
+    padding-top: 10px;
+    list-style-type: none;
+    @include govuk-media-query($from: tablet) {
+      padding-top: 15px;
     }
 
-    .app-task-list__task-name {
-      margin-bottom: 0;
+    h2 {
+      margin-bottom: 10px;
     }
 
     a {
       text-decoration: none;
-    }
-
-    p {
-      margin-bottom: 0;
     }
   }
 
@@ -50,7 +43,6 @@
 
   .browse-list-item-status-title {
     color: #6f777b;
-    margin-bottom: 0;
   }
 }
 

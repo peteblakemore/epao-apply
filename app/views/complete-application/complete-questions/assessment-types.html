@@ -35,66 +35,59 @@
 
             </form> -->
 
-    {% for question in financialData.complete_standard %}
-    <form action="{{question.next_href}}" method="post">
-          <div class="govuk-form-group">
+        {# {% for question in financialData.complete_standard %}
+          <form action="{{question.next_href}}" method="post">
+            <div class="govuk-form-group">
 
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="{{question.name}}">
-                {{data['standard-name']}} assessment plan
-              </label>
-            </h1>
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="{{question.name}}">
+                  {{data['standard-name']}} assessment plan
+                </label>
+              </h1>
 
-            <input class="govuk-input govuk-input--width-20" id="{{question.id}}" id="{{question.name}}" type="text">
+              <input class="govuk-input govuk-input--width-20" id="{{question.id}}" name="{{question.name}}" type="text">
 
-          </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-        </form>
-                {% endfor %}
-
-{% for question in financialData.complete_required_docs %}
-        <form action="{{question.next_href}}" method="post">
-          <div class="govuk-form-group">
-
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="{{question.name}}">
-                {{question.longTitle}}
-              </label>
-            </h1>
-
-            <input class="govuk-input govuk-input--width-20" id="{{question.id}}" id="{{question.name}}" type="text">
-
-          </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-        </form>
+            </div>
+            <button type="submit" class="govuk-button">
+              Save and continue
+            </button>
+          </form>
         {% endfor %}
 
-{% for question in financialData.complete_capacity_capability %}
-        <form action="{{question.next_href}}" method="post">
+        {% for question in financialData.complete_required_docs %}
+          <form action="{{question.next_href}}" method="post">
+            <div class="govuk-form-group">
 
-          <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="{{question.name}}">
+                  {{question.longTitle}}
+                </label>
+              </h1>
 
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="{{question.name}}">
-                {{question.longTitle}}
-              </label>
-            </h1>
+              <input class="govuk-input govuk-input--width-20" id="{{question.id}}" name="{{question.name}}" type="text">
 
-            <input class="govuk-input govuk-input--width-20" id="{{question.id}}" id="{{question.name}}" type="text">
+            </div>
+            <button type="submit" class="govuk-button">
+              Save and continue
+            </button>
+          </form>
+        {% endfor %} #}
 
-          </div>
+        <form action="your-staff" method="post">
+          {% for question in financialData.complete_capacity_capability %}
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="{{question.name}}">
+                  {{question.longTitle}}
+                </label>
+              </h1>
+              <input class="govuk-input govuk-input--width-20" id="{{question.id}}" name="{{question.name}}" type="text">
+            </div>
+          {% endfor %}
           <button type="submit" class="govuk-button">
             Save and continue
           </button>
-
         </form>
-        {% endfor %}
-
-
         <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
   </div>
 </div>
