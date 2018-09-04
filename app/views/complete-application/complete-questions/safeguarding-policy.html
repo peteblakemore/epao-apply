@@ -10,30 +10,73 @@
 {% import "../../includes/data.html" as financialData %}
 
 {% block content %}
+
 <div class="govuk-width-container">
-    <a href="insurance" class="govuk-back-link">Back</a>
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="prevent-agenda" method="post">
-          <div class="govuk-form-group">
+		<a href="insurance" class="govuk-back-link">Back</a>
+		<main class="govuk-main-wrapper" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<form action="ico-registration" method="post">
+						<div class="govuk-form-group">
+							<fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you have a safeguarding policy?
+                  </h1>
+                </legend>
+                <p class="govuk-body">It’s a requirement that your organisation has a safeguarding policy in place to ensure the welfare of the apprentices you’re assessing.</p>
 
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="complete_safeguarding-policy">
-                Do you have a safeguarding policy?
-              </label>
-            </h1>
 
-            <input class="govuk-input govuk-input--width-20" id="complete_safeguarding-policy" id="complete_safeguarding-policy" type="text">
+                <div class="govuk-radios" data-module="radios">
 
-          </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-        </form>
-        <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
-  </div>
-</div>
-</div>
+                  <!-- yes -->
+                  <div        class="govuk-radios__item">
+										<input    class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_safeguarding-policy-1"
+                              id="complete_safeguarding-policy-1"
+                              name="complete_safeguarding-policy"
+                              type="radio"
+                              value="email">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_safeguarding-policy">
+                              Yes
+                      </label>
+									</div>
+
+                  <!-- yes hidden -->
+                  <div
+                              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                              id="conditional-complete_safeguarding-policy-1">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="file-upload-1">
+                                  Upload a copy of your safeguarding policy
+                                </label>
+                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                              </div>
+                	</div>
+
+                  <!-- no -->
+                  <div        class="govuk-radios__item">
+										  <input  class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_safeguarding-policy-2"
+                              id="complete_safeguarding-policy-2"
+                              name="complete_safeguarding-policy"
+                              type="radio"
+                              value="no">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_safeguarding-policy">
+                              No
+                      </label>
+									</div>
+								</div>
+
+							</fieldset>
+						</div><button class="govuk-button" type="submit">Save and continue</button>
+					</form>
+				</div>
+			</div>
+			<p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
+		</main>
+	</div>
 
 {% endblock %}

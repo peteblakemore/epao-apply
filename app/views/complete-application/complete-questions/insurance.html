@@ -11,29 +11,71 @@
 
 {% block content %}
 <div class="govuk-width-container">
-    <a href="ico-registration" class="govuk-back-link">Back</a>
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="safeguarding-policy" method="post">
-          <div class="govuk-form-group">
+		<a href="ico-registration" class="govuk-back-link">Back</a>
+		<main class="govuk-main-wrapper" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<form action="safeguarding-policy" method="post">
+						<div class="govuk-form-group">
+							<fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Does your organisation have the appropriate insurance?
+                  </h1>
+                </legend>
 
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="complete_insurance">
-                Does your organisation have the appropriate insurance?
-              </label>
-            </h1>
+                <div class="govuk-radios" data-module="radios">
 
-            <input class="govuk-input govuk-input--width-20" id="complete_insurance" id="complete_insurance" type="text">
+                  <!-- yes -->
+                  <div        class="govuk-radios__item">
+										<input    class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_insurance-1"
+                              id="complete_insurance-1"
+                              name="complete_insurance"
+                              type="radio"
+                              value="email">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_insurance">
+                              Yes
+                      </label>
+									</div>
 
-          </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
-        </form>
-        <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
-  </div>
-</div>
-</div>
+                  <!-- yes hidden -->
+                  <div
+                              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                              id="conditional-complete_insurance-1">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="file-upload-1">
+                                  Upload a copy of your certificate
+                                </label>
+                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                              </div>
+                	</div>
+
+                  <!-- no -->
+                  <div        class="govuk-radios__item">
+										  <input  class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_insurance-2"
+                              id="complete_insurance-2"
+                              name="complete_insurance"
+                              type="radio"
+                              value="no">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_insurance">
+                              No
+                      </label>
+									</div>
+								</div>
+
+							</fieldset>
+						</div><button class="govuk-button" type="submit">Save and continue</button>
+					</form>
+				</div>
+			</div>
+			<p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
+		</main>
+	</div>
+
+
 
 {% endblock %}
