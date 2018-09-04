@@ -24,14 +24,54 @@
               </label>
             </h1>
 
-            <input class="govuk-input govuk-input--width-20" id="complete_standard_name" id="complete_standard_name" type="text">
+            <section class="attachment embedded" id="attachment_2893295">
+  <div class="attachment-thumb">
+      <a aria-hidden="true" class="thumbnail" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/723721/16_to_19_funding_guidance_Regulations_2018_to_2019-v1b.pdf"><img alt="" src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/723721/thumbnail_16_to_19_funding_guidance_Regulations_2018_to_2019-v1b.pdf.png"></a>
+  </div>
+  <div class="attachment-details">
+    <h2 class="title"><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/723721/16_to_19_funding_guidance_Regulations_2018_to_2019-v1b.pdf">Advice: funding regulations for post-16 provision 2018 to 2019</a></h2>
+    <p class="metadata">
+        <span class="references">
+          Ref: <span class="unique_reference">ESFA 00064-2018</span>
+        </span>
+        <span class="unnumbered-paper">
+            Unnumbered command paper
+        </span>
+        <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">896KB</span>, <span class="page-length">60 pages</span>
+    </p>
 
+
+  </div>
+</section>
+
+
+
+            <p class="govuk-body">Please confirm you’ve read the {{data['standard-name']}} assessment plan, and that you can meet its specified requirements.</p>
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <div class="govuk-radios govuk-!-margin-bottom-5">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="complete_standard_name-yes" name="complete_standard_name" type="radio" value="yes" {{ checked(complete_standard_name,'yes') }}>
+                        <label class="govuk-label govuk-radios__label" for="complete_standard_name-yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="complete_standard_name-no" name="complete_standard_name" type="radio" value="no" {{ checked(complete_standard_name,'no') }}>
+                        <label class="govuk-label govuk-radios__label" for="complete_standard_name-no">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- <input class="govuk-input govuk-input--width-20" id="complete_standard_name" id="complete_standard_name" type="text"> -->
+            <button type="submit" class="govuk-button">
+              Save and continue
+            </button>
+            <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
           </div>
-          <button type="submit" class="govuk-button">
-            Save and continue
-          </button>
         </form>
-        <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
+
   </div>
 </div>
 </div>
