@@ -32,8 +32,9 @@
                               data-aria-controls="conditional-complete_insurance-1"
                               id="complete_insurance-1"
                               name="complete_insurance"
+                              {{ checked('complete_insurance','yes') }}
                               type="radio"
-                              value="email">
+                              value="yes">
                       <label  class="govuk-label govuk-radios__label"
                               for="complete_insurance">
                               Yes
@@ -58,6 +59,7 @@
                               data-aria-controls="conditional-complete_insurance-2"
                               id="complete_insurance-2"
                               name="complete_insurance"
+                              {{ checked('complete_insurance','no') }}
                               type="radio"
                               value="no">
                       <label  class="govuk-label govuk-radios__label"

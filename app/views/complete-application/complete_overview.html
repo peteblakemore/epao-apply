@@ -27,12 +27,12 @@
         <h2 class="app-task-list__section"><span class="app-task-list__section-number">1.</span> Assessment plan</h2>
         <ul class="app-task-list__items">
           {% for question in financialData.complete_standard %}
-          <li class="app-task-list__item">
-            <a aria-describedby="standard-name" class="app-task-list__task-name" href="complete-questions/standard-name">{{data['standard-name']}}</a>
-            {% if data[question.name] %}
-              {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
-            {% endif %}
-          </li>
+            <li class="app-task-list__item">
+              <a aria-describedby="standard-name" class="app-task-list__task-name" href="complete-questions/standard-name">{{data['standard-name']}}</a>
+              {% if data[question.name] %}
+                {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+              {% endif %}
+            </li>
           {% endfor %}
         </ul>
       </li>

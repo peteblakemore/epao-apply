@@ -35,8 +35,9 @@
                               data-aria-controls="conditional-complete_ico-registration-1"
                               id="complete_ico-registration-1"
                               name="complete_ico-registration"
+                              {{ checked('complete_ico-registration','yes') }}
                               type="radio"
-                              value="email">
+                              value="yes">
                       <label  class="govuk-label govuk-radios__label"
                               for="complete_ico-registration">
                               Yes
@@ -61,6 +62,7 @@
                               data-aria-controls="conditional-complete_ico-registration-2"
                               id="complete_ico-registration-2"
                               name="complete_ico-registration"
+                              {{ checked('complete_ico-registration','no') }}
                               type="radio"
                               value="no">
                       <label  class="govuk-label govuk-radios__label"

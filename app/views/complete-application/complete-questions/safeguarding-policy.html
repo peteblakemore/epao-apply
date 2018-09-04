@@ -16,7 +16,7 @@
 		<main class="govuk-main-wrapper" id="main-content" role="main">
 			<div class="govuk-grid-row">
 				<div class="govuk-grid-column-two-thirds">
-					<form action="ico-registration" method="post">
+					<form action="prevent-agenda" method="post">
 						<div class="govuk-form-group">
 							<fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -35,8 +35,9 @@
                               data-aria-controls="conditional-complete_safeguarding-policy-1"
                               id="complete_safeguarding-policy-1"
                               name="complete_safeguarding-policy"
+                              {{ checked('complete_safeguarding-policy','yes') }}
                               type="radio"
-                              value="email">
+                              value="yes">
                       <label  class="govuk-label govuk-radios__label"
                               for="complete_safeguarding-policy">
                               Yes
@@ -61,6 +62,7 @@
                               data-aria-controls="conditional-complete_safeguarding-policy-2"
                               id="complete_safeguarding-policy-2"
                               name="complete_safeguarding-policy"
+                              {{ checked('complete_safeguarding-policy','no') }}
                               type="radio"
                               value="no">
                       <label  class="govuk-label govuk-radios__label"

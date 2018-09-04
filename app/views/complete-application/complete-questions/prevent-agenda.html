@@ -21,7 +21,7 @@
 							<fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Do you have policies and practices in place that comply with the Prevent Agenda?<
+                    Do you have policies and practices in place that comply with the Prevent Agenda?
                   </h1>
                 </legend>
 
@@ -35,8 +35,9 @@
                               data-aria-controls="conditional-complete_prevent-agenda-1"
                               id="complete_prevent-agenda-1"
                               name="complete_prevent-agenda"
+                              {{ checked('complete_prevent-agenda','yes') }}
                               type="radio"
-                              value="email">
+                              value="yes">
                       <label  class="govuk-label govuk-radios__label"
                               for="complete_prevent-agenda">
                               Yes
@@ -61,6 +62,7 @@
                               data-aria-controls="conditional-complete_prevent-agenda-2"
                               id="complete_prevent-agenda-2"
                               name="complete_prevent-agenda"
+                              {{ checked('complete_prevent-agenda','no') }}
                               type="radio"
                               value="no">
                       <label  class="govuk-label govuk-radios__label"

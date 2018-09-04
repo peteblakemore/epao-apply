@@ -32,6 +32,7 @@
                               data-aria-controls="conditional-complete_where-deliver-1"
                               id="complete_where-deliver-1"
                               name="complete_where-deliver"
+                              {{ checked('complete_where-deliver','yes') }}
                               type="radio"
                               value="yes">
                       <label  class="govuk-label govuk-radios__label"
@@ -47,6 +48,7 @@
                               data-aria-controls="conditional-complete_where-deliver-2"
                               id="complete_where-deliver-2"
                               name="complete_where-deliver"
+                              {{ checked('complete_where-deliver','no') }}
                               type="radio"
                               value="no">
                       <label  class="govuk-label govuk-radios__label"
@@ -71,55 +73,55 @@
     </span>
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-1" name="where-deliver-check" type="checkbox" value="carcasses">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-1" name="where-deliver-check" {{ checked('where-deliver-check','north-east') }} type="checkbox" value="north-east">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-1">
-          North Easy
+          North East
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-2" name="where-deliver-check" type="checkbox" value="mines">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-2" name="where-deliver-check" {{ checked('where-deliver-check','north-west') }} type="checkbox" value="north-west">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-2">
           North West
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','yorkshire') }} type="checkbox" value="yorkshire">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           Yorkshire and The Humber
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','east-mids') }} type="checkbox" value="east-mids">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           East Midlands
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','west-mids') }} type="checkbox" value="west-mids">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           West Midlands
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','east-of-england') }} type="checkbox" value="east-of-england">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           East of England
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','london') }} type="checkbox" value="london">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           London
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','south-east') }} type="checkbox" value="south-east">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           South East
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" type="checkbox" value="farm">
+        <input class="govuk-checkboxes__input" id="where-deliver-check-3" name="where-deliver-check" {{ checked('where-deliver-check','south-west') }} type="checkbox" value="south-west">
         <label class="govuk-label govuk-checkboxes__label" for="where-deliver-check-3">
           South West
         </label>

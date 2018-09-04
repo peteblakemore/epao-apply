@@ -1,11 +1,10 @@
 .framework-dashboard {
   .browse-list-item {
     border-top: 1px solid #bfc1c3;
-    padding-top: 10px;
+    padding-top: 15px;
     list-style-type: none;
-    @include govuk-media-query($from: tablet) {
-      padding-top: 15px;
-    }
+    // @include govuk-media-query($from: tablet) {
+    // }
 
     h2 {
       margin-bottom: 10px;
@@ -19,6 +18,10 @@
   ul {
     padding: 0;
   }
+}
+
+.app-task-list__task-completed {
+  margin-left: 10px;
 }
 
 .instruction-list-item-box {
