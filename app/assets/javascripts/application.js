@@ -14,9 +14,19 @@ $(document).ready(function() {
     $('.js-send-for-review-not-clicked').show();
   }
 
-  $('.js-review-passed').on('click', function() {
+  $('.js-review-passed').on('click', function(event) {
+    event.preventDefault();
     GOVUK.cookie('reviewed', true, { days: 30 });
+    $(this).hide();
     $('.js-send-for-review-clicked').show();
     $('.js-send-for-review-not-clicked').hide();
+  });
+
+  $('.js-clone-director').on('click', function(event) {
+    event.preventDefault();
+    $('.js-director-markup')
+      .clone()
+      .insertAfter('.js-director-markup')
+      .removeClass('js-director-markup');
   });
 });

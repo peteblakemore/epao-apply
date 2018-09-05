@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+    {{ govukBackLink({
+    href: "apply_overview",
+    text: "Back to application overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Application submitted</h1>
+
+      <h2 class="govuk-heading-m">What happens next?</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>we'll review your application</li>
+        <li>we'll email you the outcome</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">How long before I hear about my application?</h2>
+
+      <p>You'll hear from us within 4 weeks.</p>
+
+      <p><a href="/">Return to start of application process</a></p>
+    </div>
+  </div>
+{% endblock %}
