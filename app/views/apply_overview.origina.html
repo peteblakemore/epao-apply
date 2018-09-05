@@ -19,6 +19,17 @@
 
         {# have all the questions in this section been completed? #}
         {% if
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
           data['ukprn'] or
           data['company-classification'] or
           data['organisation-type'] or
@@ -103,6 +114,17 @@
           </li>
         {# have all the questions in section 1 been completed? #}
         {% elif
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
           data['ukprn'] or
           data['company-classification'] or
           data['organisation-type'] or
@@ -163,6 +185,17 @@
           </li>
         {# Have all the questions in section 1 been completed? #}
         {% elif
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
           data['ukprn'] or
           data['company-classification'] or
           data['organisation-type'] or
@@ -193,7 +226,16 @@
 
         {# SECTION NOTIFICATION #}
 
-        
+        <li class="browse-list-item">
+          <div class="info-summary">
+              <h3 class="govuk-heading-m">
+                Application sent for review
+              </h3>
+              <p class="govuk-body">
+                Your application has been sent for a midpoint evaluation. An assessor will review your answers given so far and provide feedback, if appropriate before you can continue onto section 4.
+              </p>
+          </div>
+        </li>
 
 
         {# SECTION 4 #}
@@ -226,36 +268,62 @@
           </li>
         {# have all of the questions in sections 2 and 3 been completed? #}
         {% elif
-          data['invite'] and
-          data['financial-statements']
+          data['invite'] or
+          data['terms-and-conditions'] or
+          data['straight-away'] or
+          data['sign-and-return-framework'] or
+          data['convictions'] or
+          data['bribary-and-corruption'] or
+          data['fraud'] or
+          data['terrorism'] or
+          data['organised-crime'] or
+          data['breach-of-tax'] or
+          data['bankruptcy'] or
+          data['voluntary-administration'] or
+          data['mitigating-factors-exclusion-1'] or
+          data['tax-return-incorrect'] or
+          data['mitigating-factors-tax'] or
+          data['contracts-withdrawn'] or
+          data['withdrawn-from-contracts'] or
+          data['mitigating-factors-withdrawn'] or
+          data['removed-trustees'] or
+          data['company-removed'] or
+          data['sanctions'] or
+          data['public-money'] or
+          data['public-bodies'] or
+          data['legal-disputes'] or
+          data['mitigating-factors-exclusion-2'] or
+          data['accuracy'] or
+          data['changes-to-information'] or
+          data['description-accuracy'] or
+          data['information-changes'] or
+          data['use-of-information'] or
+          data['details'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['financial-statements'] or
+          data['months-covered-by-financials'] or
+          data['audited-financial-statements'] or
+          data['turnover'] or
+          data['depreciation-and-amortisation'] or
+          data['profit-and-loss'] or
+          data['dividends'] or
+          data['assets'] or
+          data['liabilities'] or
+          data['borrowings'] or
+          data['shareholders-assets'] or
+          data['intangible-assets'] or
+          data['parental-guarantee']
         %}
-          <div class="js-send-for-review-not-clicked">
-            <li class="browse-list-item">
-              <div class="info-summary">
-                  <h3 class="govuk-heading-m">
-                    Application sent for review
-                  </h3>
-                  <p class="govuk-body">
-                    Your application has been sent for a midpoint evaluation. An assessor will review your answers given so far and provide feedback, if appropriate before you can continue onto section 4.
-                  </p>
-              </div>
-            </li>
-            <li class="browse-list-item">
-              <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
-              <p class="instruction-list-item-box inactive">Can't start yet</p>
-            </li>
-          </div>
-          <div class="js-send-for-review-clicked js-hidden">
-            <li class="browse-list-item">
-              <h2 class="govuk-heading-m">
-                <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
-              </h2>
-              <div class="browse-list-item-status-quiet">
-                <p class="browse-list-item-status-title">You must complete this section</p>
-              </div>
-            </li>
-          </div>
-        
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must complete this section</p>
+            </div>
+          </li>
         {% else %}
           <li class="browse-list-item">
             <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
@@ -265,11 +333,6 @@
       </ul>
 
     <br>
-    {% if
-          data['complete_standard_name']
-    %}
-      <a href="#" class="govuk-button">Submit application</a>
-    {% endif %}
 
       <h2 class="govuk-heading-m">Guidance</h2>
       <ul class="govuk-list">
@@ -288,7 +351,7 @@
           </p>
           <p class="govuk-body">Read the proposed agreement between the Education and Skills Funding Agency (ESFA) and end-point assessment organisations (EPAOs).
           <span class="govuk-hint">Last updated Wednesday 18 July 2018</span></p>
-          <a class="govuk-link js-review-passed" href="#">
+          <a class="govuk-link" href="#">
             Click here to unlock section 4
           </a>
         </li>
