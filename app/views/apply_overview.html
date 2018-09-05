@@ -19,13 +19,28 @@
 
         {# have all the questions in this section been completed? #}
         {% if
-          data['director-name'] and
-          data['responsible-name'] and
-          data['group-companies'] and
-          data['organisation-type'] and
-          data['company-classification'] and
-          data['ukprn'] and
-          data['company-classification']
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
         %}
           <li class="browse-list-item">
             {{ govukTag({
@@ -52,39 +67,39 @@
 
         {# have all the questions in this section been completed? #}
         {% if 
-          data['invite'] and
-          data['terms-and-conditions'] and
-          data['straight-away'] and
-          data['sign-and-return-framework'] and
-          data['convictions'] and
-          data['bribary-and-corruption'] and
-          data['fraud'] and
-          data['terrorism'] and
-          data['organised-crime'] and
-          data['breach-of-tax'] and
-          data['bankruptcy'] and
-          data['voluntary-administration'] and
-          data['mitigating-factors-exclusion-1'] and
-          data['tax-return-incorrect'] and
-          data['mitigating-factors-tax'] and
-          data['contracts-withdrawn'] and
-          data['withdrawn-from-contracts'] and
-          data['mitigating-factors-withdrawn'] and
-          data['removed-trustees'] and
-          data['company-removed'] and
-          data['sanctions'] and
-          data['public-money'] and
-          data['public-bodies'] and
-          data['legal-disputes'] and
-          data['mitigating-factors-exclusion-2'] and
-          data['accuracy'] and
-          data['changes-to-information'] and
-          data['description-accuracy'] and
-          data['information-changes'] and
-          data['use-of-information'] and
-          data['details'] and
-          data['primary-name'] and
-          data['primary-email'] and
+          data['invite'] or
+          data['terms-and-conditions'] or
+          data['straight-away'] or
+          data['sign-and-return-framework'] or
+          data['convictions'] or
+          data['bribary-and-corruption'] or
+          data['fraud'] or
+          data['terrorism'] or
+          data['organised-crime'] or
+          data['breach-of-tax'] or
+          data['bankruptcy'] or
+          data['voluntary-administration'] or
+          data['mitigating-factors-exclusion-1'] or
+          data['tax-return-incorrect'] or
+          data['mitigating-factors-tax'] or
+          data['contracts-withdrawn'] or
+          data['withdrawn-from-contracts'] or
+          data['mitigating-factors-withdrawn'] or
+          data['removed-trustees'] or
+          data['company-removed'] or
+          data['sanctions'] or
+          data['public-money'] or
+          data['public-bodies'] or
+          data['legal-disputes'] or
+          data['mitigating-factors-exclusion-2'] or
+          data['accuracy'] or
+          data['changes-to-information'] or
+          data['description-accuracy'] or
+          data['information-changes'] or
+          data['use-of-information'] or
+          data['details'] or
+          data['primary-name'] or
+          data['primary-email'] or
           data['contract-notice']
         %}
           <li class="browse-list-item">
@@ -99,13 +114,28 @@
           </li>
         {# have all the questions in section 1 been completed? #}
         {% elif
-          data['director-name'] and
-          data['responsible-name'] and
-          data['group-companies'] and
-          data['organisation-type'] and
-          data['company-classification'] and
-          data['ukprn'] and
-          data['company-classification']
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
         %}
           <li class="browse-list-item">
             <h2 class="govuk-heading-m">
@@ -127,20 +157,20 @@
 
         {# Have all the questions in this section been completed? #}
         {# had to remove date fields as are separated into 3 #}
-        {# data['financial-year-end-date'] and #}
+        {# data['financial-year-end-date'] or #}
         {% if
-          data['financial-statements'] and
-          data['months-covered-by-financials'] and
-          data['audited-financial-statements'] and
-          data['turnover'] and
-          data['depreciation-and-amortisation'] and
-          data['profit-and-loss'] and
-          data['dividends'] and
-          data['assets'] and
-          data['liabilities'] and
-          data['borrowings'] and
-          data['shareholders-assets'] and
-          data['intangible-assets'] and
+          data['financial-statements'] or
+          data['months-covered-by-financials'] or
+          data['audited-financial-statements'] or
+          data['turnover'] or
+          data['depreciation-and-amortisation'] or
+          data['profit-and-loss'] or
+          data['dividends'] or
+          data['assets'] or
+          data['liabilities'] or
+          data['borrowings'] or
+          data['shareholders-assets'] or
+          data['intangible-assets'] or
           data['parental-guarantee']
         %}
           <li class="browse-list-item">
@@ -155,13 +185,28 @@
           </li>
         {# Have all the questions in section 1 been completed? #}
         {% elif 
-          data['director-name'] and
-          data['responsible-name'] and
-          data['group-companies'] and
-          data['organisation-type'] and
-          data['company-classification'] and
-          data['ukprn'] and
-          data['company-classification']
+          data['contact-name'] or
+          data['contact-email'] or
+          data['contact-phone'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['company-name'] or
+          data['building-street'] or
+          data['town-city'] or
+          data['postcode'] or
+          data['country'] or
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
         %}
           <li class="browse-list-item">
             <h2 class="govuk-heading-m">
@@ -182,19 +227,19 @@
         {# SECTION 4 #}
 
         {% if
-          data['complete_standard_name'] and
-          data['complete_internal-audit-policies-and-processes'] and
-          data['complete_ico-registration'] and
-          data['complete_insurance'] and
-          data['complete_safeguarding-policy'] and
-          data['complete_prevent-agenda'] and
-          data['complete_best-practice-skills'] and
-          data['complete_where-deliver'] and
-          data['complete_occupational-competence'] and
-          data['complete_process'] and
-          data['complete_assessment-types'] and
-          data['complete_your-staff'] and
-          data['complete_quality'] and
+          data['complete_standard_name'] or
+          data['complete_internal-audit-policies-and-processes'] or
+          data['complete_ico-registration'] or
+          data['complete_insurance'] or
+          data['complete_safeguarding-policy'] or
+          data['complete_prevent-agenda'] or
+          data['complete_best-practice-skills'] or
+          data['complete_where-deliver'] or
+          data['complete_occupational-competence'] or
+          data['complete_process'] or
+          data['complete_assessment-types'] or
+          data['complete_your-staff'] or
+          data['complete_quality'] or
           data['complete_delivery-model']
         %}
           <li class="browse-list-item">
@@ -209,52 +254,52 @@
           </li>
         {# have all of the questions in sections 2 and 3 been completed? #}
         {% elif
-          data['invite'] and
-          data['terms-and-conditions'] and
-          data['straight-away'] and
-          data['sign-and-return-framework'] and
-          data['convictions'] and
-          data['bribary-and-corruption'] and
-          data['fraud'] and
-          data['terrorism'] and
-          data['organised-crime'] and
-          data['breach-of-tax'] and
-          data['bankruptcy'] and
-          data['voluntary-administration'] and
-          data['mitigating-factors-exclusion-1'] and
-          data['tax-return-incorrect'] and
-          data['mitigating-factors-tax'] and
-          data['contracts-withdrawn'] and
-          data['withdrawn-from-contracts'] and
-          data['mitigating-factors-withdrawn'] and
-          data['removed-trustees'] and
-          data['company-removed'] and
-          data['sanctions'] and
-          data['public-money'] and
-          data['public-bodies'] and
-          data['legal-disputes'] and
-          data['mitigating-factors-exclusion-2'] and
-          data['accuracy'] and
-          data['changes-to-information'] and
-          data['description-accuracy'] and
-          data['information-changes'] and
-          data['use-of-information'] and
-          data['details'] and
-          data['primary-name'] and
-          data['primary-email'] and
-          data['contract-notice'] and
-          data['financial-statements'] and
-          data['months-covered-by-financials'] and
-          data['audited-financial-statements'] and
-          data['turnover'] and
-          data['depreciation-and-amortisation'] and
-          data['profit-and-loss'] and
-          data['dividends'] and
-          data['assets'] and
-          data['liabilities'] and
-          data['borrowings'] and
-          data['shareholders-assets'] and
-          data['intangible-assets'] and
+          data['invite'] or
+          data['terms-and-conditions'] or
+          data['straight-away'] or
+          data['sign-and-return-framework'] or
+          data['convictions'] or
+          data['bribary-and-corruption'] or
+          data['fraud'] or
+          data['terrorism'] or
+          data['organised-crime'] or
+          data['breach-of-tax'] or
+          data['bankruptcy'] or
+          data['voluntary-administration'] or
+          data['mitigating-factors-exclusion-1'] or
+          data['tax-return-incorrect'] or
+          data['mitigating-factors-tax'] or
+          data['contracts-withdrawn'] or
+          data['withdrawn-from-contracts'] or
+          data['mitigating-factors-withdrawn'] or
+          data['removed-trustees'] or
+          data['company-removed'] or
+          data['sanctions'] or
+          data['public-money'] or
+          data['public-bodies'] or
+          data['legal-disputes'] or
+          data['mitigating-factors-exclusion-2'] or
+          data['accuracy'] or
+          data['changes-to-information'] or
+          data['description-accuracy'] or
+          data['information-changes'] or
+          data['use-of-information'] or
+          data['details'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice'] or
+          data['financial-statements'] or
+          data['months-covered-by-financials'] or
+          data['audited-financial-statements'] or
+          data['turnover'] or
+          data['depreciation-and-amortisation'] or
+          data['profit-and-loss'] or
+          data['dividends'] or
+          data['assets'] or
+          data['liabilities'] or
+          data['borrowings'] or
+          data['shareholders-assets'] or
+          data['intangible-assets'] or
           data['parental-guarantee']
         %}
           <li class="browse-list-item">

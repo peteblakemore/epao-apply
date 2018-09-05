@@ -55,7 +55,7 @@
                 <label class="govuk-label govuk-date-input__label" for="dob-day">
                 Day
               </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-dob-day" name="director-dob-day" value="{{ data['director-dob-day'] }}" type="number" pattern="[0-9]*">
               </div>
             </div>
 
@@ -64,7 +64,7 @@
                 <label class="govuk-label govuk-date-input__label" for="dob-month">
                 Month
               </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-dob-month" name="director-dob-month" value="{{ data['director-dob-month'] }}" type="number" pattern="[0-9]*">
               </div>
             </div>
 
@@ -73,7 +73,7 @@
                 <label class="govuk-label govuk-date-input__label" for="dob-year">
                 Year
               </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="director-dob-year" name="director-dob-year" value="{{ data['director-dob-year'] }}" type="number" pattern="[0-9]*">
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@
           Percentage of shares the director holds
         </label>
         <span class="govuk-hint">For example, 75%</span>
-        <input class="govuk-input govuk-input--width-10" id="width-4" name="width-4" type="text">
+        <input class="govuk-input govuk-input--width-10" id="percentage-shares" name="percentage-shares" value="{{ data['percentage-shares'] }}" type="text">
       </div>
 
 
