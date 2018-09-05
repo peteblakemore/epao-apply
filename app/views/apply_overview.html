@@ -66,7 +66,7 @@
         {# SECTION 2 #}
 
         {# have all the questions in this section been completed? #}
-        {% if 
+        {% if
           data['invite'] or
           data['terms-and-conditions'] or
           data['straight-away'] or
@@ -184,7 +184,7 @@
             </h2>
           </li>
         {# Have all the questions in section 1 been completed? #}
-        {% elif 
+        {% elif
           data['contact-name'] or
           data['contact-email'] or
           data['contact-phone'] or
@@ -223,6 +223,20 @@
             <p class="instruction-list-item-box inactive">Can't start yet</p>
           </li>
         {% endif %}
+
+        {# SECTION NOTIFICATION #}
+
+        <li class="browse-list-item">
+          <div class="info-summary">
+              <h3 class="govuk-heading-m">
+                Application sent for review
+              </h3>
+              <p class="govuk-body">
+                Your application has been sent for a midpoint evaluation. An assessor will review your answers given so far and provide feedback, if appropriate before you can continue onto section 4.
+              </p>
+          </div>
+        </li>
+
 
         {# SECTION 4 #}
 
@@ -337,8 +351,12 @@
           </p>
           <p class="govuk-body">Read the proposed agreement between the Education and Skills Funding Agency (ESFA) and end-point assessment organisations (EPAOs).
           <span class="govuk-hint">Last updated Wednesday 18 July 2018</span></p>
+          <a class="govuk-link" href="#">
+            Click here to unlock section 4
+          </a>
         </li>
       </ul>
+
 
 		</div>
 	</div>

@@ -17,17 +17,112 @@
   <div class="govuk-grid-column-two-thirds">
     <form action="your-staff" method="post">
 
-          <div class="govuk-form-group">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="assessment-types-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What types of end-point assessment you will deliver?
+            </h1>
+          </legend>
+          <span id="assessment-types-hint" class="govuk-hint">
+            Those that you select must be relevant to the assessment plan requirements.
+          </span>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                What types of end-point assessment you will deliver?
-              </h1>
-            </legend>
+          <div class="govuk-checkboxes">
 
-            <input class="govuk-input govuk-input--width-20" id="complete_assessment-types" name="complete_assessment-types" value="{{ data['complete_assessment-types'] }}" type="text">
-
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-1" name="assessment-types" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-1">
+                Candidate presentation
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-2" name="assessment-types" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-2">
+                Examination using structured and/or multiple choice questions
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-3" name="assessment-types" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-3">
+                Interview or viva
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-4" name="assessment-types" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-4">
+                Observation and assessment of behaviours/performance/practical demonstration/test
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-5" name="assessment-types" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-5">
+                Online assessment
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-6" name="assessment-types" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-6">
+                Personal or reflective statement
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-7" name="assessment-types" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-7">
+                Portfolio assessment
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-8" name="assessment-types" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-8">
+                Project/scenario/case study assessment
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-9" name="assessment-types" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-9">
+                Log book
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-10" name="assessment-types" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-10">
+                Regulated qualification
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-11" name="assessment-types" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-11">
+                Structured reports
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-12" name="assessment-types" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-12">
+                Summative showcase
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-13" name="assessment-types" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-13">
+                Vocational competence discussion/professional discussion
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-14" name="assessment-types" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-14">
+                Trade tests
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="assessment-types-15" name="assessment-types" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="assessment-types-15">
+                Vendor qualifications
+              </label>
+            </div>
           </div>
+        </fieldset>
+      </div>
           <button type="submit" class="govuk-button">
             Save and continue
           </button>
@@ -36,5 +131,10 @@
   </div>
 </div>
 </div>
+
+
+
+
+
 
 {% endblock %}
