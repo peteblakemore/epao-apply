@@ -16,21 +16,43 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">What is your registered address?</h1>
 
-    <form action="/eligibility_confirm-organisation" method="post">
+    <form action="/eligibility_what-employers-see" method="post">
+
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="company-name">
-            What's your organisation's name?
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-20" id="company-name" name="company-name" value="{{ data['company-name'] }}"  type="text">
+        <label class="govuk-label govuk-label--m" for="building-street">
+          Building and street
+        </label>
+        <input class="govuk-input" id="building-street" name="building-street" value="{{ data['building-street'] }}" type="text" aria-describedby="building-street-hint">
       </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="town-city">
+          Town or city
+        </label>
+        <input class="govuk-input" id="town-city" name="town-city" value="{{ data['town-city'] }}" type="text" aria-describedby="town-city-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="postcode">
+          Postcode
+        </label>
+        <input class="govuk-input" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text" aria-describedby="postcode-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="country">
+          Country
+        </label>
+        <input class="govuk-input" id="country" name="country" value="{{ data['country'] }}" type="text" aria-describedby="country-hint">
+      </div>
+
       <button type="submit" class="govuk-button">
         Continue
       </button>
-    </form>
 
+    </form>
   </div>
 </div>
 {% endblock %}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a class="govuk-back-link" href="../complete_overview">Back</a>
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="ico-registration" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Required documentation
+                </h1>
+              </legend>
+              <p class="govuk-body">You must be able to truthfully answer yes to every question under ‘Required documentation’ for your application to be considered eligible. If you can’t answer yes, your application may not be accepted.</p>
+              <p class="govuk-body">If you do answer ‘no’, you must provide full details of any remedial action that you think the Education and Skills Funding Agency (ESFA) should take into consideration. ESFA will use the information you provide to consider whether or not you will be able to proceed any further with this application.</p>
+              <p class="govuk-body">Does your organisation have an internal audit policy or process in place with regard to fraud and financial irregularity?</p>
+              <div class="govuk-radios" data-module="radios">
+                <!-- yes -->
+                <div class="govuk-radios__item">
+                  <input 
+                    class="govuk-radios__input"
+                    data-aria-controls="conditional-complete_internal-audit-policies-and-processes-1"
+                    id="complete_internal-audit-policies-and-processes-1"
+                    name="complete_internal-audit-policies-and-processes"
+                    {{ checked('complete_internal-audit-policies-and-processes','yes') }}
+                    type="radio"
+                    value="yes"
+                  />
+                  <label 
+                    class="govuk-label govuk-radios__label"
+                    for="complete_internal-audit-policies-and-processes">
+                      Yes
+                  </label>
+                </div>
+
+                <!-- yes hidden -->
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-complete_internal-audit-policies-and-processes-1">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="file-upload-1">
+                      Upload a copy of your fraud and financial irregularity policy
+                    </label>
+                    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                  </div>
+                </div>
+
+                <!-- no -->
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    data-aria-controls="conditional-complete_internal-audit-policies-and-processes-2"
+                    id="complete_internal-audit-policies-and-processes-2"
+                    name="complete_internal-audit-policies-and-processes"
+                    {{ checked('complete_internal-audit-policies-and-processes','no') }}
+                    type="radio"
+                    value="no"
+                    />
+                    <label class="govuk-label govuk-radios__label" for="complete_internal-audit-policies-and-processes">
+                      No
+                    </label>
+                </div>
+              </div>
+            </fieldset>
+          </div><button class="govuk-button" type="submit">Save and continue</button>
+        </form>
+      </div>
+    </div>
+    <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+  </main>
+</div>
+
+{% endblock %}

@@ -29,7 +29,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="../application_company-details" method="post">
+    <form action="../application_company-details#company-classification" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -39,38 +39,38 @@
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-1" name="select-org" type="radio" value="Organisation 1, 1 Street Name, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-1">
+              <input class="govuk-radios__input" id="company-classification-1" name="company-classification" {{ checked('company-classification','Voluntary, Community and Social Enterprise (VCSE)') }} type="radio" value="Voluntary, Community and Social Enterprise (VCSE)">
+              <label class="govuk-label govuk-radios__label" for="company-classification-1">
               Voluntary, Community and Social Enterprise (VCSE)
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-2" name="select-org" type="radio" value="Organisation 2, 2 Close, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-2">
+              <input class="govuk-radios__input" id="company-classification-2" name="company-classification" {{ checked('company-classification','Third Sector organisations') }} type="radio" value="Third Sector organisations">
+              <label class="govuk-label govuk-radios__label" for="company-classification-2">
               Third Sector organisations
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              <input class="govuk-radios__input" id="company-classification-3" name="company-classification" {{ checked('company-classification','Small or Medium Enterprise (SME)') }} type="radio" value="Small or Medium Enterprise (SME)">
+              <label class="govuk-label govuk-radios__label" for="company-classification-3">
               Small or Medium Enterprise (SME)
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              <input class="govuk-radios__input" id="company-classification-4" name="company-classification" {{ checked('company-classification','Sheltered workshop') }} type="radio" value="Sheltered workshop">
+              <label class="govuk-label govuk-radios__label" for="company-classification-4">
               Sheltered workshop
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              <input class="govuk-radios__input" id="company-classification-5" name="company-classification" {{ checked('company-classification','Public service mutual') }} type="radio" value="Public service mutual">
+              <label class="govuk-label govuk-radios__label" for="company-classification-5">
               Public service mutual
             </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="select-org-3" name="select-org" type="radio" value="Organisation 3, 2 Road Name, Town Name, P05T C0D3">
-              <label class="govuk-label govuk-radios__label" for="select-org-3">
+              <input class="govuk-radios__input" id="company-classification-6" name="company-classification" {{ checked('company-classification','None of the above') }} type="radio" value="None of the above">
+              <label class="govuk-label govuk-radios__label" for="company-classification-6">
               None of the above
             </label>
             </div>

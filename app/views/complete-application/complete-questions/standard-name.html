@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="../complete_overview" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <form action="../complete_overview" method="post">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                {{data['standard-name']}} assessment plan
+                            </h1>
+                        </legend>
+
+                        <section class="attachment embedded" id="attachment_2893295">
+                            <div class="attachment-thumb">
+                                <a aria-hidden="true" class="thumbnail" href="#"><img
+                                        alt="" src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/723721/thumbnail_16_to_19_funding_guidance_Regulations_2018_to_2019-v1b.pdf.png"></a>
+                            </div>
+
+                            <div class="attachment-details">
+                                <h2 class="title"><a href="#">{{data['standard-name']}} assessment plan</a></h2>
+                                <p class="metadata">
+                                    <span class="references">
+                                        PDF, 119KB, 4 pages
+                                    </span>
+                                    <br>
+                                    <span class="unnumbered-paper">
+                                        This file may not be suitable for users of assistive technology. <a class="govuk-link" href="#">Request an accessible format.</a>
+                                    </span>
+                                </p>
+                            </div>
+                        </section>
+
+                        <div class="govuk-clearfix"></div>
+                        <br>
+                        <p class="govuk-body">Please confirm you’ve read the {{data['standard-name']}} assessment plan, and
+                            that you can meet its specified requirements.</p>
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <div class="govuk-radios govuk-!-margin-bottom-5">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="complete_standard_name-yes" name="complete_standard_name" type="radio" value="yes"
+                                        {{ checked( 'complete_standard_name', 'yes') }}>
+                                    <label class="govuk-label govuk-radios__label" for="complete_standard_name-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="complete_standard_name-no" name="complete_standard_name" type="radio" value="no" {{
+                                        checked( 'complete_standard_name', 'no') }}>
+                                    <label class="govuk-label govuk-radios__label" for="complete_standard_name-no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- <input class="govuk-input govuk-input--width-20" id="complete_standard_name" id="complete_standard_name" type="text"> -->
+                        <button type="submit" class="govuk-button">
+                            Save and continue
+                        </button>
+                        <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

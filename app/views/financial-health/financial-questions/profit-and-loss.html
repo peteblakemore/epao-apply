@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="depreciation-and-amortisation" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="dividends" method="post">
+          <div class="govuk-form-group">
+
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="profit-and-loss">
+                Profit and loss after tax
+              </label>
+            </h1>
+
+            <input class="govuk-input govuk-input--width-20" id="profit-and-loss" name="profit-and-loss" value="{{ data['profit-and-loss'] }}" type="text">
+          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+        </form>
+        <p class="govuk-body"><a class="govuk-link" href="../financial-health_overview">Return to questions overview</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}

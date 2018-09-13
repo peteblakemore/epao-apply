@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+		<a href="internal-audit-policies-and-processes" class="govuk-back-link">Back</a>
+		<main class="govuk-main-wrapper" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<form action="insurance" method="post">
+						<div class="govuk-form-group">
+							<fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Are you registered with the <a href="#" class="govuk-link">Information Commissioner’s Office</a> (link opens in a new tab)?
+                  </h1>
+                </legend>
+
+                <p class="govuk-body">It’s a requirement that your organisation is registered with the Information Commissioner’s Office for processing personal data for educational purposes about students.</p>
+
+                <div class="govuk-radios" data-module="radios">
+
+                  <!-- yes -->
+                  <div        class="govuk-radios__item">
+										<input    class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_ico-registration-1"
+                              id="complete_ico-registration-1"
+                              name="complete_ico-registration"
+                              {{ checked('complete_ico-registration','yes') }}
+                              type="radio"
+                              value="yes">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_ico-registration">
+                              Yes
+                      </label>
+									</div>
+
+                  <!-- yes hidden -->
+                  <div
+                              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                              id="conditional-complete_ico-registration-1">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="file-upload-1">
+                                  Upload a copy of your registration certification
+                                </label>
+                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                              </div>
+                	</div>
+
+                  <!-- no -->
+                  <div        class="govuk-radios__item">
+										  <input  class="govuk-radios__input"
+                              data-aria-controls="conditional-complete_ico-registration-2"
+                              id="complete_ico-registration-2"
+                              name="complete_ico-registration"
+                              {{ checked('complete_ico-registration','no') }}
+                              type="radio"
+                              value="no">
+                      <label  class="govuk-label govuk-radios__label"
+                              for="complete_ico-registration">
+                              No
+                      </label>
+									</div>
+								</div>
+
+
+
+							</fieldset>
+						</div><button class="govuk-button" type="submit">Save and continue</button>
+					</form>
+				</div>
+			</div>
+			<p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+		</main>
+	</div>
+
+{% endblock %}

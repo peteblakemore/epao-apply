@@ -6,48 +6,275 @@
 
 {% block beforeContent %}
   {% include 'includes/_phase-banner-alpha.html' %}
-
-
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row framework-dashboard">
-		<div class="govuk-grid-column-two-thirds">
-			<h1 class="govuk-heading-l">Application overview</h1>
-			<ul>
-				<li class="browse-list-item">
-          <h2 class="govuk-heading-m">
-            <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
-          </h2>
-          <div class="browse-list-item-status-quiet">
-						<p class="browse-list-item-status-title">You must add your organisation’s details</p>
-					</div>
-				</li>
-				<li class="browse-list-item">
-					<h2 class="govuk-heading-m">2. Make declaration</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
-        <li class="browse-list-item">
-					<h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
-        <li class="browse-list-item">
-					<h2 class="govuk-heading-m">4. Add, edit and complete application to assess [standard-name]</h2>
-					<p class="instruction-list-item-box inactive">Can't start yet</p>
-				</li>
-			</ul>
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Application overview</h1>
+
+      <ul>
+
+        {# SECTION 1 #}
+
+        {# have all the questions in this section been completed? #}
+        {% if
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "company-details-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+            </h2>
+          </li>
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="/application_company-details">1. Enter your company details</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must add your organisation’s details</p>
+            </div>
+          </li>
+        {% endif %}
+
+        {# SECTION 2 #}
+
+        {# have all the questions in this section been completed? #}
+        {% if
+          data['invite'] or
+          data['terms-and-conditions'] or
+          data['straight-away'] or
+          data['sign-and-return-framework'] or
+          data['convictions'] or
+          data['bribary-and-corruption'] or
+          data['fraud'] or
+          data['terrorism'] or
+          data['organised-crime'] or
+          data['breach-of-tax'] or
+          data['bankruptcy'] or
+          data['voluntary-administration'] or
+          data['mitigating-factors-exclusion-1'] or
+          data['tax-return-incorrect'] or
+          data['mitigating-factors-tax'] or
+          data['contracts-withdrawn'] or
+          data['withdrawn-from-contracts'] or
+          data['mitigating-factors-withdrawn'] or
+          data['removed-trustees'] or
+          data['company-removed'] or
+          data['sanctions'] or
+          data['public-money'] or
+          data['public-bodies'] or
+          data['legal-disputes'] or
+          data['mitigating-factors-exclusion-2'] or
+          data['accuracy'] or
+          data['changes-to-information'] or
+          data['description-accuracy'] or
+          data['information-changes'] or
+          data['use-of-information'] or
+          data['details'] or
+          data['primary-name'] or
+          data['primary-email'] or
+          data['contract-notice']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "declaration-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
+            </h2>
+          </li>
+        {# have all the questions in section 1 been completed? #}
+        {% elif
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
+        %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="declarations/declarations_intro">2. Make declaration</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must complete the declarations</p>
+            </div>
+          </li>
+        {# else, it can't be started #}
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">2. Make declaration</h2>
+            <p class="instruction-list-item-box inactive">Can't start yet</p>
+          </li>
+        {% endif %}
+
+        {# SECTION 3 #}
+
+        {# Have all the questions in this section been completed? #}
+        {# had to remove date fields as are separated into 3 #}
+        {# data['financial-year-end-date'] or #}
+        {% if
+          data['financial-statements'] or
+          data['months-covered-by-financials'] or
+          data['audited-financial-statements'] or
+          data['turnover'] or
+          data['depreciation-and-amortisation'] or
+          data['profit-and-loss'] or
+          data['dividends'] or
+          data['assets'] or
+          data['liabilities'] or
+          data['borrowings'] or
+          data['shareholders-assets'] or
+          data['intangible-assets'] or
+          data['parental-guarantee']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "financial-health-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="financial-health/financial-health_intro">3. Add, edit and complete financial health assessment</a>
+            </h2>
+          </li>
+        {# Have all the questions in section 1 been completed? #}
+        {% elif
+          data['ukprn'] or
+          data['company-classification'] or
+          data['organisation-type'] or
+          data['group-companies'] or
+          data['responsible-name'] or
+          data['how-contacted'] or
+          data['director-name'] or
+          data['director-dob-day'] or
+          data['director-dob-month'] or
+          data['director-dob-year'] or
+          data['percentage-shares']
+        %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="financial-health/financial-health_intro">3. Add, edit and complete financial health assessment</a>
+            </h2>
+            <div class="browse-list-item-status-quiet">
+              <p class="browse-list-item-status-title">You must add your financial health information</p>
+            </div>
+          </li>
+        {# else, it can't be started #}
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
+            <p class="instruction-list-item-box inactive">Can't start yet</p>
+          </li>
+        {% endif %}
+
+        {# SECTION NOTIFICATION #}
+
+
+
+
+        {# SECTION 4 #}
+
+        {% if
+          data['complete_standard_name'] or
+          data['complete_internal-audit-policies-and-processes'] or
+          data['complete_ico-registration'] or
+          data['complete_insurance'] or
+          data['complete_safeguarding-policy'] or
+          data['complete_prevent-agenda'] or
+          data['complete_best-practice-skills'] or
+          data['complete_where-deliver'] or
+          data['complete_occupational-competence'] or
+          data['complete_process'] or
+          data['complete_assessment-types'] or
+          data['complete_your-staff'] or
+          data['complete_quality'] or
+          data['complete_delivery-model']
+        %}
+          <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "complete-section-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">
+              <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
+            </h2>
+          </li>
+        {# have all of the questions in sections 2 and 3 been completed? #}
+        {% elif
+          data['invite'] and
+          data['financial-statements']
+        %}
+          <div class="js-send-for-review-not-clicked">
+            <li class="browse-list-item">
+              <div class="info-summary">
+                  <h3 class="govuk-heading-m">
+                    Application sent for review
+                  </h3>
+                  <p class="govuk-body">
+                    Your application has been sent for a midpoint evaluation. An assessor will review your answers given so far and provide feedback, if appropriate before you can continue onto section 4.
+                  </p>
+              </div>
+            </li>
+            <li class="browse-list-item">
+              <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
+              <p class="instruction-list-item-box inactive">Can't start yet</p>
+            </li>
+          </div>
+          <div class="js-send-for-review-clicked js-hidden">
+            <li class="browse-list-item">
+              <h2 class="govuk-heading-m">
+                <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
+              </h2>
+              <div class="browse-list-item-status-quiet">
+                <p class="browse-list-item-status-title">You must complete this section</p>
+              </div>
+            </li>
+          </div>
+
+        {% else %}
+          <li class="browse-list-item">
+            <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
+            <p class="instruction-list-item-box inactive">Can't start yet</p>
+          </li>
+        {% endif %}
+      </ul>
 
     <br>
+    {% if
+          data['complete_standard_name']
+    %}
+      <a href="/application-complete" class="govuk-button">Submit application</a>
+    {% endif %}
 
       <h2 class="govuk-heading-m">Guidance</h2>
       <ul class="govuk-list">
         <li>
           <a class="govuk-link" href="#">Read about how to apply</a>
-        </li>
-        <li>
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Download all the questions</a>
-          </p>
         </li>
       </ul>
 
@@ -59,26 +286,23 @@
               Download the 'Conditions for organisations on the register of end-point assessment organisations'
             </a>
           </p>
-          <p class="govuk-body">Read the proposed agreement between the Education and Skills Funding Agency (ESFA) and end-point assessment organisations (EPAOs).
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">
+            Read the proposed agreement between the Education and Skills Funding Agency (ESFA) and end-point assessment organisations (EPAOs).
+          </a>
           <span class="govuk-hint">Last updated Wednesday 18 July 2018</span></p>
+
         </li>
       </ul>
 
-		</div>
-	</div>
 
+      </div>
+    </div>
 
-
-    <!-- <li class="browse-list-item">
-      <h2>2. Make supplier declaration</h2>
-      <p class="instruction-list-item-box inactive">Can't start yet</p>
-    </li>
-    <li class="browse-list-item">
-      <h2>3. Add, edit and complete services</h2>
-      <p class="instruction-list-item-box inactive">Can't start yet</p>
-    </li> -->
-
-</div>
+    <a class="govuk-link js-review-passed govuk-!-font-size-14" href="#">
+      Click here to unlock section 4
+    </a>
+  </div>
 </div>
 
 {% endblock %}

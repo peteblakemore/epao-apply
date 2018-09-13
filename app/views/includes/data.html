@@ -1,0 +1,584 @@
+{% set what_it_means =
+  [
+      {
+
+          "longTitle": "Do you agree to comply with the terms of the <a href=\"#\">Conditions for organisations on the register of end-point assessment organisations (link opens in a new tab)</a>?",
+          "shortTitle": "Invitation to apply",
+          "name": "invite",
+          "href": "what-it-means",
+          "id": "invite"
+      },
+      {
+          "longTitle": "Do you accept the terms and conditions in the <a href=\"#\">Register of end-point assessment organisations: pre-application guidance (link opens in a new tab)</a>?",
+          "shortTitle": "Terms and conditions",
+          "name": "terms-and-conditions",
+          "href": "what-it-means",
+          "id": "terms-and-conditions"
+      },
+      {
+          "longTitle": "If your application is successful, can you conduct end-point assessments for [standard name] from the first day you’re awarded a place on the register of end-point assessment organisations?",
+          "shortTitle": "Providing services straight away",
+          "name": "straight-away",
+          "href": "what-it-means",
+          "id": "straight-away"
+      },
+      {
+          "longTitle": "Do you agree to sign and return the final agreement, without changing it, within 10 days of it being issued by the Education and Skills Funding Agency?",
+          "shortTitle": "Signing and returning the agreement",
+          "name": "sign-and-return-framework",
+          "href": "what-it-means",
+          "id": "sign-and-return-framework"
+      },
+      {
+          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of:",
+          "shortTitle": "Organised crime or conspiracy convictions",
+          "name": "convictions",
+          "bullets": [
+              "any offence under sections 44 to 46 of the Serious Crime Act 2007 which relates to an offence covered by subparagraph (f)",
+              "conspiracy within the meaning of section 1 or 1A of the Criminal Law Act 1977"
+          ],
+          "href": "what-it-means",
+          "id": "convictions"
+      }
+  ]
+%}
+
+{% set grounds_for_mandatory =
+  [
+      {
+          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of:",
+          "shortTitle": "Bribery or corruption convictions",
+          "bullets": [
+              "corruption within the meaning of section 1(2) of the Public Bodies Corrupt Practices Act 1889 or section 1 of the Prevention of Corruption Act 1906",
+              "the common law offence of bribery",
+              "bribery within the meaning of sections 1, 2, or 6 of the Bribery Act 2010",
+              "any other offence within the meaning of article 57(1) of the Public Contracts Directive as defined by the law of any jurisdiction outside England and Wales and Northern Ireland",
+              "any other offence within the meaning of article 57(1) of the Public Contracts Directive created after 26th February 2015 in England and Wales or Northern Ireland"
+          ],
+          "name": "bribary-and-corruption",
+          "href": "grounds-for-mandatory",
+          "id": "bribary-and-corruption"
+      },
+      {
+          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisations has been convicted of any offence that relates to fraud affecting the European Communities’ financial interests as defined by article 1 of the Convention of the Protection of the Financial Interests of the European Communities, including:",
+          "shortTitle": "Fraud convictions",
+          "bullets": [
+              "the common law offence of cheating the Revenue (HMRC)",
+              "the common law offence of conspiracy to defraud",
+              "fraud or theft within the meaning of the Theft Act 1968, the Theft Act (Northern Ireland) 1969, the Theft Act 1978 or the Theft (Northern Ireland) Order 1978",
+              "fraudulent trading within the meaning of section 458 of the Companies Act 1985, article 451 of the Companies (Northern Ireland) Order 1986 or section 993 of the Companies Act 2006",
+              "fraudulent evasion within the meaning of section 170 of the Customs and Excise Management Act 1979 or section 72 of the Value Added Tax Act 1994",
+              "an offence in connection with taxation in the European Union within the meaning of section 71 of the Criminal Justice Act 1993",
+              "destroying, defacing or concealing of documents or procuring the execution of a valuable security within the meaning of section 20 of the Theft Act 1968 or section 19 of the Theft Act (Northern Ireland) 1969",
+              "fraud within the meaning of section 2, 3 or 4 of the Fraud Act 2006",
+              "the possession of articles for use in frauds within the meaning of section 6 of the Fraud Act 2006, or the making, adapting, supplying or offering to supply articles for use in frauds within the meaning of section 7 of that Act"
+          ],
+          "name": "fraud",
+          "href": "grounds-for-mandatory",
+          "id": "fraud"
+      },
+      {
+          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisation has been convicted of any offence listed in:",
+          "shortTitle": "Terrorism convictions",
+          "bullets": [
+              "section 41 of the Counter Terrorism Act 2008",
+              "schedule 2 of the Counter Terrorism Act 2008 where the court has determined that there is a terrorist connection",
+              "any offence under sections 44 to 46 of the Serious Crime Act 2007"
+          ],
+          "name": "terrorism",
+          "href": "grounds-for-mandatory",
+          "id": "terrorism"
+      },
+      {
+          "longTitle": "Please confirm whether, within the past 5 years, anyone who represents, supervises or has control in your organisation or a partner or parent organisation has been convicted of:",
+          "shortTitle": "Organised crime convictions",
+          "bullets": [
+              "money laundering within the meaning of sections 340(11) and 415 of the Proceeds of Crime Act 2002",
+              "an offence in connection with the proceeds of criminal conduct within the meaning of section 93A, 93B or 93C of the Criminal Justice Act 1988 or article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996",
+              "an offence under section 4 of the Asylum and Immigration (Treatment of Claimants etc) Act 2004",
+              "an offence under section 59A of the Sexual Offences Act 2003",
+              "an offence under section 71 of the Coroners and Justice Act 2009",
+              "an offence in connection with the proceeds of drug trafficking within the meaning of section 49, 50 and 51 of the Drug Trafficking Act 1994"
+          ],
+          "name": "organised-crime",
+          "href": "grounds-for-mandatory",
+          "id": "organised-crime"
+      },
+      {
+          "longTitle": "Have members of your organisation or a partner organisation been legally found to be in breach of tax payments or social security contributions?",
+          "shortTitle": "In breach of tax payments",
+          "name": "breach-of-tax",
+          "href": "grounds-for-mandatory",
+          "id": "breach-of-tax"
+      }
+  ]
+%}
+
+{% set grounds_for_discretionary =
+  [
+      {
+          "longTitle": "Please confirm whether, within the past 3 years, your organisation or any of your partner organisations:",
+          "shortTitle": "Bankruptcy or insolvency",
+          "bullets": [
+              "has been made bankrupt or the subject of insolvency or winding-up proceedings"
+          ],
+          "name": "bankruptcy",
+          "href": "grounds-for-discretionary",
+          "id": "bankruptcy"
+      },
+      {
+          "longTitle": "Please confirm whether your organisation or any of your partner organisations is in:",
+          "shortTitle": "Voluntary administration, compulsory winding up or receivership",
+          "bullets": [
+              "voluntary administration or company voluntary arrangement",
+              "compulsory winding up",
+              "receivership",
+              "composition with creditors"
+          ],
+          "name": "voluntary-administration",
+          "href": "grounds-for-discretionary",
+          "id": "voluntary-administration"
+      },
+      {
+          "longTitle": "Please confirm whether any of your organisation’s tax returns, submitted on or after 1 October 2012, have:",
+          "shortTitle": "Mitigating factors for discretionary exclusion (10 to 12)",
+          "bullets": [
+              "been found to be incorrect as of 1 April 2013",
+              "given rise to a criminal conviction for tax-related offences which is unspent, or to a civil penalty for fraud or evasion"
+          ],
+          "name": "mitigating-factors-exclusion-1",
+          "href": "grounds-for-discretionary",
+          "id": "mitigating-factors-exclusion-1"
+      },
+      {
+          "longTitle": "Please confirm whether any of your organisation’s tax returns, submitted on or after 1 October 2012, have been found to be incorrect on or after 1 April 2013 because:",
+          "shortTitle": "If a tax return was incorrect",
+          "bullets": [
+              "HMRC successfully challenged it under the General Anti-Abuse Rule (GAAR) or Halifax abuse principle",
+              "a tax authority (in a jurisdiction in which your organisation is established) successfully challenging it under any tax rules or legislation that have an effect equivalent or similar to the GAAR or Halifax abuse principle",
+              "an avoidance scheme that your organisation was involved with failed and was, or should have been, notified under the Disclosure of Tax Avoidance Scheme (DOTAS) or equivalent"
+          ],
+          "name": "tax-return-incorrect",
+          "href": "grounds-for-discretionary",
+          "id": "tax-return-incorrect"
+      },
+      {
+          "longTitle": "If you responded ‘yes’ to either question 14 or 15, please provide details of any mitigating factors that you think should be taken into consideration.",
+          "shortTitle": "Mitigating factors for tax returns",
+          "name": "mitigating-factors-tax",
+          "href": "grounds-for-discretionary",
+          "id": "mitigating-factors-tax"
+      },
+      {
+          "longTitle": "Has your organisation had any contract for the delivery of services withdrawn within the last 3 financial years?",
+          "shortTitle": "Contracts withdrawn from you",
+          "name": "contracts-withdrawn",
+          "href": "grounds-for-discretionary",
+          "id": "contracts-withdrawn"
+      },
+      {
+          "longTitle": "Has your organisation withdrawn from a contract for the delivery of services within the last 3 years?",
+          "shortTitle": "Withdrawn from contracts",
+          "name": "withdrawn-from-contracts",
+          "href": "grounds-for-discretionary",
+          "id": "withdrawn-from-contracts"
+      },
+      {
+          "longTitle": "If you responded ‘yes’ to either question 17 or 18, please provide details of any mitigating factors that you think should be taken into consideration.",
+          "shortTitle": "Mitigating factors for contract withdrawal",
+          "name": "mitigating-factors-withdrawn",
+          "href": "grounds-for-discretionary",
+          "id": "mitigating-factors-withdrawn"
+      },
+      {
+          "longTitle": "Has any director or senior responsible person of your organisation been removed from the Charities Commission or appear on the Register of Removed Trustees?",
+          "shortTitle": "Register of Removed Trustees",
+          "name": "removed-trustees",
+          "href": "grounds-for-discretionary",
+          "id": "removed-trustees"
+      },
+      {
+          "longTitle": "Has your organisation been removed from any of the following registers?",
+          "shortTitle": "Company removed from registers",
+          "bullets": [
+              "Education and Skills Funding Agency’s register of training organisations",
+              "Ofqual’s register",
+              "Other professional or trade registers"
+          ],
+          "name": "company-removed",
+          "href": "grounds-for-discretionary",
+          "id": "company-removed"
+      },
+      {
+          "longTitle": "Has your organisation received direction or sanctions from any of the following?",
+          "shortTitle": "Direction and sanctions",
+          "bullets": [
+              "Ofqual; The QAA",
+              "Awarding organisations",
+              "Other similar bodies"
+          ],
+          "name": "sanctions",
+          "href": "grounds-for-discretionary",
+          "id": "sanctions"
+      },
+      {
+          "longTitle": "Has your organisation ever had to repay public money?",
+          "shortTitle": "Repaying public money",
+          "name": "public-money",
+          "href": "grounds-for-discretionary",
+          "id": "public-money"
+      },
+      {
+          "longTitle": "Have any directors, shareholders, senior employees or someone that has powers of representation, decision or control of your organisation had any of the following?",
+          "shortTitle": "Public bodies",
+          "bullets": [
+              "Failure to repay funding due to any public body",
+              "Early termination of a contract with a public body",
+              "Early withdrawal from a contract with a public body"
+          ],
+          "name": "public-bodies",
+          "href": "grounds-for-discretionary",
+          "id": "public-bodies"
+      },
+      {
+          "longTitle": "Does your organisation have any outstanding or ongoing legal disputes that could prevent you from conducting end-point assessments?",
+          "shortTitle": "Legal disputes",
+          "name": "legal-disputes",
+          "href": "grounds-for-discretionary",
+          "id": "legal-disputes"
+      },
+      {
+          "longTitle": "If you responded ‘yes’ to either question 20 to 24, please provide details of any mitigating factors that you think should be taken into consideration.",
+          "shortTitle": "Mitigating factors for discretionary exclusion (20 to 25)",
+          "name": "mitigating-factors-exclusion-2",
+          "href": "grounds-for-discretionary",
+          "id": "mitigating-factors-exclusion-2"
+      }
+  ]
+%}
+
+{% set application_accuracy =
+  [
+      {
+          "longTitle": "Are all the answers in your declaration truthful? False information may result in:",
+          "shortTitle": "Declaration accuracy",
+          "bullets": [
+              "exclusion from this and future exercises",
+              "the removal from the register of end-point assessment organisations",
+              "the withdrawal of contracts with employers",
+              "civil or criminal proceedings"
+          ],
+          "name": "accuracy",
+          "href": "application-accuracy",
+          "id": "accuracy"
+      },
+      {
+          "longTitle": "Do you agree to inform the Education and Skills Funding Agency as soon as possible if there are any changes to the information you’re providing in this declaration?",
+          "shortTitle": "Changes to information",
+          "name": "changes-to-information",
+          "href": "application-accuracy",
+          "id": "changes-to-information"
+      },
+      {
+          "longTitle": "Will all the applications to deliver end-point assessments for standards be accurate and true representations?",
+          "shortTitle": "End-point assessments description accuracy",
+          "name": "description-accuracy",
+          "href": "application-accuracy",
+          "id": "description-accuracy"
+      },
+      {
+          "longTitle": "Do you accept that the information you provide cannot be changed after you’ve submitted the application?",
+          "shortTitle": "Information changes",
+          "name": "information-changes",
+          "href": "application-accuracy",
+          "id": "information-changes"
+      },
+      {
+          "longTitle": "Do you accept that the Education and Skills Funding Agency may use information it already holds, obtains from other government bodies or which is already in the public domain to validate part or all of any of your answers? The information obtained may be shared with employers to assist them in their selection process.",
+          "shortTitle": "Use of other information",
+          "name": "use-of-information",
+          "href": "application-accuracy",
+          "id": "use-of-information"
+      },
+      {
+          "longTitle": "Are you happy your company details will be added to the register of end-point assessment organisations if your application is successful?",
+          "shortTitle": "Details on register",
+          "name": "details",
+          "href": "application-accuracy",
+          "id": "details"
+      }
+  ]
+%}
+
+{% set contact_details =
+  [
+      {
+          "longTitle": "Who is the primary contact for the application?",
+          "shortTitle": "Primary contact name",
+          "name": "primary-name",
+          "href": "contact-details",
+          "id": "primary-name"
+      },
+      {
+          "longTitle": "What is the primary contact’s email address?",
+          "shortTitle": "Primary contact email",
+          "name": "primary-email",
+          "href": "contact-details",
+          "id": "primary-email"
+      },
+      {
+          "longTitle": "If your application is successful, what contact name should appear on the contract notice?",
+          "shortTitle": "Contract notice contact name",
+          "name": "contract-notice",
+          "href": "contact-details",
+          "id": "contract-notice"
+      }
+  ]
+%}
+
+{% set financials =
+  [
+      {
+        "longTitle": "Does your organisation have an annual turnover in excess of £75m and ESFA funding is less than 5% of your annual turnover?",
+        "shortTitle": "Financial statements",
+        "name": "financial-statements",
+        "id": "financial-statements",
+        "next_href": "financial-year-end-date",
+        "href": "financial-questions/financial-statements"
+      },
+      {
+        "longTitle": "End date of the financial statements you’re submitting",
+        "shortTitle": "Financial year end date",
+        "name": "financial-year-end-date",
+        "id": "financial-year-end-date",
+        "next_href": "months-covered-by-financials",
+        "href": "financial-questions/financial-year-end-date"
+      },
+      {
+        "longTitle": "How many months do your financial statements or accounts cover?",
+        "shortTitle": "Months covered by financials",
+        "name": "months-covered-by-financials",
+        "id": "months-covered-by-financials",
+        "next_href": "audited-financial-statements",
+        "href": "financial-questions/months-covered-by-financials"
+      },
+      {
+        "longTitle": "Have the financial statements been audited?",
+        "shortTitle": "Audited financial statements",
+        "name": "audited-financial-statements",
+        "id": "audited-financial-statements",
+        "next_href": "turnover",
+        "href": "financial-questions/audited-financial-statements"
+      },
+      {
+        "longTitle": "Total turnover",
+        "shortTitle": "Turnover",
+        "name": "turnover",
+        "id": "turnover",
+        "next_href": "depreciation-and-amortisation",
+        "href": "financial-questions/turnover"
+      },
+      {
+        "longTitle": "Combined depreciation and amortisation charges for year",
+        "shortTitle": "Depreciation and amortisation charges",
+        "name": "depreciation-and-amortisation",
+        "id": "depreciation-and-amortisation",
+        "next_href": "profit-and-loss",
+        "href": "financial-questions/depreciation-and-amortisation"
+      },
+      {
+        "longTitle": "Profit and loss after tax",
+        "shortTitle": "Profit and loss",
+        "name": "profit-and-loss",
+        "id": "profit-and-loss",
+        "next_href": "dividends",
+        "href": "financial-questions/profit-and-loss"
+      },
+      {
+        "longTitle": "Dividends paid in year",
+        "shortTitle": "Dividends",
+        "name": "dividends",
+        "id": "dividends",
+        "next_href": "assets",
+        "href": "financial-questions/dividends"
+      },
+      {
+        "longTitle": "Total current assets",
+        "shortTitle": "Assets",
+        "name": "assets",
+        "id": "assets",
+        "next_href": "liabilities",
+        "href": "financial-questions/assets"
+      },
+      {
+        "longTitle": "Total current liabilities",
+        "shortTitle": "Liabilities",
+        "name": "liabilities",
+        "id": "liabilities",
+        "next_href": "borrowings",
+        "href": "financial-questions/liabilities"
+      },
+      {
+        "longTitle": "Total borrowings",
+        "shortTitle": "Borrowings",
+        "name": "borrowings",
+        "id": "borrowings",
+        "next_href": "shareholders-assets",
+        "href": "financial-questions/borrowings"
+      },
+      {
+        "longTitle": "Shareholders funds/net assets",
+        "shortTitle": "Shareholders assets",
+        "name": "shareholders-assets",
+        "id": "shareholders-assets",
+        "next_href": "intangible-assets",
+        "href": "financial-questions/shareholders-assets"
+      },
+      {
+        "longTitle": "Intangible assets",
+        "shortTitle": "Intangible assets",
+        "name": "intangible-assets",
+        "id": "intangible-assets",
+        "next_href": "parental-guarantee",
+        "href": "financial-questions/intangible-assets"
+      },
+      {
+        "longTitle": "Does your organisation have a parental guarantee?",
+        "shortTitle": "Parental guarantee",
+        "name": "parental-guarantee",
+        "id": "parental-guarantee",
+        "next_href": "../financial-health_overview",
+        "href": "financial-questions/parental-guarantee"
+      }
+  ]
+%}
+
+
+{% set complete_standard =
+  [
+      {
+        "longTitle": data['standard-name'] + " assessment plan",
+        "shortTitle": data['standard-name'],
+        "name": "complete_standard_name",
+        "id": "complete_standard_name",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/standard-name"
+      }
+  ]
+%}
+
+{% set complete_required_docs =
+  [
+      {
+        "longTitle": "Required documentation",
+        "shortTitle": "Internal audit policies and processes",
+        "name": "complete_internal-audit-policies-and-processes",
+        "id": "complete_internal-audit-policies-and-processes",
+        "next_href": "ico-registration",
+        "href": "complete-questions/internal-audit-policies-and-processes"
+      },
+      {
+        "longTitle": "Are you registered with the <a href=\"#\">Information Commissioner’s Office (link opens in a new tab) [www.ico.gov.uk]?</a>",
+        "shortTitle": "ICO registration",
+        "name": "complete_ico-registration",
+        "id": "complete_ico-registration",
+        "next_href": "insurance",
+        "href": "complete-questions/ico-registration"
+      },
+      {
+        "longTitle": "Does your organisation have the appropriate insurance?",
+        "shortTitle": "Insurance",
+        "name": "complete_insurance",
+        "id": "complete_insurance",
+        "next_href": "safeguarding-policy",
+        "href": "complete-questions/insurance"
+      },
+      {
+        "longTitle": "Do you have a safeguarding policy?",
+        "shortTitle": "Safeguarding policy",
+        "name": "complete_safeguarding-policy",
+        "id": "complete_safeguarding-policy",
+        "next_href": "prevent-agenda",
+        "href": "complete-questions/safeguarding-policy"
+      },
+      {
+        "longTitle": "Do you have policies and practices in place that comply with the Prevent Agenda?",
+        "shortTitle": "The Prevent Agenda",
+        "name": "complete_prevent-agenda",
+        "id": "complete_prevent-agenda",
+        "next_href": "best-practice",
+        "href": "complete-questions/prevent-agenda"
+      },
+      {
+        "longTitle": "Are you a member of any professional organisations that represent the development of best practice and skills?",
+        "shortTitle": "Best practice and skills",
+        "name": "complete_best-practice-skills",
+        "id": "complete_best-practice-skills",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/best-practice"
+      }
+  ]
+
+
+%}
+
+{% set complete_capacity_capability =
+  [
+      {
+        "longTitle": "Will you deliver end-point assessments anywhere in England?",
+        "shortTitle": "Where you deliver end-point assessments",
+        "name": "complete_where-deliver",
+        "id": "complete_where-deliver",
+        "next_href": "occupational-competence",
+        "href": "complete-questions/where-deliver"
+      },
+      {
+        "longTitle": "Your occupational competence",
+        "shortTitle": "Occupational competence",
+        "name": "complete_occupational-competence",
+        "id": "complete_occupational-competence",
+        "next_href": "process",
+        "href": "complete-questions/occupational-competence"
+      },
+      {
+        "longTitle": "Your complete end-point assessment process",
+        "shortTitle": "Providing a complete end-point assessment process",
+        "name": "complete_process",
+        "id": "complete_process",
+        "next_href": "assessment-types",
+        "href": "complete-questions/process"
+      },
+      {
+        "longTitle": "What types of end-point assessment you will deliver?",
+        "shortTitle": "End-point assessment types",
+        "name": "complete_assessment-types",
+        "id": "complete_assessment-types",
+        "next_href": "your-staff",
+        "href": "complete-questions/assessment-types"
+      },
+      {
+        "longTitle": "Your staff",
+        "shortTitle": "Your staff",
+        "name": "complete_your-staff",
+        "id": "complete_your-staff",
+        "next_href": "quality",
+        "href": "complete-questions/your-staff"
+      },
+      {
+        "longTitle": "Your internal quality assurance and management procedures ",
+        "shortTitle": "Quality assurance and management procedures",
+        "name": "complete_quality",
+        "id": "complete_quality",
+        "next_href": "delivery-model",
+        "href": "complete-questions/quality"
+      },
+      {
+        "longTitle": "Your end-point assessment delivery model",
+        "shortTitle": "Your delivery model",
+        "name": "complete_delivery-model",
+        "id": "complete_delivery-model",
+        "next_href": "../complete_overview",
+        "href": "complete-questions/delivery-model"
+      }
+  ]
+%}

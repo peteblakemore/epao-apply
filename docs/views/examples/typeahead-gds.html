@@ -1,0 +1,95 @@
+{% extends "./layout.html" %}
+
+{% block page_title %}
+{{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+	{% include '../frontend-js/accessible-autocomplete.min.js' %}
+	{% include '../frontend-js/eas.js' %}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- {% include './includes/_header-nav.html' %} -->
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				Add a new funding claim (EAS)
+			</h1>
+
+			<p>
+				Use this form to add a new claim for your organisation's Earnings adjustment statement.
+			</p>
+
+			{% set claimId = ((data['claim-count'] | int) + 1) | int %}
+
+			<form method="post">
+				<div class="form-group">
+					<label class="form-label form-label-bold">
+						Search for a claim category
+					</label>
+
+					{% set categories = ["Apprenticeships for starts before 1 May 2017", "Apprenticeships for starts on or after 1 May 2017","Apprenticeships for starts from 1 May 2017 (non-procured, non-levy contracts)","Apprenticeships funded under procured contracts for non-levy contracts","16 to 18 traineeships (not funded through a 16 to 19 contract)","Adult education – traineeships and ‘other learning’ (non-procured provision)", "Adult education – traineeships and ‘other learning’ (procured provision from 1 November 2017)","Advanced Learner Loans"] %}
+
+					<div class="autocomplete-wrapper">
+						<select class="autocomplete-element" name="eas-claim-{{claimId}}-category" id="eas-claim-{{loop.index}}-category">
+							<option value="">Select a category</option>
+							{% for category in categories %}
+							<option {{"selected" if data['eas-claim-'+i+'-category'] == category}}>{{category}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label form-label-bold">
+						Which month is this claim for?
+					</label>
+
+					{% set months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+					<select class="form-control form-control-2-4" name="eas-claim-{{claimId}}-month">
+						{% for month in months %}
+						<option value="{{month}}" {{"selected" if data['eas-claim-'+i+'-month'] == month}}>{{month}}</option>
+						{% endfor %}
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label form-label-bold">
+						Claim amount (rounded to the nearest whole pound)
+					</label>
+					<div class="form-hint">
+						For example, 471.00 or 471
+					</div>
+
+					<div class="govuk-currency-input__inner">
+						<span class="govuk-currency-input__inner__unit">£</span>
+						<input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="eas-claim-{{claimId}}-value" data-non-numeric="" pattern="[0-9]\d*(\.\d+)?" type="number" value="{{data['eas-claim-'+loop.index+'-value']}}">
+					</div>
+				</div>
+
+				<input type="hidden" value="{{claimId}}" name="claim-count">
+				<input type="submit" class="button" value="Save and continue" name="add-claim">
+				<hr>
+				<p>
+					{% set claimCount = ((claimId | int) - 1) | int %}
+					or <a href="/{{version}}/eas/statement?claim-count={{claimCount}}">cancel</a> and go back
+				</p>
+			</form>
+		</div>
+
+		<div class="column-one-third">
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}

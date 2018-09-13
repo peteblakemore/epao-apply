@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO application questions
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/apply_overview",
+    text: "Back to application overview"
+  }) }}
+
+{% endblock %}
+
+{% import "../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="grid-grid-row">
+  <div class="govuk-grid-column-two-thirds app-column-minimum">
+    <h1 class="govuk-heading-l">Your application to deliver end-point assessments for {{ data['standard-name'] }} overview</h1>
+    <p>You must answer all the questions.</p>
+
+    <ol class="app-task-list">
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">1.</span> Assessment plan</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.complete_standard %}
+            <li class="app-task-list__item">
+              <a aria-describedby="standard-name" class="app-task-list__task-name" href="complete-questions/standard-name">{{data['standard-name']}}</a>
+              {% if data[question.name] %}
+                {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">2.</span> Required documentation</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.complete_required_docs %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">3.</span> Capacity and capability</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.complete_capacity_capability %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ol>
+    <p class="govuk-body"><a class="govuk-link" href="../apply_overview">Return to application overview</a></p>
+  </div>
+  <div class="govuk-clearfix"></div>
+</div>
+{% endblock %}

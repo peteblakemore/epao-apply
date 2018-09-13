@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="assessment-types" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="quality" method="post">
+
+          <div class="govuk-form-group">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Your staff
+              </h1>
+            </legend>
+
+            <input class="govuk-input govuk-input--width-20" id="complete_your-staff" name="complete_your-staff" value="{{ data['complete_your-staff'] }}" type="text">
+
+          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}

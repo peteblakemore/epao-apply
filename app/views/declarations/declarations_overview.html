@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EPAO application questions
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "/apply_overview",
+    text: "Back to application overview"
+  }) }}
+
+{% endblock %}
+
+{% import "../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="grid-grid-row">
+  <div class="govuk-grid-column-two-thirds app-column-minimum">
+    <h1 class="govuk-heading-l">Your declaration overview</h1>
+    <p>You must answer all the questions to make your declaration.</p>
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">1.</span> What it means to be on the register of end-point assessment organisations</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.what_it_means %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">2.</span> Grounds for mandatory exclusion</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.grounds_for_mandatory %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">3.</span> Grounds for discretionary exclusion</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.grounds_for_discretionary %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">4.</span> Application accuracy</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.application_accuracy %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section"><span class="app-task-list__section-number">5.</span> Contact details</h2>
+        <ul class="app-task-list__items">
+          {% for question in financialData.contact_details %}
+          <li class="app-task-list__item">
+            <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="{{question.href}}">{{question.shortTitle}}</a>
+            {% if data[question.name] %}
+              {{ govukTag({ attributes: { id: "eligibility-completed" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ol>
+    <p class="govuk-body"><a class="govuk-link" href="../apply_overview">Return to application overview</a></p>
+  </div>
+  <div class="govuk-clearfix"></div>
+</div>
+{% endblock %}

@@ -30,14 +30,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/eligibility_confirm-organisation" method="post">
+    <form action="/application_company-details#ukprn" method="post">
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="ukprn">
             What’s your UK Provider Registration Number (UKPRN)?
           </label>
         </h1>
-        <input class="govuk-input govuk-input--width-20" id="ukprn" name="ukprn" type="text">
+        <input class="govuk-input govuk-input--width-20" id="ukprn" name="ukprn" value="{{ data['ukprn'] }}" type="text">
       </div>
       <button type="submit" class="govuk-button">
         Save and return

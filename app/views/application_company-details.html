@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-    href: "/apply_overview",
+    href: "apply_overview",
     text: "Back to application overview"
   }) }}
 {% endblock %}
@@ -26,49 +26,49 @@
 
       <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers__questions-long app-check-your-answers--spacer">
 
-        <div class="app-check-your-answers__contents">
+        <div id="contact-name" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Contact name
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact name]
+            {{ data['contact-name'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="/change-details/change-contact-name">
               Change<span class="govuk-visually-hidden"> contact name</span>
             </a>
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="contact-email" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Contact email
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact email]
+            {{ data['contact-email'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="/change-details/change-contact-email">
               Change<span class="govuk-visually-hidden"> contact email</span>
             </a>
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="contact-phone" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Contact phone number
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Contact phone number]
+            {{ data['contact-phone'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="/change-details/change-contact-phone">
               Change<span class="govuk-visually-hidden"> contact phone number</span>
             </a>
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        {# <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Summary
           </dt>
@@ -78,7 +78,7 @@
           <dd class="app-check-your-answers__change">
             <span>Optional</span>
           </dd>
-        </div>
+        </div> #}
       </dl>
 
 
@@ -88,116 +88,214 @@
       </h2>
 
       <dl class="app-check-your-answers app-check-your-answers--short app-check-your-answers--spacer">
-        <div class="app-check-your-answers__contents">
+        <div id="company-name" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Registered company name
           </dt>
           <dd class="app-check-your-answers__answer">
-            [Registered company name]
+            {{ data['company-name'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="/change-details/change-company-name">
               Change<span class="govuk-visually-hidden"> registered company name</span>
             </a>
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="registered-address" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Registered address
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/company-address" class="govuk-link">Answer required</a>
+            {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
+              <p class="govuk-body">
+                {{ data['building-street'] }}<br>
+                {{ data['town-city'] }}<br>
+                {{ data['postcode'] }}<br>
+                {{ data['country'] }}
+              </p>
+            {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
+              <a href="/company-details/company-address" class="govuk-link">
+                Change
+              </a>
+            {% else %}
+              <a href="/company-details/company-address" class="govuk-link">
+                Answer required
+              </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="ukprn" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             UK Provider Registration Number (UKPRN)
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/ukprn" class="govuk-link">Answer required</a>
+              {% if data['ukprn'] %}
+                <p class="govuk-body">
+                  {{ data['ukprn'] }}
+                </p>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['ukprn'] %}
+            <a href="/company-details/ukprn" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+              <a href="/company-details/ukprn" class="govuk-link">
+                Answer required
+              </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="company-classification" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Company classification
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/company-classification" class="govuk-link">Answer required</a>
+              {% if data['company-classification'] %}
+                <p class="govuk-body">
+                {{ data['company-classification'] }}
+                </p>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['company-classification'] %}
+            <a href="/company-details/company-classification" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+                <a href="/company-details/company-classification" class="govuk-link">
+                Answer required
+                </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="organisation-type" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Organisation type
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/organisation-type" class="govuk-link">Answer required</a>
+              {% if data['organisation-type'] %}
+                <p class="govuk-body">
+                {{ data['organisation-type'] }}
+                </p>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['organisation-type'] %}
+            <a href="/company-details/organisation-type" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+                <a href="/company-details/organisation-type" class="govuk-link">
+                Answer required
+                </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+
+        <div id="group-companies" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Part of a group of companies?
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/group-companies" class="govuk-link">Answer required</a>
+              {% if data['group-companies'] %}
+                <p class="govuk-body">
+                {{ data['group-companies'] }}
+                </p>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['group-companies'] %}
+            <a href="/company-details/group-companies" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+                <a href="/company-details/group-companies" class="govuk-link">
+                Answer required
+                </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+        <div id="resonsible-name" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Overall executive management
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/executive-management" class="govuk-link">Answer required</a>
+              {% if data['responsible-name'] %}
+                <p class="govuk-body">
+                {{ data['responsible-name'] }}
+                </p>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['responsible-name'] %}
+            <a href="/company-details/executive-management" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+                <a href="/company-details/executive-management" class="govuk-link">
+                Answer required
+                </a>
+            {% endif %}
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
+
+        <div id="director-name" class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Directors
           </dt>
           <dd class="app-check-your-answers__answer">
-            <a href="/company-details/directors" class="govuk-link">Answer required</a>
+              {% if data['director-name'] %}
+                <p class="govuk-body">
+                {{ data['director-name'] }}
+                </p>
+                </a>
+              {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-
+            {% if data['director-name'] %}
+            <a href="/company-details/directors" class="govuk-link">
+              Change
+            </a>
+            {% else %}
+                <a href="/company-details/directors" class="govuk-link">
+                Answer required
+              </a>
+            {% endif %}
           </dd>
         </div>
 
       </dl>
+
+      {% if data['director-name'] and data['responsible-name'] and data['group-companies']
+      and data['organisation-type'] and data['company-classification'] and data['ukprn'] and data['company-classification'] %}
+      <p class="govuk-body">You have completed all of the Company details questions. Select save and return to continue with your application.</p>
+      <a href="/apply_overview" class="govuk-button">
+        Save and return
+      </a>
+      {% else %}
+        <p class="govuk-body">You must complete your company details to make an application.</p>
+        <a href="/apply_overview" class="govuk-button">
+          Return to overview
+        </a>
+      {% endif %}
+
+
     </div>
   </div>
 
-<p class="govuk-body">You must complete your company details to make an application.</p>
-<p class="govuk-body"><a href="#" class="govuk-link">Return to your application</a></p>
 
-<p class="govuk-body"></p>
-
-Once you confirm your information you’ll need to contact support to correct a mistake in your:
-UKPRN
-organisation type
 
 
     </div>
