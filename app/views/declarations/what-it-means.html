@@ -28,7 +28,7 @@
                         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                 <p class="govuk-body">
-                                    {{question.longTitle}}
+                                    {{question.longTitle | safe}}
                                 </p>
                             </legend>
                             <!-- <span id="{{question.name}}-hint" class="govuk-hint">
