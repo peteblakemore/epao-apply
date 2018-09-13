@@ -6,9 +6,10 @@ if (window.console && window.console.info) {
 }
 
 $(document).ready(function() {
-  $('#eligibility-standard').autocomplete({
+  $('.js-prerequisites').hide();
+  $('#standard-name').autocomplete({
     source: function(request, response) {
-      $.getJSON('/public/javascripts/data.json', function(data) {
+      $.getJSON('/public/javascripts/standards.json', function(data) {
         var array = $.map(data, function(standard) {
           const { value, name, requirements } = standard;
           return {
@@ -17,7 +18,7 @@ $(document).ready(function() {
             requirements
           };
         });
-        // Manually filter as we're not using a server to filter resulsts
+        // Manually filter as we're not using a server to filter results
         response($.ui.autocomplete.filter(array, request.term));
       });
     },
@@ -28,17 +29,18 @@ $(document).ready(function() {
         ui.item.requirements.map(function(requirement, index) {
           $('.js-prerequisites ul').append('<li>' + requirement + '</li>');
         });
-        $('.js-prerequisites').removeClass('js-hidden');
+        $('.js-prerequisites').show();
       } else {
         $('.js-prerequisites ul').empty();
-        $('.js-prerequisites').addClass('js-hidden');
+        $('.js-prerequisites').hide();
       }
       // Clear input on select.. if we do this
       // (or need to carry any other data accross) we'll need to user hidden form inputs
       // $(this).val('');
       // return false;
     }
-    
+  });
+
   if (GOVUK.cookie('reviewed')) {
     $('.js-send-for-review-clicked').show();
     $('.js-send-for-review-not-clicked').hide();
