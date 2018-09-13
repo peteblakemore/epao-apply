@@ -28,5 +28,22 @@ $(document).ready(function() {
       .clone()
       .insertAfter('.js-director-markup')
       .removeClass('js-director-markup');
+
+    // var $clone = $('.js-director-markup:last').clone();
+    // $clone.find('input');
   });
 });
+
+// $clone = $('.item-name:last').clone();
+// for (i = 1; i < 999; i++) {
+//   if (
+//     $('.item-name select[id=id_form-' + i + '-name]').attr('id') !=
+//     'id_form-' + i + '-name'
+//   ) {
+//     $clone.find('select').attr('id', 'id_form-' + i + '-name');
+//     $clone.find('select').attr('name', 'form-' + i + '-name');
+//     $clone.find('label').attr('for', 'id_form-' + i + '-name');
+//     break;
+//   }
+// }
+// $clone.insertAfter('.item-name:last');
