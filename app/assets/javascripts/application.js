@@ -50,9 +50,9 @@ $(document).ready(function() {
   }
 
   $('.js-review-passed').on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     GOVUK.cookie('reviewed', true, { days: 30 });
-    $(this).hide();
+    // $(this).hide();
     $('.js-send-for-review-clicked').show();
     $('.js-send-for-review-not-clicked').hide();
   });

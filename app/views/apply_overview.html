@@ -231,6 +231,23 @@
         %}
           <div class="js-send-for-review-not-clicked">
             <li class="browse-list-item">
+              <h2 class="govuk-heading-m">Application ready for review</h2>
+              <p>You have completed the first part of the application process. You can't make changes to your application once it has been sent for review.</p>
+              <a href="/application-complete" class="govuk-button js-review-passed">Send for review</a>
+            </li>
+          </div>
+          <div class="js-send-for-review-clicked">
+            <li class="browse-list-item">
+              <h2 class="govuk-heading-m">
+                <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
+              </h2>
+              <div class="browse-list-item-status-quiet">
+                <p class="browse-list-item-status-title">You must complete this section</p>
+              </div>
+            </li>
+          </div>
+          {# <div class="js-send-for-review-not-clicked">
+            <li class="browse-list-item">
               <div class="info-summary">
                   <h3 class="govuk-heading-m">
                     Application sent for review
@@ -245,7 +262,7 @@
               <p class="instruction-list-item-box inactive">Can't start yet</p>
             </li>
           </div>
-          <div class="js-send-for-review-clicked js-hidden">
+          <div class="js-send-for-review-clicked">
             <li class="browse-list-item">
               <h2 class="govuk-heading-m">
                 <a class="browse-list-item-link" href="complete-application/complete_overview">4. Add, edit and complete application to assess {{ data['standard-name'] }}</a>
@@ -254,13 +271,13 @@
                 <p class="browse-list-item-status-title">You must complete this section</p>
               </div>
             </li>
-          </div>
+          </div> #}
 
         {% else %}
-          <li class="browse-list-item">
+          {# <li class="browse-list-item">
             <h2 class="govuk-heading-m">4. Add, edit and complete application to assess {{ data['standard-name'] }}</h2>
             <p class="instruction-list-item-box inactive">Can't start yet</p>
-          </li>
+          </li> #}
         {% endif %}
       </ul>
 
