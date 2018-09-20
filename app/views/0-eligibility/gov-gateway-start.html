@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create an EPAO account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "confirm-identity",
+    text: "Back"
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Set up your account</h1>
+
+    <p class="govuk-body">To set up your account we need you to sign in to Government Gateway.</p>
+
+    <p class="govuk-body">To do this you'll need:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the Government Gateway login details for your PAYE schemes (ask your payroll department if you don't have access to this)</li>
+    </ul>
+
+    <a href="setup" role="button" class="govuk-button">
+      Continue
+    </a>
+
+    <h2 class="govuk-heading-s">If your organisation already has an account</h2>
+    <p class="govuk-body">If someone in your oganisation has already created an account, you'll need to ask them to invite you to the account.</p>
+
+
+
+  </div>
+
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+{% endblock %}

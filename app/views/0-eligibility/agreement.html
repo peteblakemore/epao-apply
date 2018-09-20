@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create an EPAO account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "search-org-results",
+    text: "Back"
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Allowing your tax details to be used</h1>
+        <p class="govuk-body">
+          When you enter your Government Gateway details you'll be asked to 'grant authority' to allow your tax details to be used
+        </p>
+        <p class="govuk-body">
+          If you pay the apprenticeship levy, this means you allow HMRC to send the Education and Skills Funding Agency details of the levy that you've paid, so that the correct apprenticeship funds can be seen in your account.
+        </p>
+
+        <h2 class="govuk-heading-m">By continuing you agree to the following:</h2>
+        <div class="govuk-inset-text">
+          <p class="govuk-body">I have authority to add PAYE schemes to this account.</p>
+
+          <p class="govuk-body">I understand that all account users will be able to see funds from any PAYE schemes I add.</p>
+
+          <p class="govuk-body">I'll only add PAYE schemes that are used by my organisation or used by a <a href="#" class="govuk-link">connected organisation</a></p>
+        </div>
+
+        <a href="#" class="govuk-button" role="button">Agree and continue</a>
+
+      </div>
+    </div>
+{% endblock %}

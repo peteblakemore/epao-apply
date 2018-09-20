@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create an EPAO account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "setup",
+    text: "Back"
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="search-org-results">
+                Select your organisation
+              </label>
+              <span id="dob-hint" class="govuk-hint">
+                Or search again
+              </span>
+            </h1>
+            <input class="govuk-input govuk-input--width-20" id="search-org-results" name="search-org-results" type="text">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Search
+          </button>
+        </form>
+      </div>
+      </div>
+
+        <div class="grid-row search-results">
+          <aside>
+              <h2 class="heading-medium">Filter results</h2>
+              <form action="/accounts/organisations/search/results?searchTerm=Acme" method="POST">
+                  <div class="filter">
+                      <fieldset>
+                          <legend class="vh">Filter by organisation type</legend>
+                          <h3>Organisation type</h3>
+                          <label class="block-label selection-button-radio" for="company">
+                              <input id="company" type="radio" name="organisationType" value="CompaniesHouse"> Company
+                          </label>
+                          <label class="block-label selection-button-radio" for="charity">
+                              <input id="charity" type="radio" name="organisationType" value="Charities"> Charity
+                          </label>
+                          <label class="block-label selection-button-radio" for="publicSector">
+                              <input id="publicSector" type="radio" name="organisationType" value="PublicBodies"> Public sector
+                          </label>
+                          <label class="block-label selection-button-radio selected" for="all">
+                              <input id="all" type="radio" name="organisationType" value="" checked="&quot;checked&quot;"> Show all
+                          </label>
+                      </fieldset>
+                      <div class="form-group" id="apply-filter" style="display: none;">
+                          <button type="submit" class="button-secondary">Apply filter</button>
+                      </div>
+                  </div>
+
+              </form>
+          </aside>
+          <section class="results-list">
+
+
+                      <ol>
+                              <li>
+                                  <article>
+                                      <form action="/accounts/organisations/search/confirm" method="post">
+                                          <input type="hidden" name="DateOfInception" value="5/1/2007 12:00:00 AM">
+                                          <input type="hidden" name="ReferenceNumber" value="06232576">
+                                          <input type="hidden" name="Sector">
+                                          <input type="hidden" name="Type" value="CompaniesHouse">
+                                          <input type="hidden" name="Name" value="ACME  LTD.">
+                                          <input type="hidden" name="Address" value="76  Tabernacle Street, London, EC2A 4EA">
+                                          <button type="submit" class="heading-medium link-button">ACME  LTD.</button>
+                                      </form>
+
+                                      <dl class="inline">
+                                          <dt>Address</dt>
+                                          <dd>76  Tabernacle Street, London, EC2A 4EA</dd>
+                                          <dt>Type</dt>
+                                          <dd>Listed on Companies House</dd>
+                                      </dl>
+                                  </article>
+                              </li>
+                              <li>
+                                  <article>
+                                      <form action="/accounts/organisations/search/confirm" method="post">
+                                          <input type="hidden" name="DateOfInception" value="8/19/2016 12:00:00 AM">
+                                          <input type="hidden" name="ReferenceNumber" value="10338546">
+                                          <input type="hidden" name="Sector">
+                                          <input type="hidden" name="Type" value="CompaniesHouse">
+                                          <input type="hidden" name="Name" value="ACME &amp; I (UK) LTD">
+                                          <input type="hidden" name="Address" value="Victoria Mills # 17 9 Boyd Street, London, E1 1NH">
+                                          <button type="submit" class="heading-medium link-button">ACME &amp; I (UK) LTD</button>
+                                      </form>
+
+                                      <dl class="inline">
+                                          <dt>Address</dt>
+                                          <dd>Victoria Mills # 17 9 Boyd Street, London, E1 1NH</dd>
+                                          <dt>Type</dt>
+                                          <dd>Listed on Companies House</dd>
+                                      </dl>
+                                  </article>
+                              </li>
+                              <li>
+                                  <article>
+                                      <form action="/accounts/organisations/search/confirm" method="post">
+                                          <input type="hidden" name="DateOfInception" value="8/12/2005 12:00:00 AM">
+                                          <input type="hidden" name="ReferenceNumber" value="05534913">
+                                          <input type="hidden" name="Sector">
+                                          <input type="hidden" name="Type" value="CompaniesHouse">
+                                          <input type="hidden" name="Name" value="ACME (BRIGHTON) LTD.">
+                                          <input type="hidden" name="Address" value="91 Western Road, Brighton, BN1 2NW">
+                                          <button type="submit" class="heading-medium link-button">ACME (BRIGHTON) LTD.</button>
+                                      </form>
+
+                                      <dl class="inline">
+                                          <dt>Address</dt>
+                                          <dd>91 Western Road, Brighton, BN1 2NW</dd>
+                                          <dt>Type</dt>
+                                          <dd>Listed on Companies House</dd>
+                                      </dl>
+                                  </article>
+                              </li>
+                            </ol>
+                          <nav>
+                              <ul class="previous-next-navigation">
+                                                      <li class="next">
+                                          <a href="/accounts/organisations/search/results?searchTerm=Acme&amp;pageNumber=2">
+                                              Next page
+                                              <span class="detail">Page 2 of 3</span>
+                                          </a>
+                                      </li>
+                              </ul>
+                          </nav>
+                      </section>
+            </div>
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create an EPAO account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+  {{ govukBackLink({
+    href: "used-before",
+    text: "Back"
+  }) }}
+
+  {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Get set up as a user</h1>
+
+        <form action="confirm-identity" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="first-name">
+              First name
+            </label>
+            <input class="govuk-input" id="first-name" name="first-name" type="text" aria-describedby="first-name-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="last-name" name="last-name" type="text" aria-describedby="last-name-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="email">
+              Email
+            </label>
+            <span id="email-hint" class="govuk-hint">
+              We'll send you an email to confirm your identity.
+            </span>
+            <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="new-password">
+              Create a new password
+            </label>
+            <span id="email-hint" class="govuk-hint">
+              Password requires upper and lowercase letters, a number and at least 8 characters
+            </span>
+            <input class="govuk-input" id="new-password" name="new-password" type="text" aria-describedby="new-password-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="confirm-password">
+              Confirm password
+            </label>
+            <input class="govuk-input" id="confirm-password" name="confirm-password" type="text" aria-describedby="confirm-password-hint">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Set me up
+          </button>
+
+        </form>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="../3-financial-health_overview" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="financial-year-end-date">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does your organisation have an annual turnover in excess of £75m and ESFA funding is less than 5% of your annual turnover?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="financial-statements-1" name="financial-statements" type="radio" value="Yes" {{ checked('financial-statements','Yes') }}>
+              <label class="govuk-label govuk-radios__label" for="financial-statements-1">
+              Yes
+            </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="financial-statements-2" name="financial-statements" type="radio" value="No" {{ checked('financial-statements','No') }}>
+              <label class="govuk-label govuk-radios__label" for="financial-statements-2">
+              No
+            </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+    </form>
+    <p class="govuk-body"><a class="govuk-link" href="../3-financial-health_overview">Return to questions overview</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}
