@@ -1,146 +1,142 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Create an EPAO account
+    Create an EPAO account
 {% endblock %}
 
 {% block beforeContent %}
-  {% include 'includes/_phase-banner-alpha.html' %}
-  {{ govukBackLink({
-    href: "setup",
-    text: "Back"
-  }) }}
-
-  {% endblock %}
+    {% include 'includes/_phase-banner-alpha.html' %}
+        {{ govukBackLink({
+            href: "setup",
+            text: "Back"
+        })
+    }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
         <form action="/form-handler" method="post" novalidate>
-          <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="search-org-results">
-                Select your organisation
-              </label>
-              <span id="dob-hint" class="govuk-hint">
-                Or search again
-              </span>
-            </h1>
-            <input class="govuk-input govuk-input--width-20" id="search-org-results" name="search-org-results" type="text">
-          </div>
-
-          <button type="submit" class="govuk-button">
-            Search
-          </button>
-        </form>
-      </div>
-      </div>
-
-        <div class="grid-row search-results">
-          <aside>
-              <h2 class="heading-medium">Filter results</h2>
-              <form action="/accounts/organisations/search/results?searchTerm=Acme" method="POST">
-                  <div class="filter">
-                      <fieldset>
-                          <legend class="vh">Filter by organisation type</legend>
-                          <h3>Organisation type</h3>
-                          <label class="block-label selection-button-radio" for="company">
-                              <input id="company" type="radio" name="organisationType" value="CompaniesHouse"> Company
-                          </label>
-                          <label class="block-label selection-button-radio" for="charity">
-                              <input id="charity" type="radio" name="organisationType" value="Charities"> Charity
-                          </label>
-                          <label class="block-label selection-button-radio" for="publicSector">
-                              <input id="publicSector" type="radio" name="organisationType" value="PublicBodies"> Public sector
-                          </label>
-                          <label class="block-label selection-button-radio selected" for="all">
-                              <input id="all" type="radio" name="organisationType" value="" checked="&quot;checked&quot;"> Show all
-                          </label>
-                      </fieldset>
-                      <div class="form-group" id="apply-filter" style="display: none;">
-                          <button type="submit" class="button-secondary">Apply filter</button>
-                      </div>
-                  </div>
-
-              </form>
-          </aside>
-          <section class="results-list">
-
-
-                      <ol>
-                              <li>
-                                  <article>
-                                      <form action="/accounts/organisations/search/confirm" method="post">
-                                          <input type="hidden" name="DateOfInception" value="5/1/2007 12:00:00 AM">
-                                          <input type="hidden" name="ReferenceNumber" value="06232576">
-                                          <input type="hidden" name="Sector">
-                                          <input type="hidden" name="Type" value="CompaniesHouse">
-                                          <input type="hidden" name="Name" value="ACME  LTD.">
-                                          <input type="hidden" name="Address" value="76  Tabernacle Street, London, EC2A 4EA">
-                                          <button type="submit" class="heading-medium link-button">ACME  LTD.</button>
-                                      </form>
-
-                                      <dl class="inline">
-                                          <dt>Address</dt>
-                                          <dd>76  Tabernacle Street, London, EC2A 4EA</dd>
-                                          <dt>Type</dt>
-                                          <dd>Listed on Companies House</dd>
-                                      </dl>
-                                  </article>
-                              </li>
-                              <li>
-                                  <article>
-                                      <form action="/accounts/organisations/search/confirm" method="post">
-                                          <input type="hidden" name="DateOfInception" value="8/19/2016 12:00:00 AM">
-                                          <input type="hidden" name="ReferenceNumber" value="10338546">
-                                          <input type="hidden" name="Sector">
-                                          <input type="hidden" name="Type" value="CompaniesHouse">
-                                          <input type="hidden" name="Name" value="ACME &amp; I (UK) LTD">
-                                          <input type="hidden" name="Address" value="Victoria Mills # 17 9 Boyd Street, London, E1 1NH">
-                                          <button type="submit" class="heading-medium link-button">ACME &amp; I (UK) LTD</button>
-                                      </form>
-
-                                      <dl class="inline">
-                                          <dt>Address</dt>
-                                          <dd>Victoria Mills # 17 9 Boyd Street, London, E1 1NH</dd>
-                                          <dt>Type</dt>
-                                          <dd>Listed on Companies House</dd>
-                                      </dl>
-                                  </article>
-                              </li>
-                              <li>
-                                  <article>
-                                      <form action="/accounts/organisations/search/confirm" method="post">
-                                          <input type="hidden" name="DateOfInception" value="8/12/2005 12:00:00 AM">
-                                          <input type="hidden" name="ReferenceNumber" value="05534913">
-                                          <input type="hidden" name="Sector">
-                                          <input type="hidden" name="Type" value="CompaniesHouse">
-                                          <input type="hidden" name="Name" value="ACME (BRIGHTON) LTD.">
-                                          <input type="hidden" name="Address" value="91 Western Road, Brighton, BN1 2NW">
-                                          <button type="submit" class="heading-medium link-button">ACME (BRIGHTON) LTD.</button>
-                                      </form>
-
-                                      <dl class="inline">
-                                          <dt>Address</dt>
-                                          <dd>91 Western Road, Brighton, BN1 2NW</dd>
-                                          <dt>Type</dt>
-                                          <dd>Listed on Companies House</dd>
-                                      </dl>
-                                  </article>
-                              </li>
-                            </ol>
-                          <nav>
-                              <ul class="previous-next-navigation">
-                                                      <li class="next">
-                                          <a href="/accounts/organisations/search/results?searchTerm=Acme&amp;pageNumber=2">
-                                              Next page
-                                              <span class="detail">Page 2 of 3</span>
-                                          </a>
-                                      </li>
-                              </ul>
-                          </nav>
-                      </section>
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--xl" for="search-org-results">
+                        Select your organisation
+                    </label>
+                    <span class="govuk-hint">
+                        Or search again
+                    </span>
+                </h1>
+                <input class="govuk-input govuk-input--width-20" id="search-org-results" name="search-org-results" type="text">
             </div>
+
+            <button type="submit" class="govuk-button">
+                Search
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="govuk-grid-row search-results">
+    <div class="govuk-grid-column-one-third">
+        <aside>
+            <h2 class="govuk-heading-m">Filter results</h2>
+            <div class="filter">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-visually-hidden-focusable">Filter by organisation type</legend>
+                    <div class="filter-heading">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Organisation type</h3>
+                    </div>
+                    <div class="filter-body">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="filter-results-1" name="filter-results" type="radio"
+                                    value="company">
+                                <label class="govuk-label govuk-radios__label" for="filter-results-1">
+                                    Company
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="filter-results-2" name="filter-results" type="radio"
+                                    value="charity">
+                                <label class="govuk-label govuk-radios__label" for="filter-results-2">
+                                    Charity
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="filter-results-3" name="filter-results" type="radio"
+                                    value="public">
+                                <label class="govuk-label govuk-radios__label" for="filter-results-3">
+                                    Public
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="filter-results-4" name="filter-results" type="radio"
+                                    value="show-all">
+                                <label class="govuk-label govuk-radios__label" for="filter-results-4">
+                                    Show all
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group" id="apply-filter" style="display: none;">
+                    <button type="submit" class="button-secondary">Apply filter</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                            <a href="#" type="submit" class="govuk-link">ACME LTD.</a>
+                        </p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
+                            76 Tabernacle Street, London, EC2A 4EA</p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Type</span>
+                            Listed on Companies House</p>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                            <a href="#" type="submit" class="govuk-link">ACME &amp; I (UK) LTD</a>
+                        </p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
+                            Victoria Mills # 17 9 Boyd Street, London, E1 1NH</p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Type</span>
+                            Listed on Companies House</p>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                            <a href="#" type="submit" class="govuk-link">ACME (BRIGHTON) LTD.</a>
+                        </p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
+                            91 Western Road, Brighton, BN1 2NW</p>
+                        <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Type</span>
+                            Listed on Companies House</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <section class="results-list">
+            <nav>
+                <ul class="previous-next-navigation">
+                    <li class="next">
+                        <a href="/accounts/organisations/search/results?searchTerm=Acme&amp;pageNumber=2">
+                            Next page
+                            <span class="detail">Page 2 of 3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section> -->
+    </div>
+</div>
 
 
 {% endblock %}

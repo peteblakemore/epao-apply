@@ -48,3 +48,16 @@
 .browse-list-item-link {
   color: red;
 }
+
+.filter {
+  border: 1px solid $govuk-border-colour;
+}
+
+.filter-body {
+  padding: 1em;
+}
+
+.filter-heading {
+  padding: 0.5em 1em;
+  background-color: govuk-colour('grey-3');
+}
