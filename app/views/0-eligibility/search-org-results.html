@@ -16,17 +16,17 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="agreement" method="post" novalidate>
+        <form action="search-org-results" method="post" novalidate>
             <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
-                    <label class="govuk-label govuk-label--xl" for="search-org-results">
+                    <label class="govuk-label govuk-label--xl" for="company-name">
                         Select your organisation
                     </label>
                     <span class="govuk-hint">
                         Or search again
                     </span>
                 </h1>
-                <input class="govuk-input govuk-input--width-20" id="search-org-results" name="search-org-results" type="text">
+                <input class="govuk-input govuk-input--width-20" id="company-name" name="company-name" type="text">
             </div>
 
             <button type="submit" class="govuk-button">
@@ -91,7 +91,7 @@
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
                         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                            <a href="#" type="submit" class="govuk-link">ACME LTD.</a>
+                            <a href="agreement" type="submit" class="govuk-link">{{ data['company-name'] }} LTD.</a>
                         </p>
                         <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
                             76 Tabernacle Street, London, EC2A 4EA</p>
@@ -102,10 +102,10 @@
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
                         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                            <a href="#" type="submit" class="govuk-link">ACME &amp; I (UK) LTD</a>
+                            <a href="agreement" type="submit" class="govuk-link">{{ data['company-name'] }} &amp; Co LTD</a>
                         </p>
                         <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
-                            Victoria Mills # 17 9 Boyd Street, London, E1 1NH</p>
+                            Victoria Mills, 17 9 Boyd Street, London, E1 1NH</p>
                         <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Type</span>
                             Listed on Companies House</p>
                     </td>
@@ -113,7 +113,7 @@
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-left-2">
                         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                            <a href="#" type="submit" class="govuk-link">ACME (BRIGHTON) LTD.</a>
+                            <a href="agreement" type="submit" class="govuk-link">{{ data['company-name'] }} (BRIGHTON) LTD.</a>
                         </p>
                         <p class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-0"><span class="govuk-body govuk-!-font-weight-bold">Address</span>
                             91 Western Road, Brighton, BN1 2NW</p>
@@ -127,7 +127,7 @@
             <nav>
                 <ul class="previous-next-navigation">
                     <li class="next">
-                        <a href="/accounts/organisations/search/results?searchTerm=Acme&amp;pageNumber=2">
+                        <a href="/accounts/organisations/search/results?searchTerm={{ data['company-name'] }}&amp;pageNumber=2">
                             Next page
                             <span class="detail">Page 2 of 3</span>
                         </a>
