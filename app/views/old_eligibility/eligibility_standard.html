@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {% include 'includes/_phase-banner-alpha.html' %}
   {{ govukBackLink({
-    href: "/index",
+    href: "/apply_overview",
     text: "Back"
   }) }}
 
@@ -16,7 +16,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/eligibility_find-organisation" method="post">
+    <form action="/4-complete-application/complete_overview" method="post">
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="standard-name">
