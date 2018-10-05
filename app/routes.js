@@ -27,6 +27,21 @@ router.post('/0-eligibility/setup', (req, res) => {
   }
 });
 
+router.post('/review-complete', (req, res) => {
+  if (!req.session.data['email']) {
+    res.send('Email required');
+  } else {
+    notify
+      .sendEmail(
+        '0d9cc7a4-e06b-4f7d-9c0b-21f746eb9f56',
+        req.session.data['email']
+      )
+      .then(response => console.log('Failed application email sent'))
+      .catch(err => console.error(err));
+    res.redirect('/application-complete');
+  }
+});
+
 // Send out email after section 4 has been competed (Submit application button clicked) with link to return to recieve feedback
 router.post('/application-complete', (req, res) => {
   if (!req.session.data['standard-name'] || !req.session.data['email']) {

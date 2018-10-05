@@ -233,7 +233,10 @@
             <li class="browse-list-item">
               <h2 class="govuk-heading-m">Application ready for review</h2>
               <p>You have completed the first part of the application process. You can't make changes to your application once it has been sent for review.</p>
-              <a href="/application-complete" class="govuk-button js-review-passed">Send for review</a>
+              {# <a href="/application-complete" class="govuk-button js-review-passed">Send for review</a> #}
+              <form action="review-complete" class="form" method="post">
+                <button class="govuk-button js-review-passed">Send for review</button>
+              </form>
             </li>
           </div>
           <div class="js-send-for-review-clicked">
@@ -285,11 +288,9 @@
     {% if
           data['complete_standard_name']
     %}
-    <div class="js-send-for-review-not-clicked">
-      <form action="application-complete" class="form" method="post">
-        <button class="govuk-button js-review-passed">Submit application</button>
-      </form>
-    </div>
+    <form action="application-complete" class="form" method="post">
+      <button class="govuk-button">Submit application</button>
+    </form>
     {# <div class="js-send-for-review-clicked">
       <h1 class="govuk-heading-l">Feedback</h1>
       <p>Feedback state</p>
