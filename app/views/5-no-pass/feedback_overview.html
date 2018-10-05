@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/_phase-banner-alpha.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row framework-dashboard">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Application overview</h1>
+
+      <div class="govuk-inset-text">
+        <span class="govuk-!-font-size-24">The sections which are not marked as complete below require changes</span>
+      </div>
+
+      <ul>
+        {# SECTION 1 #}
+        <li class="browse-list-item">
+            {{ govukTag({
+              attributes: { id: "complete-section-completed" },
+              classes: "app-task-list__task-completed",
+              text: "Completed"
+            }) }}
+            <h2 class="govuk-heading-m">1. Enter your company details</h2>
+          </li>   
+        
+
+        {# SECTION 2 #}
+        <li class="browse-list-item">
+          {{ govukTag({
+            attributes: { id: "declaration-completed" },
+            classes: "app-task-list__task-completed",
+            text: "Completed"
+          }) }}
+          <h2 class="govuk-heading-m">2. Make declaration</h2>
+        </li>
+        
+
+        {# SECTION 3 #}
+        <li class="browse-list-item">
+          {{ govukTag({
+            attributes: { id: "financial-health-completed" },
+            classes: "app-task-list__task-completed",
+            text: "Completed"
+          }) }}
+          <h2 class="govuk-heading-m">3. Add, edit and complete financial health assessment</h2>
+        </li>
+
+
+        {# SECTION 4 #}
+
+        <li class="browse-list-item">
+          {# {{ govukTag({
+            attributes: { id: "complete-section-completed" },
+            classes: "app-task-list__task-completed",
+            text: "Feedback"
+          }) }} #}
+          <h2 class="govuk-heading-m">
+            <a class="browse-list-item-link" href="/5-no-pass/complete_overview_feedback">4. Add standard</a>
+          </h2>
+        </li>
+      </ul>
+
+    <br>
+    {% if
+          data['complete_standard_name']
+    %}
+    <div class="js-send-for-review-not-clicked">
+      <form action="application-complete" class="form" method="post">
+        <button class="govuk-button js-review-passed">Submit application</button>
+      </form>
+    </div>
+    {# <div class="js-send-for-review-clicked">
+      <h1 class="govuk-heading-l">Feedback</h1>
+      <p>Feedback state</p>
+    </div> #}
+    {% endif %}
+
+      <h2 class="govuk-heading-m">Guidance</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Read about how to apply</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Legal documents</h2>
+      <ul class="govuk-list">
+        <li>
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">
+              Download the 'Conditions for organisations on the register of end-point assessment organisations'
+            </a>
+          </p>
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">
+            Read the proposed agreement between the Education and Skills Funding Agency (ESFA) and end-point assessment organisations (EPAOs).
+          </a>
+          <span class="govuk-hint">Last updated Wednesday 18 July 2018</span></p>
+
+        </li>
+      </ul>
+
+
+      </div>
+    </div>
+
+    {# <a class="govuk-link js-review-passed govuk-!-font-size-14" href="#">
+      Click here to unlock section 4
+    </a> #}
+  </div>
+</div>
+
+{% endblock %}
