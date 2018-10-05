@@ -17,8 +17,8 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Confirm your identity</h1>
-        <p class="govuk-body">We're sent a code to {{ data['email'] }}.</p>
-        <form action="gov-gateway-start" method="post" novalidate class="govuk-!-padding-bottom-3">
+        <p class="govuk-body">We've sent a code to {{ data['email'] }}.</p>
+        <form action="search-org" method="post" novalidate class="govuk-!-padding-bottom-3">
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="enter-code">
@@ -33,7 +33,7 @@
         </form>
         <h2 class="govuk-heading-s">Not received an email?</h2>
         <p class="govuk-body">
-          <a href="#" class="govuk-link">Request another email</a>
+          <a href="/request-another-email" class="govuk-link">Request another email</a>
         </p>
       </div>
     </div>

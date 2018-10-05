@@ -285,7 +285,15 @@
     {% if
           data['complete_standard_name']
     %}
-      <a href="/application-complete" class="govuk-button">Submit application</a>
+    <div class="js-send-for-review-not-clicked">
+      <form action="application-complete" class="form" method="post">
+        <button class="govuk-button js-review-passed">Submit application</button>
+      </form>
+    </div>
+    {# <div class="js-send-for-review-clicked">
+      <h1 class="govuk-heading-l">Feedback</h1>
+      <p>Feedback state</p>
+    </div> #}
     {% endif %}
 
       <h2 class="govuk-heading-m">Guidance</h2>

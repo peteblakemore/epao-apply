@@ -1,0 +1,442 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What it means to be an EPAO
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% import "../../includes/data.html" as financialData %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <a href="../complete_overview_feedback" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-inset-text">
+      <span class="govuk-!-font-size-24">You must tell us about your end-point assessment process...</span>
+    </div>
+    <form action="../complete_overview_feedback" method="post">
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Your complete end-point assessment process
+              </h1>
+            </legend>
+
+            <p class="govuk-body">You must be able to truthfully answer ‘yes’ to every question on this page for your application to be considered eligible. If you can’t answer ‘no’, your application may not be accepted.</p>
+            <p class="govuk-body">If you do answer ‘no’, you must provide full details of the actions you will take and the processes you will implement for each area you currently do not have the capacity and capability to provide as part of a complete end-point assessment. ESFA will use the information you provide to consider whether or not you will be able to proceed any further with this application.</p>
+
+
+            <h2 class="govuk-heading-m">
+              Do you currently have the capacity and capability to deliver the following as part of a complete end-point assessment process?
+            </h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="resources-for-candidates-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Access to appropriate resources for candidates (materials, equipment and/or facilities)
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="resources-for-candidates-1" name="resources-for-candidates" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="resources-for-candidates-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="resources-for-candidates-2" name="resources-for-candidates" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="resources-for-candidates-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="administration-of-assessment-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Administration of assessment
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="administration-of-assessment-1" name="administration-of-assessment" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="administration-of-assessment-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="administration-of-assessment-2" name="administration-of-assessment" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="administration-of-assessment-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="development-assessment-products-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Development of assessment products and tools
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="development-assessment-products-1" name="development-assessment-products" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="development-assessment-products-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="development-assessment-products-2" name="development-assessment-products" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="development-assessment-products-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="appropriate-content-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Appropriate content and level of demand of assessment
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="appropriate-content-1" name="appropriate-content" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="appropriate-content-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="appropriate-content-2" name="appropriate-content" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="appropriate-content-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="arrangements-special-consideration-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Arrangements for special consideration and adjustment for candidates where appropriate (to support candidates with particular needs and/or requirements)
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="arrangements-special-consideration-1" name="arrangements-special-consideration" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="arrangements-special-consideration-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="arrangements-special-consideration-2" name="arrangements-special-consideration" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="arrangements-special-consideration-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="assessment-guidance-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Assessment guidance for candidates
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="assessment-guidance-1" name="assessment-guidance" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="assessment-guidance-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="assessment-guidance-2" name="assessment-guidance" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="assessment-guidance-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="ensure-access-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Ensure access to assessment for candidates
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ensure-access-1" name="ensure-access" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="ensure-access-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ensure-access-2" name="ensure-access" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="ensure-access-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="verification-apprentice-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Verification apprentice meets any requirements for end-point assessment
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="verification-apprentice-1" name="verification-apprentice" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="verification-apprentice-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="verification-apprentice-2" name="verification-apprentice" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="verification-apprentice-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="marking-and-certification-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Marking and certification of results of assessment
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marking-and-certification-1" name="marking-and-certification" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="marking-and-certification-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marking-and-certification-2" name="marking-and-certification" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="marking-and-certification-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="collation-of-outcomes-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Collation of outcomes of end-point assessment and confirmation that final certification can be issued
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="collation-of-outcomes-1" name="collation-of-outcomes" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="collation-of-outcomes-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="collation-of-outcomes-2" name="collation-of-outcomes" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="collation-of-outcomes-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="transfer-of-information-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Liaison with and transfer of information so the ESFA can issue the apprenticeship achievement certificate
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="transfer-of-information-1" name="transfer-of-information" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="transfer-of-information-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="transfer-of-information-2" name="transfer-of-information" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="transfer-of-information-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-of-candidates-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Registration of candidates
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="registration-of-candidates-1" name="registration-of-candidates" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="registration-of-candidates-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="registration-of-candidates-2" name="registration-of-candidates" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="registration-of-candidates-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="reporting-issuing-results-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Reporting and issuing of results
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reporting-issuing-results-1" name="reporting-issuing-results" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="reporting-issuing-results-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reporting-issuing-results-2" name="reporting-issuing-results" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="reporting-issuing-results-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="it-infrastructure-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Secure IT infrastructure
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="it-infrastructure-1" name="it-infrastructure" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="it-infrastructure-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="it-infrastructure-2" name="it-infrastructure" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="it-infrastructure-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="security-of-assessment-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Security of assessment
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="security-of-assessment-1" name="security-of-assessment" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="security-of-assessment-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="security-of-assessment-2" name="security-of-assessment" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="security-of-assessment-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="exempt-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h3 class="govuk-heading-s">
+                    Exempt
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="exempt-1" name="exempt" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="exempt-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="exempt-2" name="exempt" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="exempt-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s">
+                If you responded ‘no’ to any of the questions on this page, please provide details of any mitigating factors that you think should be taken into consideration.
+              </h3>
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+
+
+          </div>
+          <button type="submit" class="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}
