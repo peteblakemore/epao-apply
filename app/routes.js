@@ -28,6 +28,19 @@ router.post("/send-setup-email", (req, res) => {
   }
 });
 
+router.post("/send-signin-email", (req, res) => {
+  const email = req.body.email || req.session.data["email"];
+  if (!email) {
+    res.send("Email is required");
+  } else {
+    notify
+      .sendEmail("fb979df3-7419-4798-91b0-2800cc3603b9", email)
+      .then(response => console.log("Account signin email sent"))
+      .catch(err => console.error(err));
+    res.redirect("/confirm-identity-signin");
+  }
+});
+
 router.post("/review-complete", (req, res) => {
   if (!req.session.data["email"]) {
     res.send("Email required");
