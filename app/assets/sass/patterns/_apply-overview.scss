@@ -79,3 +79,27 @@
     text-decoration: underline;
   }
 }
+
+.govuk-checkboxes__item.govuk-checkboxes__item--show-hide {
+  padding: 0;
+}
+
+.govuk-checkboxes__item.govuk-checkboxes__item--show-hide
+  .govuk-checkboxes__label {
+  padding: 10px 0;
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+.govuk-checkboxes__item.govuk-checkboxes__item--show-hide
+  .govuk-checkboxes__input,
+.govuk-checkboxes__item.govuk-checkboxes__item--show-hide
+  .govuk-checkboxes__input
+  + .govuk-checkboxes__label::before,
+.govuk-checkboxes__item.govuk-checkboxes__item--show-hide
+  .govuk-checkboxes__input
+  + .govuk-checkboxes__label::after {
+  width: 0;
+  height: 0;
+  display: none;
+}

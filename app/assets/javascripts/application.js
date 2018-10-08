@@ -84,8 +84,10 @@ $(document).ready(function() {
         function() {
           if (self.element.checked) {
             self.field.setAttribute("type", "text");
+            self.element.labels[0].innerText = "Hide password";
           } else {
             self.field.setAttribute("type", "password");
+            self.element.labels[0].innerText = "Show password";
           }
         },
         false
@@ -95,7 +97,7 @@ $(document).ready(function() {
 
   document.addEventListener("DOMContentLoaded", function() {
     var checkbox = document.querySelector("#show-password"),
-      pwd = document.querySelector("#new-password"),
+      pwd = document.querySelector("#new-password");
 
     var toggler = new PasswordToggler(checkbox, pwd);
   });
