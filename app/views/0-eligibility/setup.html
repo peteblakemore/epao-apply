@@ -18,20 +18,20 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Get set up as a user</h1>
 
-        <form method="post" novalidate>
+        <form id="account-setup" action="/send-setup-email" method="post" novalidate>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="first-name">
               First name
             </label>
-            <input class="govuk-input" id="first-name" name="first-name" type="text" aria-describedby="first-name-hint">
+            <input class="govuk-input govuk-!-width-one-half" id="first-name" name="first-name" type="text" aria-describedby="first-name-hint">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="last-name">
               Last name
             </label>
-            <input class="govuk-input" id="last-name" name="last-name" type="text" aria-describedby="last-name-hint">
+            <input class="govuk-input govuk-!-width-one-half" id="last-name" name="last-name" type="text" aria-describedby="last-name-hint">
           </div>
 
           <div class="govuk-form-group">
@@ -51,15 +51,28 @@
             <span id="email-hint" class="govuk-hint">
               Password requires upper and lowercase letters, a number and at least 8 characters
             </span>
-            <input class="govuk-input" id="new-password" name="new-password" type="password" aria-describedby="new-password-hint">
+            <input class="govuk-input govuk-!-width-one-half" id="new-password" name="new-password" type="password" aria-describedby="new-password-hint">
           </div>
 
           <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="show-password" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="show-password">
+                  Show password
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+
+          {# <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="confirm-password">
               Confirm password
             </label>
-            <input class="govuk-input" id="confirm-password" name="confirm-password" type="password" aria-describedby="confirm-password-hint">
-          </div>
+            <input class="govuk-input govuk-!-width-one-half" id="confirm-password" name="confirm-password" type="password" aria-describedby="confirm-password-hint">
+          </div> #}
 
           <button type="submit" class="govuk-button">
             Set me up
