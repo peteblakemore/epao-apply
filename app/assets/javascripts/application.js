@@ -96,10 +96,12 @@ $(document).ready(function() {
   };
 
   document.addEventListener("DOMContentLoaded", function() {
-    var checkbox = document.querySelector("#show-password"),
-      pwd = document.querySelector("#new-password");
+    var checkbox = document.querySelector("#show-password");
+    var pwd = document.querySelector("#new-password");
 
-    var toggler = new PasswordToggler(checkbox, pwd);
+    if (checkbox && pwd) {
+      var toggler = new PasswordToggler(checkbox, pwd);
+    }
   });
 })();
 
