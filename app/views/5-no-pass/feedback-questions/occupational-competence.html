@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What it means to be an EPAO
+What it means to be an EPAO
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,80 +12,69 @@
 {% block content %}
 
 <div class="govuk-width-container">
-		<a href="../complete_overview_feedback" class="govuk-back-link">Back</a>
-		<main class="govuk-main-wrapper" id="main-content" role="main">
-			<div class="govuk-grid-row">
-				<div class="govuk-grid-column-two-thirds">
-          <div class="govuk-inset-text">
-            <span class="govuk-!-font-size-24">You must tell us about your occupational competence...</span>
-          </div>
-					<form action="../complete_overview_feedback" method="post">
-						<div class="govuk-form-group">
-							<fieldset class="govuk-fieldset">
+  <a href="../complete_overview_feedback" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-inset-text">
+          <h2 class="govuk=heading-l">Feedback:</h2>
+          <span class="govuk-!-font-size-24">You must tell us about your occupational competence.</span>
+        </div>
+        <form action="../complete_overview_feedback" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
 
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h1 class="govuk-fieldset__heading">
-                    Your occupational competence
-                  </h1>
-                </legend>
-                <p class="govuk-body">
-                  Within the past 3 years, have you developed any activities in cooperation with employers?
-                </p>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Your occupational competence
+                </h1>
+              </legend>
+              <p class="govuk-body">
+                Within the past 3 years, have you developed any activities in cooperation with employers?
+              </p>
 
 
 
-                <div class="govuk-radios" data-module="radios">
+              <div class="govuk-radios" data-module="radios">
 
-                  <!-- yes -->
-                  <div        class="govuk-radios__item">
-										<input    class="govuk-radios__input"
-                              data-aria-controls="conditional-complete_best-practice-skills-1"
-                              id="complete_best-practice-skills-1"
-                              name="complete_best-practice-skills"
-                              {{ checked('complete_best-practice-skills','yes') }}
-                              type="radio"
-                              value="yes">
-                      <label  class="govuk-label govuk-radios__label"
-                              for="complete_best-practice-skills">
-                              Yes
-                      </label>
-									</div>
+                <!-- yes -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" data-aria-controls="conditional-feedback_complete_best-practice-skills-1"
+                    id="feedback_complete_best-practice-skills-1" name="feedback_complete_best-practice-skills"
+                    {{ checked('feedback_complete_best-practice-skills','yes') }} type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="feedback_complete_best-practice-skills">
+                    Yes
+                  </label>
+                </div>
 
-                  <!-- yes hidden -->
-                  <div
-                              class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                              id="conditional-complete_best-practice-skills-1">
-                              <div class="govuk-form-group">
-                                <label class="govuk-label" for="more-detail">
-                                  Provide details
-                                </label>
-                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                              </div>
-                	</div>
+                <!-- yes hidden -->
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-feedback_complete_best-practice-skills-1">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="feedback_competence-more-detail">
+                      Provide details
+                    </label>
+                    <textarea class="govuk-textarea" id="feedback_competence-more-detail" name="feedback_competence-more-detail" rows="5" aria-describedby="feedback_competence-more-detail-hint">{{ data["feedback_competence-more-detail"] }}</textarea>
+                  </div>
+                </div>
 
-                  <!-- no -->
-                  <div        class="govuk-radios__item">
-										  <input  class="govuk-radios__input"
-                              data-aria-controls="conditional-complete_best-practice-skills-2"
-                              id="complete_best-practice-skills-2"
-                              name="complete_best-practice-skills"
-                              {{ checked('complete_best-practice-skills','no') }}
-                              type="radio"
-                              value="no">
-                      <label  class="govuk-label govuk-radios__label"
-                              for="complete_best-practice-skills">
-                              No
-                      </label>
-									</div>
-								</div>
+                <!-- no -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" data-aria-controls="conditional-feedback_complete_best-practice-skills-2"
+                    id="feedback_complete_best-practice-skills-2" name="feedback_complete_best-practice-skills"
+                    {{ checked('feedback_complete_best-practice-skills','no') }} type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="feedback_complete_best-practice-skills">
+                    No
+                  </label>
+                </div>
+              </div>
 
-							</fieldset>
-						</div><button class="govuk-button" type="submit">Save and continue</button>
-					</form>
-				</div>
-			</div>
-			<p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
-		</main>
-	</div>
+            </fieldset>
+          </div><button class="govuk-button" type="submit">Save and continue</button>
+        </form>
+      </div>
+    </div>
+    <p class="govuk-body"><a class="govuk-link" href="../complete_overview">Return to questions overview</a></p>
+  </main>
+</div>
 
 {% endblock %}

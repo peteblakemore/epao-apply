@@ -17,7 +17,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-inset-text">
-      <span class="govuk-!-font-size-24">You must tell us what your end-point assessment delivery model is...</span>
+      <h2 class="govuk=heading-l">Feedback:</h2>
+      <span class="govuk-!-font-size-24">You must tell us what your end-point assessment delivery model is.</span>
     </div>
     <form action="../complete_overview_feedback" method="post">
 
@@ -29,7 +30,8 @@
               </h1>
             </legend>
 
-            <input class="govuk-input govuk-input--width-20" id="complete_delivery-model" name="complete_delivery-model" value="{{ data['complete_delivery-model'] }}" type="text">
+            {# <input class="govuk-input govuk-input--width-20" id="complete_delivery-model" name="complete_delivery-model" value="{{ data['feedback_complete_delivery-model'] }}" type="text"> #}
+            <textarea class="govuk-textarea" id="feedback_complete_delivery-model" name="feedback_complete_delivery-model" rows="10" aria-describedby="feedback_complete_delivery-model-hint">{{ data['feedback_complete_delivery-model'] }}</textarea>
 
           </div>
           <button type="submit" class="govuk-button">

@@ -4,14 +4,14 @@
   EPAO application questions
 {% endblock %}
 
-{% block beforeContent %}
+{# {% block beforeContent %}
   {% include 'includes/_phase-banner-alpha.html' %}
   {{ govukBackLink({
     href: "feedback_overview",
     text: "Back to application feedback overview"
   }) }}
 
-{% endblock %}
+{% endblock %} #}
 
 {% import "../includes/data.html" as financialData %}
 
@@ -21,7 +21,7 @@
     <div class="govuk-inset-text">
       <span class="govuk-!-font-size-24">You must complete all of the sections below before <span>re-submitting</span> your application</span>
     </div>
-    <h1 class="govuk-heading-l">Your application to deliver end-point assessments for {{ data['standard-name'] }} overview</h1>
+    <h1 class="govuk-heading-l">Your application to deliver end-point assessments in {{ data['standard-name'] }}</h1>
     {# <p>You must answer all the questions.</p> #}
 
     <ol class="app-task-list">
@@ -49,8 +49,8 @@
           </li> #}
           <li class="app-task-list__item">
             <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="/5-no-pass/feedback-questions/safeguarding-policy">Safeguarding policy</a>
-            {% if data['complete_safeguarding-policy'] %}
-              {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% if data['feedback_complete_safeguarding-policy'] %}
+              {{ govukTag({ attributes: { id: "feedback_complete_safeguarding-policy" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
           </li>
           {# <li class="app-task-list__item">
@@ -70,14 +70,14 @@
           </li> #}
            <li class="app-task-list__item">
             <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="/5-no-pass/feedback-questions/occupational-competence">Occupational competence</a>
-            {% if data['complete_best-practice-skills'] %}
-              {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% if data['feedback_complete_best-practice-skills'] %}
+              {{ govukTag({ attributes: { id: "feedback_complete_best-practice-skills" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
           </li>
           <li class="app-task-list__item">
             <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="/5-no-pass/feedback-questions/process">Providing a complete end-point assessment process</a>
-            {% if data['resources-for-candidates'] %}
-              {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% if data['feedback_resources-for-candidates'] %}
+              {{ govukTag({ attributes: { id: "feedback_resources-for-candidates" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
           </li>
           {# <li class="app-task-list__item">
@@ -91,8 +91,8 @@
           </li> #}
           <li class="app-task-list__item">
             <a aria-describedby="eligibility-completed" class="app-task-list__task-name" href="/5-no-pass/feedback-questions/delivery-model">Your delivery model</a>
-            {% if data['complete_delivery-model'] %}
-              {{ govukTag({ attributes: { id: "standard-name" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
+            {% if data['feedback_complete_delivery-model'] %}
+              {{ govukTag({ attributes: { id: "feedback_complete_delivery-model" }, classes: "app-task-list__task-completed", text: "Completed" }) }}
             {% endif %}
           </li>
           
