@@ -107,25 +107,17 @@
             Registered address
           </dt>
           <dd class="app-check-your-answers__answer">
-            {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
               <p class="govuk-body">
-                {{ data['building-street'] }}<br>
-                {{ data['town-city'] }}<br>
-                {{ data['postcode'] }}<br>
-                {{ data['country'] }}
+                76 East Street<br>
+                London<br>
+                EC2A 4EA<br>
+                England
               </p>
-            {% endif %}
           </dd>
           <dd class="app-check-your-answers__change">
-            {% if data['building-street'] or data['town-city'] or data['postcode'] or data['country'] %}
               <a href="1-company-details/company-address" class="govuk-link">
                 Change
               </a>
-            {% else %}
-              <a href="1-company-details/company-address" class="govuk-link">
-                Answer required
-              </a>
-            {% endif %}
           </dd>
         </div>
 
